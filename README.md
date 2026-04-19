@@ -9,7 +9,7 @@
 
 ## Project Overview
 
-**DoodleDash: 5-Second Chaos** is a high-speed, frenetic arcade experience. The concept centers on a "Cursed Sketchbook" where doodles have come to life and are bored. To keep them contained (and prevent them from erasing reality), the player must complete a series of absurd, short-lived challenges. You have 5 seconds per task. Fail, and the ink spills!
+**InkRush** is a high-speed, frenetic arcade experience. The concept centers on a "Cursed Sketchbook" where doodles have come to life and are bored. To keep them contained (and prevent them from erasing reality), the player must complete a series of absurd, short-lived challenges. You have 5 seconds per task. Fail, and the ink spills!
 
 ### Key Features
 * **⚡ Frenetic Chaos:** Micro-games that last exactly 5 seconds. Tests reflexes and mental agility to the limit.
