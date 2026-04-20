@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://cxam3ngwtb62y"]
+
+[ext_resource type="Texture2D" uid="uid://cookypqhpxm77" path="res://Assets/game_1/2.png" id="1_snhmn"]
+[ext_resource type="Texture2D" uid="uid://cuj4sc5ludvk6" path="res://Assets/game_1/border5.png" id="2_dhcxe"]
+[ext_resource type="PackedScene" uid="uid://c28svxpc8086h" path="res://Scenes/ball.tscn" id="3_nbnrc"]
+[ext_resource type="PackedScene" uid="uid://bctyxbdlbgruh" path="res://Scenes/player_car.tscn" id="4_ng0bj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dhcxe"]
+size = Vector2(1270.5, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbnrc"]
+size = Vector2(6, 662)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ng0bj"]
+size = Vector2(5, 655.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vm6a"]
+size = Vector2(1276, 4.5)
+
+[node name="Dodge" type="Node2D" unique_id=384416477]
+position = Vector2(9, 11)
+
+[node name="background" type="Sprite2D" parent="." unique_id=854340734]
+z_index = -1
+position = Vector2(-27.5, -58.000015)
+scale = Vector2(9.9765625, 5.1406245)
+texture = ExtResource("1_snhmn")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=625252371]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -672.0
+offset_top = -398.0
+offset_right = 618.0
+offset_bottom = 274.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dhcxe")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="walls" type="StaticBody2D" parent="." unique_id=23783203]
+
+[node name="wall_up" type="CollisionShape2D" parent="walls" unique_id=1609971039]
+position = Vector2(-19.75, -387)
+shape = SubResource("RectangleShape2D_dhcxe")
+
+[node name="wall_right" type="CollisionShape2D" parent="walls" unique_id=388526019]
+position = Vector2(613, -57)
+shape = SubResource("RectangleShape2D_nbnrc")
+
+[node name="wall_left" type="CollisionShape2D" parent="walls" unique_id=661523921]
+position = Vector2(-658.5, -55.25)
+shape = SubResource("RectangleShape2D_ng0bj")
+
+[node name="wall_down" type="CollisionShape2D" parent="walls" unique_id=1674067448]
+position = Vector2(-30, 265.25)
+shape = SubResource("RectangleShape2D_1vm6a")
+
+[node name="balls" type="Node2D" parent="." unique_id=1110553696]
+
+[node name="Ball2" parent="balls" unique_id=1402104833 groups=["balls"] instance=ExtResource("3_nbnrc")]
+position = Vector2(-499, -289)
+
+[node name="Ball5" parent="balls" unique_id=1973790165 groups=["balls"] instance=ExtResource("3_nbnrc")]
+position = Vector2(391, 154)
+
+[node name="Ball3" parent="balls" unique_id=246775177 groups=["balls"] instance=ExtResource("3_nbnrc")]
+position = Vector2(476, -298)
+
+[node name="Ball4" parent="balls" unique_id=1197625879 groups=["balls"] instance=ExtResource("3_nbnrc")]
+position = Vector2(-486, 151)
+
+[node name="PlayerCar" parent="." unique_id=1718791426 instance=ExtResource("4_ng0bj")]
+position = Vector2(-7, -12)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=20522130]
+position = Vector2(5, 1)
