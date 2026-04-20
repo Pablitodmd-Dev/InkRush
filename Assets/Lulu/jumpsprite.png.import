@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcsdxp07tryln"
-path="res://.godot/imported/imagen-removebg-preview(34).png-b3b34eb96ab97e229b72c53d235d141b.ctex"
+uid="uid://bocygr826828q"
+path="res://.godot/imported/jumpsprite.png-51cfd6624afb929deb3560e53f773e9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/imagen-removebg-preview(34).png"
-dest_files=["res://.godot/imported/imagen-removebg-preview(34).png-b3b34eb96ab97e229b72c53d235d141b.ctex"]
+source_file="res://Assets/Lulu/jumpsprite.png"
+dest_files=["res://.godot/imported/jumpsprite.png-51cfd6624afb929deb3560e53f773e9d.ctex"]
 
 [params]
 

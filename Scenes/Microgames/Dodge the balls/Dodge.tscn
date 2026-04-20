@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cxam3ngwtb62y"]
 
-[ext_resource type="Texture2D" uid="uid://cookypqhpxm77" path="res://Assets/game_1/2.png" id="1_snhmn"]
-[ext_resource type="Texture2D" uid="uid://cuj4sc5ludvk6" path="res://Assets/game_1/border5.png" id="2_dhcxe"]
-[ext_resource type="PackedScene" uid="uid://c28svxpc8086h" path="res://Scenes/ball.tscn" id="3_nbnrc"]
-[ext_resource type="PackedScene" uid="uid://bctyxbdlbgruh" path="res://Scenes/player_car.tscn" id="4_ng0bj"]
+[ext_resource type="Texture2D" uid="uid://cookypqhpxm77" path="res://Assets/game_1/2.png" id="1_cb7e8"]
+[ext_resource type="Texture2D" uid="uid://cuj4sc5ludvk6" path="res://Assets/game_1/border5.png" id="2_mikc2"]
+[ext_resource type="PackedScene" uid="uid://c28svxpc8086h" path="res://Scenes/Microgames/Dodge the balls/ball.tscn" id="3_66v0l"]
+[ext_resource type="PackedScene" uid="uid://bctyxbdlbgruh" path="res://Scenes/Microgames/Dodge the balls/player_car.tscn" id="4_ctq5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhcxe"]
 size = Vector2(1270.5, 6)
@@ -24,7 +24,7 @@ position = Vector2(9, 11)
 z_index = -1
 position = Vector2(-27.5, -58.000015)
 scale = Vector2(9.9765625, 5.1406245)
-texture = ExtResource("1_snhmn")
+texture = ExtResource("1_cb7e8")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=625252371]
 anchors_preset = 15
@@ -36,7 +36,7 @@ offset_right = 618.0
 offset_bottom = 274.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_dhcxe")
+texture = ExtResource("2_mikc2")
 patch_margin_left = 20
 patch_margin_top = 20
 patch_margin_right = 20
@@ -62,19 +62,19 @@ shape = SubResource("RectangleShape2D_1vm6a")
 
 [node name="balls" type="Node2D" parent="." unique_id=1110553696]
 
-[node name="Ball2" parent="balls" unique_id=1402104833 groups=["balls"] instance=ExtResource("3_nbnrc")]
+[node name="Ball2" parent="balls" unique_id=1402104833 groups=["balls"] instance=ExtResource("3_66v0l")]
 position = Vector2(-499, -289)
 
-[node name="Ball5" parent="balls" unique_id=1973790165 groups=["balls"] instance=ExtResource("3_nbnrc")]
+[node name="Ball5" parent="balls" unique_id=1973790165 groups=["balls"] instance=ExtResource("3_66v0l")]
 position = Vector2(391, 154)
 
-[node name="Ball3" parent="balls" unique_id=246775177 groups=["balls"] instance=ExtResource("3_nbnrc")]
+[node name="Ball3" parent="balls" unique_id=246775177 groups=["balls"] instance=ExtResource("3_66v0l")]
 position = Vector2(476, -298)
 
-[node name="Ball4" parent="balls" unique_id=1197625879 groups=["balls"] instance=ExtResource("3_nbnrc")]
+[node name="Ball4" parent="balls" unique_id=1197625879 groups=["balls"] instance=ExtResource("3_66v0l")]
 position = Vector2(-486, 151)
 
-[node name="PlayerCar" parent="." unique_id=1718791426 instance=ExtResource("4_ng0bj")]
+[node name="PlayerCar" parent="." unique_id=1718791426 instance=ExtResource("4_ctq5k")]
 position = Vector2(-7, -12)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=20522130]
