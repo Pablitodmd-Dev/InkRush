@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://brgwsfwnnjxbk"]
+
+[ext_resource type="Texture2D" uid="uid://d022c857lsvc7" path="res://Assets/trampoline_game/spring.png" id="1_4p3qg"]
+[ext_resource type="Script" uid="uid://ct7f7jvwpv07v" path="res://Scripts/trampoline_game/spring.gd" id="1_xceyj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xceyj"]
+atlas = ExtResource("1_4p3qg")
+region = Rect2(0, 0, 276, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cr3tn"]
+atlas = ExtResource("1_4p3qg")
+region = Rect2(276, 0, 276, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yv252"]
+atlas = ExtResource("1_4p3qg")
+region = Rect2(552, 0, 276, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc8c4"]
+atlas = ExtResource("1_4p3qg")
+region = Rect2(828, 0, 276, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cro43"]
+atlas = ExtResource("1_4p3qg")
+region = Rect2(552, 0, 276, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utqrt"]
+atlas = ExtResource("1_4p3qg")
+region = Rect2(276, 0, 276, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs0i1"]
+atlas = ExtResource("1_4p3qg")
+region = Rect2(0, 0, 276, 324)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cro43"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xceyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cr3tn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yv252")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bc8c4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cro43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utqrt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs0i1")
+}],
+"loop": false,
+"name": &"compress",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4p3qg"]
+size = Vector2(52, 35)
+
+[node name="Spring" type="Area2D" unique_id=2099346951]
+script = ExtResource("1_xceyj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=670234767]
+unique_name_in_owner = true
+position = Vector2(-1.1920929e-07, -18.000002)
+scale = Vector2(0.1938406, 0.109567836)
+sprite_frames = SubResource("SpriteFrames_cro43")
+animation = &"compress"
+frame = 1
+frame_progress = 0.6234544
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=70818267]
+position = Vector2(0, -18.5)
+shape = SubResource("RectangleShape2D_4p3qg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
