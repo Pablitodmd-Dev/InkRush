@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://fhcwmipyksc"]
+
+[ext_resource type="Texture2D" uid="uid://hhajk8l1b68t" path="res://Assets/Microgames/Protect Lulu/Raindrop.png" id="1_hutuy"]
+[ext_resource type="Script" uid="uid://natnfyoi2nap" path="res://Scripts/Protect Lulu/raindrop.gd" id="1_u70qc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hutuy"]
+radius = 19.0
+
+[node name="Raindrop" type="Area2D" unique_id=1521805759 groups=["raindrops"]]
+script = ExtResource("1_u70qc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1723322824]
+texture = ExtResource("1_hutuy")
+region_enabled = true
+region_rect = Rect2(130.60002, 113.2, 54.399994, 74.399994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1010544419]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_hutuy")
+debug_color = Color(0.99386674, 0.075165726, 1.92523e-07, 0.41960785)

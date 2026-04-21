@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://bctyxbdlbgruh"]
+
+[ext_resource type="Texture2D" uid="uid://ot7djlg3lioj" path="res://Assets/Microgames/Dodge the balls/car_player.png" id="1_ir43m"]
+[ext_resource type="Script" uid="uid://db8ou8t1y2w4e" path="res://Scripts/Dodge the ball/player_car.gd" id="1_iwbkh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwbkh"]
+atlas = ExtResource("1_ir43m")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5784"]
+atlas = ExtResource("1_ir43m")
+region = Rect2(0, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2t4p"]
+atlas = ExtResource("1_ir43m")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7seya"]
+atlas = ExtResource("1_ir43m")
+region = Rect2(100, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxbj2"]
+atlas = ExtResource("1_ir43m")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8c0x"]
+atlas = ExtResource("1_ir43m")
+region = Rect2(0, 200, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6aji4"]
+atlas = ExtResource("1_ir43m")
+region = Rect2(200, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swgpl"]
+atlas = ExtResource("1_ir43m")
+region = Rect2(100, 200, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k5784"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwbkh")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5784")
+}],
+"loop": true,
+"name": &"down_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2t4p")
+}],
+"loop": true,
+"name": &"down_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7seya")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxbj2")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8c0x")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6aji4")
+}],
+"loop": true,
+"name": &"up_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swgpl")
+}],
+"loop": true,
+"name": &"up_right",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwbkh"]
+size = Vector2(140.75, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7seya"]
+size = Vector2(141, 57)
+
+[node name="PlayerCar" type="CharacterBody2D" unique_id=1718791426]
+script = ExtResource("1_iwbkh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=935091336]
+position = Vector2(6.000004, -1)
+scale = Vector2(1.69, 1.4399999)
+sprite_frames = SubResource("SpriteFrames_k5784")
+animation = &"left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1774144929]
+position = Vector2(2.625, 4)
+shape = SubResource("RectangleShape2D_iwbkh")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=504736209]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=878020164]
+position = Vector2(2.5, 4.5)
+shape = SubResource("RectangleShape2D_7seya")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c28svxpc8086h"]
+
+[ext_resource type="Texture2D" uid="uid://hujsmg2gjhcr" path="res://Assets/Microgames/Dodge the balls/ball.png" id="1_d60mj"]
+[ext_resource type="Script" uid="uid://d34giyq3q4fj8" path="res://Scripts/Dodge the ball/ball.gd" id="1_ij5cq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d60mj"]
+radius = 56.142673
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ij5cq"]
+radius = 56.0
+
+[node name="Ball" type="CharacterBody2D" unique_id=1973790165]
+script = ExtResource("1_ij5cq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=709284245]
+shape = SubResource("CircleShape2D_d60mj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=427130059]
+position = Vector2(-1.2500013, 2.0781271)
+scale = Vector2(0.4403846, 0.38723856)
+texture = ExtResource("1_d60mj")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1425197887]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=453399019 groups=["balls"]]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_ij5cq")

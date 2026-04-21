@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://pv1iymaqvb7d"]
+
+[ext_resource type="Script" uid="uid://hcurbto3tuhx" path="res://Scripts/Protect Lulu/LuluGame.gd" id="1_stjev"]
+[ext_resource type="Texture2D" uid="uid://rsal7vralx2d" path="res://Assets/Microgames/Protect Lulu/3 sin título_20260421093910.png" id="2_8untf"]
+[ext_resource type="PackedScene" uid="uid://ddo2ia35adypv" path="res://Scenes/Microgames/Protect Lulu/Lulu.tscn" id="3_1ia0r"]
+[ext_resource type="PackedScene" uid="uid://denx46lb7jn2a" path="res://Scenes/Microgames/Protect Lulu/umbrella.tscn" id="4_n51rm"]
+[ext_resource type="AudioStream" uid="uid://bhmktd3yxudwc" path="res://Assets/Microgames/Protect Lulu/Music/videoplayback.mp3" id="5_1ia0r"]
+
+[node name="Node2D" type="Node2D" unique_id=854515093]
+script = ExtResource("1_stjev")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1667382795]
+position = Vector2(576, 324)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_8untf")
+
+[node name="Dog" parent="." unique_id=36002750 instance=ExtResource("3_1ia0r")]
+position = Vector2(580, 486)
+
+[node name="Umbrella" parent="." unique_id=1359556013 instance=ExtResource("4_n51rm")]
+position = Vector2(590, 248)
+
+[node name="RainTimer" type="Timer" parent="." unique_id=931382343]
+wait_time = 0.3
+autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=831861031]
+stream = ExtResource("5_1ia0r")
+autoplay = true
+
+[connection signal="timeout" from="RainTimer" to="." method="_on_rain_timer_timeout"]

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://denx46lb7jn2a"]
+
+[ext_resource type="Script" uid="uid://b44wp12em1fpe" path="res://Scripts/Protect Lulu/umbrella.gd" id="1_g4lnp"]
+[ext_resource type="Texture2D" uid="uid://cg48xphalx1vj" path="res://Assets/Microgames/Protect Lulu/Umbrella.png" id="1_hwbae"]
+
+[node name="Area2D" type="Area2D" unique_id=1359556013]
+script = ExtResource("1_g4lnp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=997349980]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_hwbae")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1458964083]
+position = Vector2(0, -1)
+polygon = PackedVector2Array(0, 0, -61, 0, -141, 0, -141, -1, -114, -57, -79, -92, -28, -116, 1, -120, 32, -115, 69, -97, 98, -74, 119, -48, 133, -20, 140, 0, 79, 0)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
