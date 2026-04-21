@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var bounce_force: float = -1000.0
+@export var bounce_force: float = -700.0
 @export var move_speed: float = 100.0
 @export var horizontal_limit: float = 200.0
 
