@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuj4sc5ludvk6"
-path="res://.godot/imported/border5.png-01120b098eb7061b967d3a395aa15a46.ctex"
+uid="uid://hujsmg2gjhcr"
+path="res://.godot/imported/ball.png-1b7e8bec2a97471591e344586683ed7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/game_1/border5.png"
-dest_files=["res://.godot/imported/border5.png-01120b098eb7061b967d3a395aa15a46.ctex"]
+source_file="res://Assets/Microgames/Dodge the balls/ball.png"
+dest_files=["res://.godot/imported/ball.png-1b7e8bec2a97471591e344586683ed7b.ctex"]
 
 [params]
 

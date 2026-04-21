@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bctyxbdlbgruh"]
 
-[ext_resource type="Texture2D" uid="uid://ot7djlg3lioj" path="res://Assets/game_1/car_player.png" id="1_ir43m"]
-[ext_resource type="Script" uid="uid://db8ou8t1y2w4e" path="res://Scripts/player_car.gd" id="1_iwbkh"]
+[ext_resource type="Texture2D" uid="uid://ot7djlg3lioj" path="res://Assets/Microgames/Dodge the balls/car_player.png" id="1_ir43m"]
+[ext_resource type="Script" uid="uid://db8ou8t1y2w4e" path="res://Scripts/Dodge the ball/player_car.gd" id="1_iwbkh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iwbkh"]
 atlas = ExtResource("1_ir43m")

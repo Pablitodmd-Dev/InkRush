@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp2b55lol0g7h"
-path="res://.godot/imported/poopsprite.png-f41d8c26244f2f6fafd9c2b88aab0864.ctex"
+uid="uid://ctabmilfjjo0j"
+path="res://.godot/imported/4_Cat_Fall-Sheet.png-174a89c7bdb369b418da64e0a877ae0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Lulu/poopsprite.png"
-dest_files=["res://.godot/imported/poopsprite.png-f41d8c26244f2f6fafd9c2b88aab0864.ctex"]
+source_file="res://Assets/Microgames/trampoline_game/Cat_Character/4_Cat_Fall-Sheet.png"
+dest_files=["res://.godot/imported/4_Cat_Fall-Sheet.png-174a89c7bdb369b418da64e0a877ae0d.ctex"]
 
 [params]
 

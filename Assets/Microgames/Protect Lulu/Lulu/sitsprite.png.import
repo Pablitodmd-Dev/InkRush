@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c81u4eokelmdf"
-path="res://.godot/imported/barksprite without lines.png-89ba619bdb92c79b017864a7b5f75a81.ctex"
+uid="uid://cobk3sqk55wbx"
+path="res://.godot/imported/sitsprite.png-902b2d35eb0d4e7402b21f1d34081526.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Lulu/barksprite without lines.png"
-dest_files=["res://.godot/imported/barksprite without lines.png-89ba619bdb92c79b017864a7b5f75a81.ctex"]
+source_file="res://Assets/Microgames/Protect Lulu/Lulu/sitsprite.png"
+dest_files=["res://.godot/imported/sitsprite.png-902b2d35eb0d4e7402b21f1d34081526.ctex"]
 
 [params]
 

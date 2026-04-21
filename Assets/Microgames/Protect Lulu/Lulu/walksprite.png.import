@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j5ogdr2jhaj6"
-path="res://.godot/imported/idlesprite.png-c1db3f088c24fef073ce83f254b0efc2.ctex"
+uid="uid://cow62yrgdstfd"
+path="res://.godot/imported/walksprite.png-aec4b385936349b71f2dda933ffc6718.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Lulu/idlesprite.png"
-dest_files=["res://.godot/imported/idlesprite.png-c1db3f088c24fef073ce83f254b0efc2.ctex"]
+source_file="res://Assets/Microgames/Protect Lulu/Lulu/walksprite.png"
+dest_files=["res://.godot/imported/walksprite.png-aec4b385936349b71f2dda933ffc6718.ctex"]
 
 [params]
 

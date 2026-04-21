@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cookypqhpxm77"
-path="res://.godot/imported/2.png-839a9334b8bb95e8a701a2fcbe026a47.ctex"
+uid="uid://d022c857lsvc7"
+path="res://.godot/imported/spring.png-472560614dd3612e065e0969462c586c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/game_1/2.png"
-dest_files=["res://.godot/imported/2.png-839a9334b8bb95e8a701a2fcbe026a47.ctex"]
+source_file="res://Assets/Microgames/trampoline_game/spring.png"
+dest_files=["res://.godot/imported/spring.png-472560614dd3612e065e0969462c586c.ctex"]
 
 [params]
 

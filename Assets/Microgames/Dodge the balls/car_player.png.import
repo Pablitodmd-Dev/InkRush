@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxk0x8c8yr3mi"
-path="res://.godot/imported/runsprite.png-a9660c9a7669cc144fd412a5723fa6ec.ctex"
+uid="uid://ot7djlg3lioj"
+path="res://.godot/imported/car_player.png-f4ae7216d5c9da1d31b7f004e2b6c7d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Lulu/runsprite.png"
-dest_files=["res://.godot/imported/runsprite.png-a9660c9a7669cc144fd412a5723fa6ec.ctex"]
+source_file="res://Assets/Microgames/Dodge the balls/car_player.png"
+dest_files=["res://.godot/imported/car_player.png-f4ae7216d5c9da1d31b7f004e2b6c7d4.ctex"]
 
 [params]
 

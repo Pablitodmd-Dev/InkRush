@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ot7djlg3lioj"
-path="res://.godot/imported/car_player.png-cfa976be77bdf7da6392a2cc2d2fa580.ctex"
+uid="uid://dovmagt71kt3g"
+path="res://.godot/imported/3_Cat_Jump-Sheet.png-ab84ffc7d9c7a9b056833be0226f8327.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/game_1/car_player.png"
-dest_files=["res://.godot/imported/car_player.png-cfa976be77bdf7da6392a2cc2d2fa580.ctex"]
+source_file="res://Assets/Microgames/trampoline_game/Cat_Character/3_Cat_Jump-Sheet.png"
+dest_files=["res://.godot/imported/3_Cat_Jump-Sheet.png-ab84ffc7d9c7a9b056833be0226f8327.ctex"]
 
 [params]
 

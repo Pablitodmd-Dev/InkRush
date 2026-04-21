@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://du2qapbtojdb0"]
 
 [ext_resource type="Script" uid="uid://lmdajia2h4ta" path="res://Scripts/trampoline_game/wilson.gd" id="1_5tpan"]
-[ext_resource type="Texture2D" uid="uid://ctabmilfjjo0j" path="res://Assets/trampoline_game/Cat_Character/4_Cat_Fall-Sheet.png" id="2_lye2a"]
-[ext_resource type="Texture2D" uid="uid://dovmagt71kt3g" path="res://Assets/trampoline_game/Cat_Character/3_Cat_Jump-Sheet.png" id="3_g7g76"]
-[ext_resource type="Texture2D" uid="uid://t2itvkoe1mxc" path="res://Assets/trampoline_game/Cat_Character/1_Cat_Idle-Sheet.png" id="3_ny57e"]
+[ext_resource type="Texture2D" uid="uid://ctabmilfjjo0j" path="res://Assets/Microgames/trampoline_game/Cat_Character/4_Cat_Fall-Sheet.png" id="2_lye2a"]
+[ext_resource type="Texture2D" uid="uid://dovmagt71kt3g" path="res://Assets/Microgames/trampoline_game/Cat_Character/3_Cat_Jump-Sheet.png" id="3_g7g76"]
+[ext_resource type="Texture2D" uid="uid://t2itvkoe1mxc" path="res://Assets/Microgames/trampoline_game/Cat_Character/1_Cat_Idle-Sheet.png" id="3_ny57e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e54b4"]
 atlas = ExtResource("2_lye2a")

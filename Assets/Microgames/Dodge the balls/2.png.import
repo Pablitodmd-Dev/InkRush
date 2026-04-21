@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvojrfl5r08am"
-path="res://.godot/imported/2_Cat_Run-Sheet.png-32d46167b1e81139c966f36810d9e98f.ctex"
+uid="uid://cookypqhpxm77"
+path="res://.godot/imported/2.png-04c625198aef1b34b3eb6f2d0ae5fca3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/trampoline_game/Cat_Character/2_Cat_Run-Sheet.png"
-dest_files=["res://.godot/imported/2_Cat_Run-Sheet.png-32d46167b1e81139c966f36810d9e98f.ctex"]
+source_file="res://Assets/Microgames/Dodge the balls/2.png"
+dest_files=["res://.godot/imported/2.png-04c625198aef1b34b3eb6f2d0ae5fca3.ctex"]
 
 [params]
 

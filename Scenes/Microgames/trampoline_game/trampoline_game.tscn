@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://b2cck10vl0dp3"]
 
 [ext_resource type="Script" uid="uid://b65y6dp6rgfoq" path="res://Scripts/trampoline_game/trampoline_game.gd" id="1_6ait7"]
-[ext_resource type="Texture2D" uid="uid://b18a40cna3mc8" path="res://Assets/trampoline_game/world_tileset.png" id="1_82sgi"]
-[ext_resource type="PackedScene" uid="uid://du2qapbtojdb0" path="res://Scenes/trampoline_game/player.tscn" id="2_ftqrp"]
-[ext_resource type="PackedScene" uid="uid://brgwsfwnnjxbk" path="res://Scenes/trampoline_game/spring.tscn" id="3_ftqrp"]
+[ext_resource type="Texture2D" uid="uid://b18a40cna3mc8" path="res://Assets/Microgames/trampoline_game/world_tileset.png" id="1_82sgi"]
+[ext_resource type="PackedScene" uid="uid://du2qapbtojdb0" path="res://Scenes/Microgames/trampoline_game/player.tscn" id="2_ftqrp"]
+[ext_resource type="PackedScene" uid="uid://brgwsfwnnjxbk" path="res://Scenes/Microgames/trampoline_game/spring.tscn" id="3_ftqrp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ftqrp"]
 texture = ExtResource("1_82sgi")

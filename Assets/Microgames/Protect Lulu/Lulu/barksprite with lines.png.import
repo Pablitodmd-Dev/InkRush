@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d022c857lsvc7"
-path="res://.godot/imported/spring.png-064aa5c3d920ee1e0552722ad73fff39.ctex"
+uid="uid://bx5hwiabufff2"
+path="res://.godot/imported/barksprite with lines.png-59400d6e11349d93a59189364b164c6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/trampoline_game/spring.png"
-dest_files=["res://.godot/imported/spring.png-064aa5c3d920ee1e0552722ad73fff39.ctex"]
+source_file="res://Assets/Microgames/Protect Lulu/Lulu/barksprite with lines.png"
+dest_files=["res://.godot/imported/barksprite with lines.png-59400d6e11349d93a59189364b164c6e.ctex"]
 
 [params]
 

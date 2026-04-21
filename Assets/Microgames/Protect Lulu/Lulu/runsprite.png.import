@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cobk3sqk55wbx"
-path="res://.godot/imported/sitsprite.png-9b8a6c09d17b716b24d7f72e918d2f62.ctex"
+uid="uid://dxk0x8c8yr3mi"
+path="res://.godot/imported/runsprite.png-ee7e4d94c69e61398f9998e3f2ef212c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Lulu/sitsprite.png"
-dest_files=["res://.godot/imported/sitsprite.png-9b8a6c09d17b716b24d7f72e918d2f62.ctex"]
+source_file="res://Assets/Microgames/Protect Lulu/Lulu/runsprite.png"
+dest_files=["res://.godot/imported/runsprite.png-ee7e4d94c69e61398f9998e3f2ef212c.ctex"]
 
 [params]
 

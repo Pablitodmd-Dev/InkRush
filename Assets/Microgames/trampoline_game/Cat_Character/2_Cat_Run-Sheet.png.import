@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bocygr826828q"
-path="res://.godot/imported/jumpsprite.png-51cfd6624afb929deb3560e53f773e9d.ctex"
+uid="uid://cvojrfl5r08am"
+path="res://.godot/imported/2_Cat_Run-Sheet.png-64e92b6e13e96381df75ee64fcc104ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Lulu/jumpsprite.png"
-dest_files=["res://.godot/imported/jumpsprite.png-51cfd6624afb929deb3560e53f773e9d.ctex"]
+source_file="res://Assets/Microgames/trampoline_game/Cat_Character/2_Cat_Run-Sheet.png"
+dest_files=["res://.godot/imported/2_Cat_Run-Sheet.png-64e92b6e13e96381df75ee64fcc104ff.ctex"]
 
 [params]
 
