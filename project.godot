@@ -14,6 +14,10 @@ config/name="InkRush"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[global_group]
+
+raindrops=""
+
 [input]
 
 up={
