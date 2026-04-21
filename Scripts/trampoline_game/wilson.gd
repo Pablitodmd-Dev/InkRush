@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var anim_player = %AnimatedSprite2D
 
-var speed = 300.0
+var speed = 350.0
 var gravity = 500
 var is_alive = true
 

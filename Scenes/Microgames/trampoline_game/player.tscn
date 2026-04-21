@@ -136,19 +136,21 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vnxai"]
+radius = 16.0
+height = 52.0
 
 [node name="player" type="CharacterBody2D" unique_id=809886788]
 script = ExtResource("1_5tpan")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=289452855]
 unique_name_in_owner = true
-scale = Vector2(1.59375, 1.59375)
+texture_filter = 1
+position = Vector2(0.24999607, -0.2500019)
+scale = Vector2(3.0156252, 2.671875)
 sprite_frames = SubResource("SpriteFrames_tjpdw")
 animation = &"idle"
 autoplay = "fall"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1448978539]
-position = Vector2(-1, 5)
+position = Vector2(-1, 9)
 shape = SubResource("CapsuleShape2D_vnxai")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1767242746]
