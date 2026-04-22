@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ykfrvbsqckqh"]
+
+[ext_resource type="Script" uid="uid://gdv8cergjxrc" path="res://Scripts/dodge_vehicles/node_2d.gd" id="1_7l2j0"]
+[ext_resource type="PackedScene" uid="uid://cw4nclswcwe4b" path="res://Scenes/Microgames/dodge_vehicles/parallax_background.tscn" id="2_yuoq1"]
+[ext_resource type="PackedScene" uid="uid://bdgerhtfx1d24" path="res://Scenes/Microgames/dodge_vehicles/player.tscn" id="3_pa6x6"]
+
+[node name="Node2D" type="Node2D" unique_id=352350838]
+script = ExtResource("1_7l2j0")
+
+[node name="ParallaxBackground" parent="." unique_id=317593496 instance=ExtResource("2_yuoq1")]
+
+[node name="Player" parent="." unique_id=1233756294 instance=ExtResource("3_pa6x6")]
+position = Vector2(609, 507)
+
+[node name="CarSpawnTimer" type="Timer" parent="." unique_id=1532697878]
+wait_time = 1.5
+autostart = true
+
+[node name="SpawnPointY" type="Marker2D" parent="." unique_id=721373546]
+position = Vector2(-1, -488)
+
+[connection signal="timeout" from="CarSpawnTimer" to="." method="_on_car_spawn_timer_timeout"]

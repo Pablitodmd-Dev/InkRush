@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cw4nclswcwe4b"]
+
+[ext_resource type="Texture2D" uid="uid://di3iiyfcfhk1w" path="res://Assets/Microgames/dodge_vehicles/Toon Road Texture.png" id="1_kyqvq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqil4"]
+atlas = ExtResource("1_kyqvq")
+region = Rect2(0, 0, 2048, 1500)
+
+[node name="ParallaxBackground" type="ParallaxBackground" unique_id=317593496]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=246580337]
+motion_mirroring = Vector2(0, 960)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer" unique_id=324303931]
+texture_repeat = 2
+position = Vector2(582.716, 1030.4208)
+rotation = -1.5686096
+scale = Vector2(1.0922989, 0.76163703)
+texture = SubResource("AtlasTexture_cqil4")
