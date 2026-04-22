@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://hq72lm81jyqi"
+path="res://.godot/imported/FruitMinigameTheme.mp3-32f78ac48fda21ec1b663ba1451740ba.mp3str"
+
+[deps]
+
+source_file="res://Assets/Microgames/Hit the Fruit/sounds/FruitMinigameTheme.mp3"
+dest_files=["res://.godot/imported/FruitMinigameTheme.mp3-32f78ac48fda21ec1b663ba1451740ba.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
