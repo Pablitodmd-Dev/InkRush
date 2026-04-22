@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cvdyq2c15p5sb"]
+
+[ext_resource type="Texture2D" uid="uid://cvkeo6otut3et" path="res://Assets/Microgames/The Last Lesson/board.png" id="1_1v6we"]
+[ext_resource type="Script" uid="uid://lvqunhtlfrck" path="res://Scripts/The Last Lesson/main.gd" id="1_1x5l5"]
+
+[node name="Main" type="Node2D" unique_id=1263790000]
+script = ExtResource("1_1x5l5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=139576642]
+position = Vector2(579.5, 500.375)
+scale = Vector2(0.7448052, 0.67613643)
+texture = ExtResource("1_1v6we")
+
+[node name="Question" type="Label" parent="." unique_id=1765013804]
+unique_name_in_owner = true
+offset_left = 222.0
+offset_top = 233.0
+offset_right = 554.0
+offset_bottom = 280.0
+text = "Loading Question...."
+horizontal_alignment = 1
+
+[node name="optionA" type="Button" parent="." unique_id=2007357918]
+offset_left = 150.0
+offset_top = 340.0
+offset_right = 238.0
+offset_bottom = 371.0
+text = "A"
+
+[node name="optionB" type="Button" parent="." unique_id=1660201937]
+offset_left = 346.0
+offset_top = 341.0
+offset_right = 429.0
+offset_bottom = 372.0
+text = "B"
+
+[node name="optionC" type="Button" parent="." unique_id=1573178579]
+offset_left = 520.0
+offset_top = 340.0
+offset_right = 605.0
+offset_bottom = 371.0
+text = "C"
