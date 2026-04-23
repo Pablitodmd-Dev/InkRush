@@ -1,25 +1,25 @@
 [gd_scene format=3 uid="uid://ck3q7ct3n4h0s"]
 
 [ext_resource type="Script" uid="uid://3ntroqh2swb5" path="res://Scripts/Pattern Bot/main.gd" id="1_46wrp"]
-[ext_resource type="Texture2D" uid="uid://5l23g4rx4cob" path="res://Assets/Microgames/Pattern Bot/robot.png" id="1_ygfp4"]
-[ext_resource type="Texture2D" uid="uid://dmshkvy3r2fp5" path="res://Assets/Microgames/Pattern Bot/bg2.png" id="3_lc7d2"]
+[ext_resource type="Texture2D" uid="uid://c7qy6xd0vqvu" path="res://Assets/Microgames/Pattern Bot/robots.png" id="2_hupnw"]
+[ext_resource type="Texture2D" uid="uid://bfhy8j85tp87i" path="res://Assets/Microgames/Pattern Bot/bg_robot.jpg" id="3_hupnw"]
 [ext_resource type="AudioStream" uid="uid://b4jqxvw04u7ev" path="res://Assets/Microgames/Pattern Bot/true.wav" id="4_maq16"]
 [ext_resource type="AudioStream" uid="uid://cciixeit3iyv0" path="res://Assets/Microgames/Pattern Bot/win.wav" id="5_26875"]
 [ext_resource type="AudioStream" uid="uid://uarweyweq1o2" path="res://Assets/Microgames/Pattern Bot/incorretoptionm.mp3" id="6_hupnw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_46wrp"]
-atlas = ExtResource("1_ygfp4")
-region = Rect2(0, 0, 1320, 1320)
+[sub_resource type="AtlasTexture" id="AtlasTexture_jltw2"]
+atlas = ExtResource("2_hupnw")
+region = Rect2(0, 0, 268, 464)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lc7d2"]
-atlas = ExtResource("1_ygfp4")
-region = Rect2(0, 1320, 1320, 1320)
+[sub_resource type="AtlasTexture" id="AtlasTexture_whl5g"]
+atlas = ExtResource("2_hupnw")
+region = Rect2(268, 0, 268, 464)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_maq16"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_46wrp")
+"texture": SubResource("AtlasTexture_jltw2")
 }],
 "loop": true,
 "name": &"broken",
@@ -27,7 +27,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lc7d2")
+"texture": SubResource("AtlasTexture_whl5g")
 }],
 "loop": true,
 "name": &"repaired",
@@ -42,17 +42,19 @@ animations = [{
 script = ExtResource("1_46wrp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1744309112]
-position = Vector2(544, 206)
-scale = Vector2(0.70151514, 0.6689394)
+z_index = 8
+position = Vector2(560, 458.36874)
+scale = Vector2(1.8606946, 1.6050379)
 sprite_frames = SubResource("SpriteFrames_maq16")
 animation = &"broken"
 autoplay = "broken"
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=893409820]
-offset_left = 428.0
-offset_top = 220.0
-offset_right = 640.0
-offset_bottom = 379.0
+z_index = 10
+offset_left = 495.0
+offset_top = 306.0
+offset_right = 621.0
+offset_bottom = 407.0
 columns = 3
 
 [node name="Button" type="Button" parent="GridContainer" unique_id=1869159443]
@@ -123,10 +125,11 @@ one_shot = true
 autostart = true
 
 [node name="Bg2" type="Sprite2D" parent="." unique_id=1455306664]
-z_index = -1
-position = Vector2(486, 277)
-scale = Vector2(1.0767477, 0.9739584)
-texture = ExtResource("3_lc7d2")
+z_index = 1
+position = Vector2(527.7241, 249.00002)
+scale = Vector2(1.2209648, 1.3179013)
+texture = ExtResource("3_hupnw")
+metadata/_edit_lock_ = true
 
 [node name="correctOption" type="AudioStreamPlayer2D" parent="." unique_id=230270965]
 unique_name_in_owner = true
