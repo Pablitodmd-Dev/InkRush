@@ -5,6 +5,7 @@ var correctAnswer=1
 
 func _ready():
 	questions = readQuestions()
+	$%optionA.grab_focus()
 	newQuestion()
 	
 func readQuestions():
@@ -31,7 +32,7 @@ func _on_option_c_pressed() -> void:
 	checkAnswer(questions[index].answers[2].values()[0])
 
 func checkAnswer(valor):
-	if correctAnswer>=5:
+	if correctAnswer>=1:
 		#print('Ganaste')
 		get_tree().quit()
 	else:
