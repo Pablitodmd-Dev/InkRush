@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://cvdyq2c15p5sb"]
 
-[ext_resource type="Texture2D" uid="uid://cvkeo6otut3et" path="res://Assets/Microgames/The Last Lesson/board.png" id="1_1v6we"]
 [ext_resource type="Script" uid="uid://lvqunhtlfrck" path="res://Scripts/The Last Lesson/main.gd" id="1_1x5l5"]
+[ext_resource type="Texture2D" uid="uid://ct58kla06v8x6" path="res://Assets/Microgames/The Last Lesson/class.png" id="2_km0gw"]
 [ext_resource type="FontFile" uid="uid://c4ufv7q5kmc4m" path="res://Assets/Microgames/The Last Lesson/Chalk Board.ttf" id="3_be52o"]
-[ext_resource type="Texture2D" uid="uid://bkjvq36osartd" path="res://Assets/Microgames/The Last Lesson/floor.jpg" id="3_km0gw"]
 
 [sub_resource type="Theme" id="Theme_0b0pj"]
 Button/fonts/font = ExtResource("3_be52o")
@@ -12,16 +11,16 @@ Button/fonts/font = ExtResource("3_be52o")
 script = ExtResource("1_1x5l5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=139576642]
-position = Vector2(579.5, 500.375)
-scale = Vector2(0.7448052, 0.67613643)
-texture = ExtResource("1_1v6we")
+position = Vector2(589.24994, 328.5)
+scale = Vector2(1.0299479, 1.0077161)
+texture = ExtResource("2_km0gw")
 
 [node name="Question" type="Label" parent="." unique_id=1765013804]
 unique_name_in_owner = true
-offset_left = 93.0
-offset_top = 236.0
-offset_right = 311.0
-offset_bottom = 298.0
+offset_left = 178.0
+offset_top = 184.0
+offset_right = 371.0
+offset_bottom = 246.0
 theme_override_fonts/font = ExtResource("3_be52o")
 theme_override_font_sizes/font_size = 35
 text = "Loading Question...."
@@ -29,50 +28,33 @@ horizontal_alignment = 1
 
 [node name="optionA" type="Button" parent="." unique_id=2007357918]
 unique_name_in_owner = true
-offset_left = 134.0
-offset_top = 340.0
-offset_right = 215.0
-offset_bottom = 385.0
+offset_left = 219.0
+offset_top = 310.0
+offset_right = 300.0
+offset_bottom = 358.0
 theme = SubResource("Theme_0b0pj")
 theme_override_font_sizes/font_size = 28
 text = "A"
 
 [node name="optionB" type="Button" parent="." unique_id=1660201937]
 unique_name_in_owner = true
-offset_left = 314.0
-offset_top = 339.0
-offset_right = 397.0
-offset_bottom = 384.0
+offset_left = 385.0
+offset_top = 312.0
+offset_right = 468.0
+offset_bottom = 360.0
 theme_override_fonts/font = ExtResource("3_be52o")
 theme_override_font_sizes/font_size = 28
 text = "B"
 
 [node name="optionC" type="Button" parent="." unique_id=1573178579]
 unique_name_in_owner = true
-offset_left = 489.0
-offset_top = 336.0
-offset_right = 574.0
-offset_bottom = 385.0
+offset_left = 545.0
+offset_top = 313.0
+offset_right = 630.0
+offset_bottom = 362.0
 theme_override_fonts/font = ExtResource("3_be52o")
 theme_override_font_sizes/font_size = 28
 text = "C"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1765875580]
-layer = -1
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1465071823]
-z_index = -6
-offset_right = 1151.0
-offset_bottom = 557.0
-color = Color(0.17254902, 0.24313726, 0.3137255, 1)
-metadata/_edit_lock_ = true
-
-[node name="Floor" type="Sprite2D" parent="." unique_id=1049847543]
-z_index = -1
-position = Vector2(573, 853)
-scale = Vector2(1.5774456, 0.71467394)
-texture = ExtResource("3_km0gw")
-metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="optionA" to="." method="_on_option_a_pressed"]
 [connection signal="pressed" from="optionB" to="." method="_on_option_b_pressed"]

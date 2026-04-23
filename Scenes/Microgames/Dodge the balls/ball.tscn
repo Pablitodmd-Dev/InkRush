@@ -1,27 +1,62 @@
 [gd_scene format=3 uid="uid://c28svxpc8086h"]
 
-[ext_resource type="Texture2D" uid="uid://hujsmg2gjhcr" path="res://Assets/Microgames/Dodge the balls/ball.png" id="1_d60mj"]
 [ext_resource type="Script" uid="uid://d34giyq3q4fj8" path="res://Scripts/Dodge the ball/ball.gd" id="1_ij5cq"]
+[ext_resource type="Texture2D" uid="uid://cv074dhb05382" path="res://Assets/Microgames/Dodge the balls/balls.png" id="2_pb28p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujypr"]
+atlas = ExtResource("2_pb28p")
+region = Rect2(0, 0, 165, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mulwc"]
+atlas = ExtResource("2_pb28p")
+region = Rect2(165, 0, 165, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rijlf"]
+atlas = ExtResource("2_pb28p")
+region = Rect2(0, 160, 165, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsx8a"]
+atlas = ExtResource("2_pb28p")
+region = Rect2(165, 160, 165, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ji7f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujypr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mulwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rijlf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsx8a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d60mj"]
-radius = 56.142673
+radius = 77.10383
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ij5cq"]
-radius = 56.0
+radius = 78.025635
 
 [node name="Ball" type="CharacterBody2D" unique_id=1973790165]
 script = ExtResource("1_ij5cq")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=271678691]
+sprite_frames = SubResource("SpriteFrames_1ji7f")
+autoplay = "default"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=709284245]
 shape = SubResource("CircleShape2D_d60mj")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=427130059]
-position = Vector2(-1.2500013, 2.0781271)
-scale = Vector2(0.4403846, 0.38723856)
-texture = ExtResource("1_d60mj")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1425197887]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=453399019 groups=["balls"]]
-position = Vector2(-1, 1)
+position = Vector2(2, -1)
 shape = SubResource("CircleShape2D_ij5cq")

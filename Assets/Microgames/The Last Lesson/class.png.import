@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkjvq36osartd"
-path="res://.godot/imported/floor.jpg-a6d67ebe95b05ab2ee74c4f32d4a25ae.ctex"
+uid="uid://ct58kla06v8x6"
+path="res://.godot/imported/class.png-df85f1182713867c52a5de3920e2e8d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Microgames/The Last Lesson/floor.jpg"
-dest_files=["res://.godot/imported/floor.jpg-a6d67ebe95b05ab2ee74c4f32d4a25ae.ctex"]
+source_file="res://Assets/Microgames/The Last Lesson/class.png"
+dest_files=["res://.godot/imported/class.png-df85f1182713867c52a5de3920e2e8d1.ctex"]
 
 [params]
 

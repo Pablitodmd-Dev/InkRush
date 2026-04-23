@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cxam3ngwtb62y"]
 
-[ext_resource type="Texture2D" uid="uid://cookypqhpxm77" path="res://Assets/Microgames/Dodge the balls/2.png" id="1_cb7e8"]
+[ext_resource type="Texture2D" uid="uid://30d301veeai3" path="res://Assets/Microgames/Dodge the balls/pitch.png" id="1_cb7e8"]
 [ext_resource type="Texture2D" uid="uid://cuj4sc5ludvk6" path="res://Assets/Microgames/Dodge the balls/border5.png" id="2_mikc2"]
 [ext_resource type="PackedScene" uid="uid://c28svxpc8086h" path="res://Scenes/Microgames/Dodge the balls/ball.tscn" id="3_66v0l"]
 [ext_resource type="PackedScene" uid="uid://bctyxbdlbgruh" path="res://Scenes/Microgames/Dodge the balls/player_car.tscn" id="4_ctq5k"]
@@ -22,8 +22,8 @@ position = Vector2(9, 11)
 
 [node name="background" type="Sprite2D" parent="." unique_id=854340734]
 z_index = -1
-position = Vector2(5.5, 1.0000081)
-scale = Vector2(9.0078125, 5.0625)
+position = Vector2(8.500046, -0.50001144)
+scale = Vector2(0.9973959, 0.9799383)
 texture = ExtResource("1_cb7e8")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=625252371]

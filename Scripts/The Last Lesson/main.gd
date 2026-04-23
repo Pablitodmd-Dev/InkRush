@@ -31,12 +31,12 @@ func _on_option_c_pressed() -> void:
 	checkAnswer(questions[index].answers[2].values()[0])
 
 func checkAnswer(valor):
-	if correctAnswer>=1:
-		print('Ganaste')
+	if correctAnswer>=5:
+		#print('Ganaste')
 		get_tree().quit()
 	else:
 		if valor == "true":
-			print("bien")
+			#print("bien")
 			correctAnswer+=1
 			questions.pop_at(index)
 			newQuestion()
