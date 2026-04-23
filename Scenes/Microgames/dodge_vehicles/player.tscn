@@ -1,11 +1,7 @@
 [gd_scene format=3 uid="uid://bdgerhtfx1d24"]
 
 [ext_resource type="Script" uid="uid://7c4831v8kisb" path="res://Scripts/dodge_vehicles/player.gd" id="1_hv1ty"]
-[ext_resource type="Texture2D" uid="uid://dsay874yhjvb8" path="res://Assets/Microgames/dodge_vehicles/TopDown Vehicles v1.17/SEDAN TOPDOWN_player/Blue/MOVE/NORTH/Blue_SEDAN_CLEAN_NORTH_000-sheet.png" id="2_angix"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qhi3b"]
-atlas = ExtResource("2_angix")
-region = Rect2(130.86485, 120.65549, 39.201233, 64.67786)
+[ext_resource type="Texture2D" uid="uid://k1ttyvio2y3g" path="res://Assets/Microgames/dodge_vehicles/blue_car-Photoroom.png" id="2_hv1ty"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qwblg"]
 size = Vector2(109.5, 160.5)
@@ -15,9 +11,9 @@ script = ExtResource("1_hv1ty")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1226158318]
 texture_filter = 1
-position = Vector2(-3.8146973e-06, -1)
-scale = Vector2(3.2323718, 2.5625)
-texture = SubResource("AtlasTexture_qhi3b")
+position = Vector2(39.000004, 7.5000086)
+scale = Vector2(0.33203125, 0.41145837)
+texture = ExtResource("2_hv1ty")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=946141098]
 position = Vector2(-0.75, -0.25)

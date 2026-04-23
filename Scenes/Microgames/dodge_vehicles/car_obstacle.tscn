@@ -1,11 +1,7 @@
 [gd_scene format=3 uid="uid://glr6dr86v24j"]
 
 [ext_resource type="Script" uid="uid://bptsvngtsbxhl" path="res://Scripts/dodge_vehicles/car_obstacle.gd" id="1_b56ud"]
-[ext_resource type="Texture2D" uid="uid://c63tgncgfe34x" path="res://Assets/Microgames/dodge_vehicles/TopDown Vehicles v1.17/MEDIUM TRUCK TOPDOWN/Red/MOVE/NORTH/Red_MEDIUMTRUCK_CLEAN_NORTH_000-sheet.png" id="2_ipga3"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eqagm"]
-atlas = ExtResource("2_ipga3")
-region = Rect2(185.18303, 153.90086, 47.60399, 98.73952)
+[ext_resource type="Texture2D" uid="uid://bnc207vkvfxxl" path="res://Assets/Microgames/dodge_vehicles/enemy_vehicle-Photoroom.png" id="2_b56ud"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_th7ce"]
 size = Vector2(132, 194)
@@ -15,9 +11,9 @@ texture_filter = 1
 script = ExtResource("1_b56ud")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1908605297]
-position = Vector2(-3.8146973e-06, 0)
-scale = Vector2(3.031915, 2.0408163)
-texture = SubResource("AtlasTexture_eqagm")
+position = Vector2(19.000011, 8.349482)
+scale = Vector2(0.43563002, 0.39447805)
+texture = ExtResource("2_b56ud")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1550900547]
 position = Vector2(0, 1)
