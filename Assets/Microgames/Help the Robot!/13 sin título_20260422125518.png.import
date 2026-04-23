@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqrukigbej0a7"
-path="res://.godot/imported/Character.png-38103a372b80e28dd8470288f52159e4.ctex"
+uid="uid://ct7834n3mnpjh"
+path="res://.godot/imported/13 sin título_20260422125518.png-673a630271136b5402401934d834af7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Microgames/Hit the Fruit/Character.png"
-dest_files=["res://.godot/imported/Character.png-38103a372b80e28dd8470288f52159e4.ctex"]
+source_file="res://Assets/Microgames/Help the Robot!/13 sin título_20260422125518.png"
+dest_files=["res://.godot/imported/13 sin título_20260422125518.png-673a630271136b5402401934d834af7f.ctex"]
 
 [params]
 

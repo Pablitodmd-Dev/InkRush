@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://dtc5ssjv4ekfk"]
+
+[ext_resource type="Script" uid="uid://djo0a8m4aqscp" path="res://Scripts/Help the Robot/character_robot.gd" id="1_6qph4"]
+[ext_resource type="Texture2D" uid="uid://dvgsvdux7fm8p" path="res://Assets/Microgames/Help the Robot!/12 sin título_20260423191927.png" id="2_6qph4"]
+[ext_resource type="AudioStream" uid="uid://b3hy17hekvqtj" path="res://Assets/Microgames/Help the Robot!/sounds/win.mp3" id="3_adkqp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adkqp"]
+atlas = ExtResource("2_6qph4")
+region = Rect2(12, 4, 51, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj6vi"]
+atlas = ExtResource("2_6qph4")
+region = Rect2(63, 4, 51, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbknk"]
+atlas = ExtResource("2_6qph4")
+region = Rect2(114, 4, 51, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_peamc"]
+atlas = ExtResource("2_6qph4")
+region = Rect2(165, 4, 51, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwedo"]
+atlas = ExtResource("2_6qph4")
+region = Rect2(216, 4, 51, 105)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pwedo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adkqp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vj6vi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbknk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_peamc")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwedo")
+}],
+"loop": true,
+"name": &"win",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2t5g"]
+size = Vector2(26, 85)
+
+[node name="Player" type="CharacterBody2D" unique_id=1338167239]
+script = ExtResource("1_6qph4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=698134439]
+scale = Vector2(1.3, 1.3)
+sprite_frames = SubResource("SpriteFrames_pwedo")
+animation = &"idle"
+frame_progress = 0.43714997
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1695975528]
+position = Vector2(3, 5.5)
+shape = SubResource("RectangleShape2D_n2t5g")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2019688568]
+stream = ExtResource("3_adkqp")

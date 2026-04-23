@@ -13,11 +13,11 @@ script = ExtResource("1_ob823")
 position = Vector2(576, 324)
 texture = ExtResource("1_s4me1")
 
-[node name="Target" parent="." unique_id=190506642 instance=ExtResource("3_3ghnx")]
-position = Vector2(789, 101)
-
 [node name="Archer" parent="." unique_id=1390194333 instance=ExtResource("2_3ghnx")]
 position = Vector2(399, 410)
+
+[node name="Target" parent="." unique_id=190506642 instance=ExtResource("3_3ghnx")]
+position = Vector2(789, 101)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2042744085]
 stream = ExtResource("5_rsahc")

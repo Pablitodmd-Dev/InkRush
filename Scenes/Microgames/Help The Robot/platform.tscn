@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bdjc1wetgc1st"]
+
+[ext_resource type="Script" uid="uid://doqhpadljucon" path="res://Scripts/Help the Robot/elevator.gd" id="1_kyjtr"]
+[ext_resource type="Texture2D" uid="uid://ct7834n3mnpjh" path="res://Assets/Microgames/Help the Robot!/13 sin título_20260422125518.png" id="1_njhes"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyjtr"]
+size = Vector2(138, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njhes"]
+size = Vector2(138, 58)
+
+[node name="Platform" type="AnimatableBody2D" unique_id=1417290430]
+script = ExtResource("1_kyjtr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=421372113]
+texture = ExtResource("1_njhes")
+region_enabled = true
+region_rect = Rect2(136.20003, 158.79999, 147.99998, 31.199997)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1738478487]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_kyjtr")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1744485456]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=2144407693]
+position = Vector2(0, -39)
+shape = SubResource("RectangleShape2D_njhes")

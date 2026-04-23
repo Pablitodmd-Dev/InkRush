@@ -4,7 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://daqpho8kwa5td" path="res://Assets/Microgames/Hit the Fruit/Arrow and Bow.png" id="1_kyvjk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h4ipl"]
-height = 22.0
+radius = 7.0
+height = 14.0
 
 [node name="Arrow" type="Area2D" unique_id=874605234 groups=["Arrow"]]
 script = ExtResource("1_h4ipl")
