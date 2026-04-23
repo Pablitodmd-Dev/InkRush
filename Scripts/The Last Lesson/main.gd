@@ -31,7 +31,7 @@ func _on_option_c_pressed() -> void:
 	checkAnswer(questions[index].answers[2].values()[0])
 
 func checkAnswer(valor):
-	if correctAnswer>=3:
+	if correctAnswer>=1:
 		print('Ganaste')
 		get_tree().quit()
 	else:
