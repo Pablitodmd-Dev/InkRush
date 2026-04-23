@@ -26,18 +26,23 @@ func colorButtons():
 func _on_pressed_button(numberButton):
 	if redButtons.has(numberButton):
 		var style = StyleBoxFlat.new()
+		%correctOption.play()
 		style.bg_color = Color(0.0, 0.561, 0.0, 1.0) 
 		buttons[numberButton].add_theme_stylebox_override("normal", style)
 		correctButton+=1
 		redButtons.erase(numberButton)
 		if(correctButton==4):
+			%win.play()
 			$AnimatedSprite2D.play("repaired")
 			$GridContainer.visible=false
 	else:
 		var style = StyleBoxFlat.new()
 		style.bg_color = Color(0.463, 0.068, 0.535, 1.0) 
 		buttons[numberButton].add_theme_stylebox_override("normal", style)
+		%incorrectOption.play()
+		await %incorrectOption.finished
 		get_tree().quit()
+		
 
 func resetButtons():
 	for btn in buttons:

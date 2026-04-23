@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://3ntroqh2swb5" path="res://Scripts/Pattern Bot/main.gd" id="1_46wrp"]
 [ext_resource type="Texture2D" uid="uid://5l23g4rx4cob" path="res://Assets/Microgames/Pattern Bot/robot.png" id="1_ygfp4"]
 [ext_resource type="Texture2D" uid="uid://dmshkvy3r2fp5" path="res://Assets/Microgames/Pattern Bot/bg2.png" id="3_lc7d2"]
+[ext_resource type="AudioStream" uid="uid://b4jqxvw04u7ev" path="res://Assets/Microgames/Pattern Bot/true.wav" id="4_maq16"]
+[ext_resource type="AudioStream" uid="uid://cciixeit3iyv0" path="res://Assets/Microgames/Pattern Bot/win.wav" id="5_26875"]
+[ext_resource type="AudioStream" uid="uid://uarweyweq1o2" path="res://Assets/Microgames/Pattern Bot/incorretoptionm.mp3" id="6_hupnw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_46wrp"]
 atlas = ExtResource("1_ygfp4")
@@ -124,5 +127,17 @@ z_index = -1
 position = Vector2(486, 277)
 scale = Vector2(1.0767477, 0.9739584)
 texture = ExtResource("3_lc7d2")
+
+[node name="correctOption" type="AudioStreamPlayer2D" parent="." unique_id=230270965]
+unique_name_in_owner = true
+stream = ExtResource("4_maq16")
+
+[node name="win" type="AudioStreamPlayer2D" parent="." unique_id=1114078641]
+unique_name_in_owner = true
+stream = ExtResource("5_26875")
+
+[node name="incorrectOption" type="AudioStreamPlayer2D" parent="." unique_id=477273429]
+unique_name_in_owner = true
+stream = ExtResource("6_hupnw")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
