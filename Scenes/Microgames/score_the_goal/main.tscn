@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bqktdod2k27eh"]
+
+[ext_resource type="Script" uid="uid://bjv1adbpbs50e" path="res://Scripts/score_the_goal/main.gd" id="1_cngn5"]
+[ext_resource type="PackedScene" uid="uid://d4no7vcgt3bxj" path="res://Scenes/Microgames/score_the_goal/goalkeeper.tscn" id="1_tmtrv"]
+[ext_resource type="PackedScene" uid="uid://8ia8cbr2fy70" path="res://Scenes/Microgames/score_the_goal/ball.tscn" id="2_cngn5"]
+[ext_resource type="Texture2D" uid="uid://dgot1vl8dw0jd" path="res://Assets/Microgames/score_the_goal/bg.png" id="2_cv87a"]
+[ext_resource type="Texture2D" uid="uid://d3kxed4lxysr4" path="res://Assets/Microgames/score_the_goal/goalpost-Photoroom.png" id="3_4jyda"]
+[ext_resource type="PackedScene" uid="uid://cswolsxbrqptg" path="res://Scenes/Microgames/score_the_goal/progress_bar.tscn" id="3_cv87a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cv87a"]
+size = Vector2(859, 303.25)
+
+[node name="main" type="Node2D" unique_id=1579057862]
+script = ExtResource("1_cngn5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1088746821]
+position = Vector2(576.5, 327)
+scale = Vector2(0.7480469, 0.66875)
+texture = ExtResource("2_cv87a")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=512516784]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=571150724]
+position = Vector2(557.5, 171.625)
+shape = SubResource("RectangleShape2D_cv87a")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=666289508]
+position = Vector2(494.50006, 238.99998)
+scale = Vector2(0.91341156, 0.68750006)
+texture = ExtResource("3_4jyda")
+
+[node name="Goalkeeper" parent="." unique_id=2098757742 instance=ExtResource("1_tmtrv")]
+position = Vector2(551, 255)
+collision_layer = 2
+
+[node name="Ball" parent="." unique_id=38758623 instance=ExtResource("2_cngn5")]
+position = Vector2(541, 488)
+collision_mask = 2
+
+[node name="PowerBar" parent="." unique_id=402164392 instance=ExtResource("3_cv87a")]
+offset_left = 625.0
+offset_top = 356.0
+offset_right = 1559.0
+offset_bottom = 1027.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d4no7vcgt3bxj"]
+
+[ext_resource type="Texture2D" uid="uid://yopfqs0isji1" path="res://Assets/Microgames/score_the_goal/keeper-Photoroom.png" id="1_tb5u0"]
+[ext_resource type="Script" uid="uid://dfw4yqhwnv0mk" path="res://Scripts/score_the_goal/goalkeeper.gd" id="1_xqhtf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xqhtf"]
+radius = 63.0
+height = 280.0
+
+[node name="Goalkeeper" type="CharacterBody2D" unique_id=2098757742]
+script = ExtResource("1_xqhtf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1982929056]
+position = Vector2(46, 69)
+scale = Vector2(0.7128906, 0.890625)
+texture = ExtResource("1_tb5u0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1759199772]
+position = Vector2(4, -39)
+shape = SubResource("CapsuleShape2D_xqhtf")
