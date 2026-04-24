@@ -7,7 +7,14 @@ extends Node2D
 @onready var ball_start_pos = ball.global_position
 
 func _input(event):
-	if event.is_action_pressed("ui_up") and bar.moving:
+	# 1. INICIO: Al presionar "ui_up", reseteamos la barra y empezamos a moverla
+	if event.is_action_pressed("ui_up"):
+		bar.reset_bar()
+		bar.moving = true
+	
+	# 2. FIN: Al soltar "ui_up", si la barra se estaba moviendo, disparamos
+	elif event.is_action_released("ui_up") and bar.moving:
+		bar.moving = false # Detenemos la barra inmediatamente
 		var quality = bar.get_power_quality()
 		calculate_shot(quality)
 
@@ -43,7 +50,8 @@ func restart_game():
 	ball.scale = Vector2(1, 1)
 	
 	keeper.active = true
-	keeper.global_position.x = 551 #
-	keeper.global_position.y = 250
+	keeper.global_position = Vector2(551, 250)
 	
-	bar.reset_bar()
+	# Aseguramos que la barra esté quieta al reiniciar
+	bar.value = 0
+	bar.moving = false
