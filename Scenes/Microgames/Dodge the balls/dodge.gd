@@ -7,9 +7,6 @@ func _ready():
 	timer.start()
 	countdown_sprite.play("countdown")
 
-func _on_timer_timeout() -> void:
-	get_tree().quit()
-
-func _on_goal_body_entered(body):
-	if body.name == "Character":
-		body.play_win()
+func _on_timer_timeout():
+	print("¡Tiempo agotado! Cerrando juego...")
+	get_tree().quit() 

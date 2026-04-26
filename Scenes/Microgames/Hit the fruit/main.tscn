@@ -5,6 +5,64 @@
 [ext_resource type="PackedScene" uid="uid://b7ixivo6a1bne" path="res://Scenes/Microgames/Hit the fruit/Archer.tscn" id="2_3ghnx"]
 [ext_resource type="PackedScene" uid="uid://dgwvjyg7m43ho" path="res://Scenes/Microgames/Hit the fruit/Target.tscn" id="3_3ghnx"]
 [ext_resource type="AudioStream" uid="uid://hq72lm81jyqi" path="res://Assets/Microgames/Hit the Fruit/sounds/FruitMinigameTheme.mp3" id="5_rsahc"]
+[ext_resource type="Texture2D" uid="uid://lqkfpke5tvg8" path="res://Assets/Timer/Timer.png" id="6_xo46u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46x5n"]
+atlas = ExtResource("6_xo46u")
+region = Rect2(0, 0, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbdyu"]
+atlas = ExtResource("6_xo46u")
+region = Rect2(0, 45, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62whp"]
+atlas = ExtResource("6_xo46u")
+region = Rect2(0, 90, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vm0uc"]
+atlas = ExtResource("6_xo46u")
+region = Rect2(0, 135, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5g5s"]
+atlas = ExtResource("6_xo46u")
+region = Rect2(0, 180, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imxo2"]
+atlas = ExtResource("6_xo46u")
+region = Rect2(0, 225, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oswt"]
+atlas = ExtResource("6_xo46u")
+region = Rect2(0, 270, 370, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5u76"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46x5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbdyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62whp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vm0uc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5g5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imxo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6oswt")
+}],
+"loop": true,
+"name": &"countdown",
+"speed": 1.3
+}]
 
 [node name="Main" type="Node2D" unique_id=1419169100]
 script = ExtResource("1_ob823")
@@ -22,3 +80,15 @@ position = Vector2(789, 101)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2042744085]
 stream = ExtResource("5_rsahc")
 autoplay = true
+
+[node name="Timer" type="Timer" parent="." unique_id=169356687]
+wait_time = 5.5
+one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2011392106]
+position = Vector2(372, 603)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_v5u76")
+animation = &"countdown"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

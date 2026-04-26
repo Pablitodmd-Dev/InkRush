@@ -52,6 +52,5 @@ func restart_game():
 	keeper.active = true
 	keeper.global_position = Vector2(551, 250)
 	
-	# Aseguramos que la barra esté quieta al reiniciar
 	bar.value = 0
 	bar.moving = false

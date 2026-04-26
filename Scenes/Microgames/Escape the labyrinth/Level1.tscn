@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://cf4xygvvjklsl"]
 
+[ext_resource type="Script" uid="uid://bsxbm1a433yhy" path="res://Scripts/Escape the labyrinth/level_1_scapeLabyrinth.gd" id="1_afe63"]
 [ext_resource type="Texture2D" uid="uid://dpcjjhqplbg3h" path="res://Assets/Microgames/Scape the labyrinth/images/Background.png" id="1_ttmau"]
 [ext_resource type="PackedScene" uid="uid://bwtcc8mfhtxy2" path="res://Scenes/Microgames/Escape the labyrinth/Character_Labyrinth.tscn" id="2_m2r5f"]
 [ext_resource type="AudioStream" uid="uid://cgdgpsob4egu" path="res://Assets/Microgames/Scape the labyrinth/sounds/theme.mp3" id="3_m2r5f"]
+[ext_resource type="Texture2D" uid="uid://lqkfpke5tvg8" path="res://Assets/Timer/Timer.png" id="5_t4d62"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttmau"]
 size = Vector2(102, 157)
@@ -136,7 +138,65 @@ height = 68.0
 radius = 4.0
 height = 68.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dge5"]
+atlas = ExtResource("5_t4d62")
+region = Rect2(0, 0, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0gtf"]
+atlas = ExtResource("5_t4d62")
+region = Rect2(0, 45, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2g0o"]
+atlas = ExtResource("5_t4d62")
+region = Rect2(0, 90, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfam4"]
+atlas = ExtResource("5_t4d62")
+region = Rect2(0, 135, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hbtw"]
+atlas = ExtResource("5_t4d62")
+region = Rect2(0, 180, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xk1by"]
+atlas = ExtResource("5_t4d62")
+region = Rect2(0, 225, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0ox4"]
+atlas = ExtResource("5_t4d62")
+region = Rect2(0, 270, 370, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tj035"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dge5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0gtf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2g0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfam4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hbtw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xk1by")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0ox4")
+}],
+"loop": true,
+"name": &"countdown",
+"speed": 0.7
+}]
+
 [node name="Level1" type="Node2D" unique_id=1699131602]
+script = ExtResource("1_afe63")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=526758162]
 position = Vector2(576, 324)
@@ -312,3 +372,15 @@ autoplay = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1289258527]
 position = Vector2(576, 324)
+
+[node name="Timer" type="Timer" parent="." unique_id=441605643]
+wait_time = 9.5
+one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=497956175]
+position = Vector2(375, 611)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_tj035")
+animation = &"countdown"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
