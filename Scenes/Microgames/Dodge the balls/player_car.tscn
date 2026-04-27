@@ -106,7 +106,7 @@ animations = [{
 size = Vector2(140.75, 56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7seya"]
-size = Vector2(141, 57)
+size = Vector2(144, 58)
 
 [node name="PlayerCar" type="CharacterBody2D" unique_id=1718791426]
 script = ExtResource("1_iwbkh")
@@ -115,7 +115,7 @@ script = ExtResource("1_iwbkh")
 position = Vector2(6.000004, -1)
 scale = Vector2(1.69, 1.4399999)
 sprite_frames = SubResource("SpriteFrames_k5784")
-animation = &"left"
+animation = &"down_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1774144929]
 position = Vector2(2.625, 4)
@@ -124,7 +124,7 @@ shape = SubResource("RectangleShape2D_iwbkh")
 [node name="Area2D" type="Area2D" parent="." unique_id=504736209]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=878020164]
-position = Vector2(2.5, 4.5)
+position = Vector2(3, 4)
 shape = SubResource("RectangleShape2D_7seya")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

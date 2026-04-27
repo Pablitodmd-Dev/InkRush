@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://b4jqxvw04u7ev" path="res://Assets/Microgames/Pattern Bot/true.wav" id="4_maq16"]
 [ext_resource type="AudioStream" uid="uid://cciixeit3iyv0" path="res://Assets/Microgames/Pattern Bot/win.wav" id="5_26875"]
 [ext_resource type="AudioStream" uid="uid://uarweyweq1o2" path="res://Assets/Microgames/Pattern Bot/incorretoptionm.mp3" id="6_hupnw"]
+[ext_resource type="Texture2D" uid="uid://lqkfpke5tvg8" path="res://Assets/Timer/Timer.png" id="7_jltw2"]
+[ext_resource type="AudioStream" uid="uid://dkbp5pg6b7l2a" path="res://Assets/Microgames/Pattern Bot/patternrobot.mp3" id="8_whl5g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jltw2"]
 atlas = ExtResource("2_hupnw")
@@ -37,6 +39,63 @@ animations = [{
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lc7d2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_46wrp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58jnk"]
+atlas = ExtResource("7_jltw2")
+region = Rect2(0, 0, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j16jm"]
+atlas = ExtResource("7_jltw2")
+region = Rect2(0, 45, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2hcr"]
+atlas = ExtResource("7_jltw2")
+region = Rect2(0, 90, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exuol"]
+atlas = ExtResource("7_jltw2")
+region = Rect2(0, 135, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn1j5"]
+atlas = ExtResource("7_jltw2")
+region = Rect2(0, 180, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l84pf"]
+atlas = ExtResource("7_jltw2")
+region = Rect2(0, 225, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qh601"]
+atlas = ExtResource("7_jltw2")
+region = Rect2(0, 270, 370, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_27817"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58jnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j16jm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2hcr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exuol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn1j5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l84pf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qh601")
+}],
+"loop": true,
+"name": &"countdown",
+"speed": 1.0
+}]
 
 [node name="Main" type="Node2D" unique_id=2103921213]
 script = ExtResource("1_46wrp")
@@ -143,4 +202,20 @@ stream = ExtResource("5_26875")
 unique_name_in_owner = true
 stream = ExtResource("6_hupnw")
 
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1803636934]
+z_index = 16
+position = Vector2(280.5, 602.75)
+scale = Vector2(1.3648648, 2.2777777)
+sprite_frames = SubResource("SpriteFrames_27817")
+animation = &"countdown"
+
+[node name="Timer2" type="Timer" parent="." unique_id=1151512160]
+wait_time = 5.5
+one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1002247811]
+stream = ExtResource("8_whl5g")
+autoplay = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

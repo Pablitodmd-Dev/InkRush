@@ -5,9 +5,14 @@ var redButtons = []
 var randomButtons
 var correctButton = 0
 
+@onready var countdown_timer=$Timer2
+@onready var countdown_sprite=$AnimatedSprite2D2
+
 func _ready():
 	buttons = $GridContainer.get_children()
 	colorButtons()
+	countdown_timer.start(7.0) 
+	countdown_sprite.play("countdown")
 
 func colorButtons():
 	while redButtons.size() < 4:
@@ -44,8 +49,10 @@ func _on_pressed_button(numberButton):
 			$AnimatedSprite2D.play("repaired")
 			$GridContainer.visible = false
 	else:
+		set_process_input(false)
+		
 		var style = StyleBoxFlat.new()
-		style.bg_color = Color(0.463, 0.068, 0.535, 1.0) # Purple/Error
+		style.bg_color = Color(0.463, 0.068, 0.535, 1.0) 
 		buttons[numberButton].add_theme_stylebox_override("normal", style)
 		
 		%incorrectOption.play()
@@ -58,3 +65,7 @@ func resetButtons():
 		
 func _on_timer_timeout() -> void:
 	resetButtons()
+
+
+func _on_timer_2_timeout() -> void:
+	get_tree().quit()

@@ -3,9 +3,68 @@
 [ext_resource type="Script" uid="uid://lvqunhtlfrck" path="res://Scripts/The Last Lesson/main.gd" id="1_1x5l5"]
 [ext_resource type="Texture2D" uid="uid://ct58kla06v8x6" path="res://Assets/Microgames/The Last Lesson/class.png" id="2_km0gw"]
 [ext_resource type="FontFile" uid="uid://c4ufv7q5kmc4m" path="res://Assets/Microgames/The Last Lesson/Chalk Board.ttf" id="3_be52o"]
+[ext_resource type="Texture2D" uid="uid://lqkfpke5tvg8" path="res://Assets/Timer/Timer.png" id="4_be52o"]
+[ext_resource type="AudioStream" uid="uid://cy80srlst1vs0" path="res://Assets/Microgames/The Last Lesson/lastlesson.mp3" id="5_0b0pj"]
 
 [sub_resource type="Theme" id="Theme_0b0pj"]
 Button/fonts/font = ExtResource("3_be52o")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0b0pj"]
+atlas = ExtResource("4_be52o")
+region = Rect2(0, 0, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_341rp"]
+atlas = ExtResource("4_be52o")
+region = Rect2(0, 45, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ombdx"]
+atlas = ExtResource("4_be52o")
+region = Rect2(0, 90, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kesdb"]
+atlas = ExtResource("4_be52o")
+region = Rect2(0, 135, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi7yx"]
+atlas = ExtResource("4_be52o")
+region = Rect2(0, 180, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwkc3"]
+atlas = ExtResource("4_be52o")
+region = Rect2(0, 225, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpfj3"]
+atlas = ExtResource("4_be52o")
+region = Rect2(0, 270, 370, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_km0gw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0b0pj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_341rp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ombdx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kesdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hi7yx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwkc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpfj3")
+}],
+"loop": true,
+"name": &"countdown",
+"speed": 1.0
+}]
 
 [node name="Main" type="Node2D" unique_id=1263790000]
 script = ExtResource("1_1x5l5")
@@ -60,6 +119,21 @@ theme_override_fonts/font = ExtResource("3_be52o")
 theme_override_font_sizes/font_size = 28
 text = "C"
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1876563089]
+position = Vector2(279.00003, 534.00006)
+scale = Vector2(1.3216217, 2.211111)
+sprite_frames = SubResource("SpriteFrames_km0gw")
+animation = &"countdown"
+
+[node name="Timer" type="Timer" parent="." unique_id=292451733]
+wait_time = 5.0
+one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1213681467]
+stream = ExtResource("5_0b0pj")
+autoplay = true
+
 [connection signal="pressed" from="optionA" to="." method="_on_option_a_pressed"]
 [connection signal="pressed" from="optionB" to="." method="_on_option_b_pressed"]
 [connection signal="pressed" from="optionC" to="." method="_on_option_c_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

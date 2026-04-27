@@ -3,10 +3,16 @@ var questions={}
 var index=0
 var correctAnswer=1
 
+@onready var countdown_timer=$Timer
+@onready var countdown_sprite=$AnimatedSprite2D
+
+
 func _ready():
 	questions = readQuestions()
 	$%optionA.grab_focus()
 	newQuestion()
+	countdown_timer.start(7.0) 
+	countdown_sprite.play("countdown")
 	
 func readQuestions():
 	var file = FileAccess.open("res://Assets/Microgames/The Last Lesson/questionsAnswers.txt", FileAccess.READ)
@@ -48,3 +54,7 @@ func checkAnswer(valor):
 		#print(questions)
 
 		#print(questions)
+
+
+func _on_timer_timeout() -> void:
+	get_tree().quit()

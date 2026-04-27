@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://cxam3ngwtb62y"]
 
-[ext_resource type="Script" uid="uid://5g8b2uui7flx" path="res://Scenes/Microgames/Dodge the balls/dodge.gd" id="1_66v0l"]
+[ext_resource type="Script" uid="uid://5g8b2uui7flx" path="res://Scripts/Dodge the ball/dodge.gd" id="1_66v0l"]
 [ext_resource type="Texture2D" uid="uid://30d301veeai3" path="res://Assets/Microgames/Dodge the balls/pitch.png" id="1_cb7e8"]
 [ext_resource type="Texture2D" uid="uid://cuj4sc5ludvk6" path="res://Assets/Microgames/Dodge the balls/border5.png" id="2_mikc2"]
 [ext_resource type="PackedScene" uid="uid://c28svxpc8086h" path="res://Scenes/Microgames/Dodge the balls/ball.tscn" id="3_66v0l"]
 [ext_resource type="PackedScene" uid="uid://bctyxbdlbgruh" path="res://Scenes/Microgames/Dodge the balls/player_car.tscn" id="4_ctq5k"]
 [ext_resource type="Texture2D" uid="uid://lqkfpke5tvg8" path="res://Assets/Timer/Timer.png" id="6_ctq5k"]
+[ext_resource type="AudioStream" uid="uid://cuxy8w15kr1n8" path="res://Assets/Microgames/Dodge the balls/dodge-balls.mp3" id="7_ctq5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhcxe"]
 size = Vector2(1270.5, 6)
@@ -153,5 +154,9 @@ sprite_frames = SubResource("SpriteFrames_j88eu")
 animation = &"countdown"
 frame = 1
 frame_progress = 0.35378447
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1093744261]
+stream = ExtResource("7_ctq5k")
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
