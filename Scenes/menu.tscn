@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://b08w05h5rbhw3"]
+
+[ext_resource type="Script" uid="uid://d0335xdud7f3p" path="res://Scripts/menu.gd" id="1_158mb"]
+[ext_resource type="Texture2D" uid="uid://c8q2fqbh6ktuw" path="res://Assets/Menu/start.png" id="1_cayip"]
+[ext_resource type="Texture2D" uid="uid://di1cqk6uno55a" path="res://Assets/Menu/completed.png" id="2_158mb"]
+[ext_resource type="Texture2D" uid="uid://dpry3fpr7alnq" path="res://Assets/Menu/failed.png" id="3_wwsa2"]
+[ext_resource type="Texture2D" uid="uid://e3i62jpkq12p" path="res://Assets/Menu/brushes.png" id="5_wwsa2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsrd8"]
+atlas = ExtResource("5_wwsa2")
+region = Rect2(0, -2.834, 52, 90)
+
+[node name="menu" type="CanvasLayer" unique_id=2045481240]
+script = ExtResource("1_158mb")
+
+[node name="start" type="Sprite2D" parent="." unique_id=1615619965]
+position = Vector2(576, 324)
+texture = ExtResource("1_cayip")
+
+[node name="completed" type="Sprite2D" parent="." unique_id=973300543]
+unique_name_in_owner = true
+position = Vector2(576, 324)
+texture = ExtResource("2_158mb")
+
+[node name="failed" type="Sprite2D" parent="." unique_id=1500861656]
+position = Vector2(576, 324)
+texture = ExtResource("3_wwsa2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1048201957]
+offset_left = 219.0
+offset_top = 296.0
+offset_right = 447.0
+offset_bottom = 410.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=650081394]
+custom_minimum_size = Vector2(54, 90)
+layout_mode = 2
+texture = SubResource("AtlasTexture_jsrd8")
+stretch_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer" unique_id=972264704]
+custom_minimum_size = Vector2(54, 90)
+layout_mode = 2
+texture = SubResource("AtlasTexture_jsrd8")
+stretch_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer" unique_id=340380545]
+custom_minimum_size = Vector2(54, 90)
+layout_mode = 2
+texture = SubResource("AtlasTexture_jsrd8")
+stretch_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="TextureRect4" type="TextureRect" parent="HBoxContainer" unique_id=1115917938]
+custom_minimum_size = Vector2(54, 90)
+layout_mode = 2
+texture = SubResource("AtlasTexture_jsrd8")
+stretch_mode = 3
+metadata/_edit_lock_ = true

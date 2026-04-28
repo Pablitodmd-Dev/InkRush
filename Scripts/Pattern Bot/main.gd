@@ -1,5 +1,6 @@
 extends Node2D
 
+signal finished(success: bool)
 var buttons = []
 var redButtons = []
 var randomButtons
@@ -45,9 +46,14 @@ func _on_pressed_button(numberButton):
 		redButtons.erase(numberButton)
 		
 		if correctButton == 4:
+			$Timer2.stop()
 			%win.play()
 			$AnimatedSprite2D.play("repaired")
 			$GridContainer.visible = false
+			
+			await get_tree().create_timer(1.0).timeout
+			
+			finished.emit(true)
 	else:
 		set_process_input(false)
 		
@@ -57,7 +63,9 @@ func _on_pressed_button(numberButton):
 		
 		%incorrectOption.play()
 		await %incorrectOption.finished
-		get_tree().quit()
+		finished.emit(false)
+
+
 
 func resetButtons():
 	for btn in buttons:
@@ -68,4 +76,4 @@ func _on_timer_timeout() -> void:
 
 
 func _on_timer_2_timeout() -> void:
-	get_tree().quit()
+	finished.emit(false)
