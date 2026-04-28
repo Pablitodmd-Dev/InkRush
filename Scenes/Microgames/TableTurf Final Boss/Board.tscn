@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cblureaq1glfx"]
+
+[ext_resource type="Script" uid="uid://4egth0n162t3" path="res://Scripts/TableTurf Final Boss/Board.gd" id="1_6h02v"]
+[ext_resource type="Resource" uid="uid://cddggh0ngq6vy" path="res://Scripts/TableTurf Final Boss/cards/card_cross.tres" id="2_8fsk1"]
+[ext_resource type="Resource" uid="uid://m0jmc7lhd5cs" path="res://Scripts/TableTurf Final Boss/cards/card_dagger.tres" id="3_tcdsm"]
+[ext_resource type="Resource" uid="uid://dekk12bek8w2m" path="res://Scripts/TableTurf Final Boss/cards/card_elbow.tres" id="4_v437l"]
+[ext_resource type="Resource" uid="uid://cevfvm5vl5fph" path="res://Scripts/TableTurf Final Boss/cards/card_heavy_block.tres" id="5_i21i4"]
+[ext_resource type="Resource" uid="uid://dmgjd67bseuhm" path="res://Scripts/TableTurf Final Boss/cards/card_shield.tres" id="6_62iaf"]
+[ext_resource type="Resource" uid="uid://calbja015lp72" path="res://Scripts/TableTurf Final Boss/cards/card_spear.tres" id="7_orhc8"]
+[ext_resource type="Resource" uid="uid://biek7x34g70xd" path="res://Scripts/TableTurf Final Boss/cards/card_v-shape.tres" id="8_tm00u"]
+[ext_resource type="Resource" uid="uid://bsnro47qrlngy" path="res://Scripts/TableTurf Final Boss/cards/card_wall.tres" id="9_0bxxu"]
+[ext_resource type="Resource" uid="uid://oahdpk4bxae1" path="res://Scripts/TableTurf Final Boss/cards/card_zigzag.tres" id="10_phncf"]
+
+[node name="Board" type="Node2D" unique_id=439452448]
+script = ExtResource("1_6h02v")
+all_cards = Array[Resource]([ExtResource("2_8fsk1"), ExtResource("3_tcdsm"), ExtResource("4_v437l"), ExtResource("5_i21i4"), ExtResource("6_62iaf"), ExtResource("7_orhc8"), ExtResource("8_tm00u"), ExtResource("9_0bxxu"), ExtResource("10_phncf")])
+
+[node name="BoardGraphics" type="Node2D" parent="." unique_id=818581164]

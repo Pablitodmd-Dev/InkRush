@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cfj83n16gq5qm"]
+
+[ext_resource type="Script" uid="uid://bds250yntm4t" path="res://Scenes/Microgames/TableTurf Final Boss/Card.gd" id="1_gvwl3"]
+[ext_resource type="Resource" uid="uid://oahdpk4bxae1" path="res://Scripts/TableTurf Final Boss/cards/card_zigzag.tres" id="2_rupma"]
+
+[node name="Card" type="Node2D" unique_id=2073223475]
+script = ExtResource("1_gvwl3")
+card_data = ExtResource("2_rupma")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://calbja015lp72"]
+
+[ext_resource type="Script" uid="uid://b3yjmycxxs3kw" path="res://Scripts/TableTurf Final Boss/card_data.gd" id="1_duuvh"]
+
+[resource]
+resource_name = "Spear"
+script = ExtResource("1_duuvh")
+name = "Spear"
+power = 4
+occupied_cells = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(0, 2), Vector2i(0, 3)])
+metadata/_custom_type_script = "uid://b3yjmycxxs3kw"
