@@ -1,5 +1,6 @@
 extends Node2D
 
+signal finished(success: bool)
 @onready var player = $Player
 @onready var spawn_point = $SpawnPoint
 
@@ -23,3 +24,5 @@ func _on_death_zone_body_entered(body: Node2D) -> void:
 		print("Game Over")
 		body.set_physics_process(false)
 		body.modulate = Color.RED
+		await get_tree().create_timer(1.0).timeout
+		finished.emit(false)

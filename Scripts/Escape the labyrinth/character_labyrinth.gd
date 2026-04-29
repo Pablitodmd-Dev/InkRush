@@ -22,3 +22,4 @@ func _on_area_2d_area_entered(area):
 		has_won = true
 		$AnimatedSprite2D.play("win")
 		$AudioStreamPlayer2D.play()
+		get_parent().finished.emit(true)

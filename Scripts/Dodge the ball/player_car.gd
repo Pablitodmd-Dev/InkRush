@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 const SPEED = 300.0
+signal finished(success: bool)
+
 
 func _physics_process(_delta):
 	var direction = Vector2(
@@ -37,4 +39,4 @@ func _physics_process(_delta):
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("balls"):
-		get_tree().reload_current_scene()
+		get_parent().finished.emit(false)

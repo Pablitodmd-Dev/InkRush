@@ -1,5 +1,6 @@
 extends Node2D
 
+signal finished(success: bool)
 var raindrop_scene = preload("res://Scenes/Microgames/Protect Lulu/raindrop.tscn")
 
 @onready var timer = $Timer
@@ -15,4 +16,4 @@ func _on_rain_timer_timeout():
 	add_child(raindrop)
 
 func _on_timer_timeout():
-	get_tree().quit()
+	finished.emit(true)

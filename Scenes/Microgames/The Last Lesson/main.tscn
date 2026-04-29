@@ -126,7 +126,7 @@ sprite_frames = SubResource("SpriteFrames_km0gw")
 animation = &"countdown"
 
 [node name="Timer" type="Timer" parent="." unique_id=292451733]
-wait_time = 5.0
+wait_time = 7.0
 one_shot = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1213681467]

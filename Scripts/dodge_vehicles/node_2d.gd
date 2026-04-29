@@ -1,5 +1,5 @@
 extends Node2D
-
+signal finished(success: bool)
 const CAR_OBSTACLE_SCENE = preload("res://Scenes/Microgames/dodge_vehicles/car_obstacle.tscn")
 
 @export var road_speed: float = 400.0
@@ -22,7 +22,7 @@ func _process(delta):
 # --- LÓGICA DEL CONTADOR (NUEVA) ---
 func _on_timer_timeout() -> void:
 	# Esta función se ejecuta automáticamente cuando el timer llega a 0
-	get_tree().quit() 
+	finished.emit(true)
 
 # --- LÓGICA DE COCHES (EXISTENTE) ---
 func _on_car_spawn_timer_timeout() -> void:

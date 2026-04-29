@@ -1,7 +1,9 @@
 extends Node2D
 var questions={}
 var index=0
-var correctAnswer=1
+var correctAnswer=0
+signal finished(success: bool)
+
 
 @onready var countdown_timer=$Timer
 @onready var countdown_sprite=$AnimatedSprite2D
@@ -40,7 +42,7 @@ func _on_option_c_pressed() -> void:
 func checkAnswer(valor):
 	if correctAnswer>=1:
 		#print('Ganaste')
-		get_tree().quit()
+		finished.emit(true)
 	else:
 		if valor == "true":
 			#print("bien")
@@ -50,7 +52,8 @@ func checkAnswer(valor):
 			
 		else:
 			print("mal")
-			get_tree().quit()
+			
+			finished.emit(false)
 		#print(questions)
 
 		#print(questions)

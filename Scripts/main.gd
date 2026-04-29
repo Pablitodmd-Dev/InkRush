@@ -27,7 +27,7 @@ func load_random_microgame() -> void:
 	await get_tree().create_timer(3.0).timeout
 
 	var random_index = randi() % minigame_list.size()
-	var game_path = minigame_list[5]
+	var game_path = minigame_list[random_index]
 	var game_scene = load(game_path).instantiate()
 
 	game_scene.finished.connect(_on_microgame_finished)
