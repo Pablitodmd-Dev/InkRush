@@ -1,56 +1,78 @@
 extends Node2D
 
+# Nodes references
 @onready var ball = $Ball
-@onready var keeper = $Goalkeeper
-@onready var bar = $PowerBar
+@onready var power_bar = $PowerBar
 
-@onready var ball_start_pos = ball.global_position
+# Game Settings
+var charge_speed = 60.0
+var ball_speed = 750.0
+var charging = false
+var ball_velocity = Vector2.ZERO
+var initial_ball_pos = Vector2.ZERO
 
-func _input(event):
-	# 1. INICIO: Al presionar "ui_up", reseteamos la barra y empezamos a moverla
-	if event.is_action_pressed("ui_up"):
-		bar.reset_bar()
-		bar.moving = true
-	
-	# 2. FIN: Al soltar "ui_up", si la barra se estaba moviendo, disparamos
-	elif event.is_action_released("ui_up") and bar.moving:
-		bar.moving = false # Detenemos la barra inmediatamente
-		var quality = bar.get_power_quality()
-		calculate_shot(quality)
+# Physics Settings
+var goal_line_y = 41.0
 
-func calculate_shot(quality: String):
-	var random_val = randf()
-	var goal_pos = Vector2(640, 200) 
-	
-	if quality == "green":
-		goal_pos.x += randf_range(-150, 150)
-		ball.launch(goal_pos)
+func _ready():
+	initial_ball_pos = ball.global_position
+	power_bar.value = 0
+	power_bar.max_value = 100
+	power_bar.step = 0.01
+
+func _process(delta):
+	if Input.is_action_just_pressed("ui_up"):
+		charging = true
+		power_bar.value = 0
 		
-	elif quality == "yellow":
-		goal_pos.x += randf_range(-100, 100)
-		ball.launch(goal_pos)
-		if random_val > 0.7:
-			keeper.dive(goal_pos.x) 
-			
-	elif quality == "red":
-		goal_pos.x += randf_range(-50, 50)
-		ball.launch(goal_pos)
-		if random_val > 0.2:
-			keeper.dive(goal_pos.x)
+	if charging:
+		power_bar.value += charge_speed * delta
+		if power_bar.value >= 100:
+			power_bar.value = 0
+		
+		if Input.is_action_just_released("ui_up"):
+			charging = false
+			_process_shot(power_bar.value)
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "Ball":
-		print("¡GOL! Reiniciando...")
-		await get_tree().create_timer(1.0).timeout
-		restart_game()
+	if ball_velocity != Vector2.ZERO:
+		var next_pos = ball.position + (ball_velocity * delta)
+		
+		if next_pos.y <= goal_line_y:
+			ball.position.y = goal_line_y
+			ball_velocity = Vector2.ZERO
+		else:
+			ball.position = next_pos
 
-func restart_game():
-	ball.global_position = ball_start_pos
-	ball.speed = Vector2.ZERO
-	ball.scale = Vector2(1, 1)
+func _process_shot(final_power):
+	var direction = Vector2.ZERO
+	print("Shot Power: ", final_power)
 	
-	keeper.active = true
-	keeper.global_position = Vector2(551, 250)
+	if final_power <= 40.0:
+		# ZONE: RED Missed wide left
+		direction = Vector2(-1.5, -1).normalized()
+		print("RESULT: RED - Missed!")
+		
+	elif final_power <= 50.0:
+		# ZONE: GREEN Goal
+		direction = Vector2(randf_range(-0.1, 0.1), -1).normalized()
+		print("RESULT: GREEN - Goal!")
+		
+	else:
+		# ZONE: YELLOW 50/50 Chance
+		if randf() > 0.5:
+			direction = Vector2(0.2, -1).normalized()
+			print("RESULT: YELLOW - Lucky Goal!")
+		else:
+			direction = Vector2(1.5, -1).normalized()
+			print("RESULT: YELLOW - Missed!")
+
+	ball_velocity = direction * ball_speed
 	
-	bar.value = 0
-	bar.moving = false
+	await get_tree().create_timer(3.0).timeout
+	_restart_round()
+
+func _restart_round():
+	ball_velocity = Vector2.ZERO
+	ball.global_position = initial_ball_pos
+	power_bar.value = 0
+	print("--- READY FOR NEXT SHOT ---")

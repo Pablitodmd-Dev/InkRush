@@ -1,17 +1,15 @@
 [gd_scene format=3 uid="uid://cswolsxbrqptg"]
 
-[ext_resource type="Script" uid="uid://ckfltre4l85tu" path="res://Scripts/score_the_goal/progress_bar.gd" id="1_8x53j"]
-[ext_resource type="Texture2D" uid="uid://k20j2o06cj6g" path="res://Assets/Microgames/score_the_goal/PowerBarBlank-Photoroom.png" id="1_jg8im"]
-[ext_resource type="Texture2D" uid="uid://ce5bgx2bcbuda" path="res://Assets/Microgames/score_the_goal/PowerBarWithColor-Photoroom.png" id="2_nrg7b"]
+[ext_resource type="Texture2D" uid="uid://dycda4b4demfo" path="res://Assets/Microgames/score_the_goal/blankcanvapowerbar.png" id="1_x1lrb"]
+[ext_resource type="Texture2D" uid="uid://c346qw61wksec" path="res://Assets/Microgames/score_the_goal/canvapowerbar.png" id="2_jg8im"]
 
 [node name="TextureProgressBar" type="TextureProgressBar" unique_id=1564067376]
 layout_direction = 2
-offset_left = -210.0
-offset_top = -112.0
-offset_right = 1087.0
-offset_bottom = 941.0
+offset_left = 6.0
+offset_top = -1.0
+offset_right = 1158.0
+offset_bottom = 638.0
 step = 0.0
 nine_patch_stretch = true
-texture_under = ExtResource("1_jg8im")
-texture_progress = ExtResource("2_nrg7b")
-script = ExtResource("1_8x53j")
+texture_under = ExtResource("1_x1lrb")
+texture_progress = ExtResource("2_jg8im")

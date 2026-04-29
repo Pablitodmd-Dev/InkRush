@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://8ia8cbr2fy70"]
 
 [ext_resource type="Texture2D" uid="uid://bgor5cdjt5ovb" path="res://Assets/Microgames/score_the_goal/balls.png" id="1_3tuto"]
-[ext_resource type="Script" uid="uid://sqkp05puuhlo" path="res://Scripts/score_the_goal/ball.gd" id="1_e5y70"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e5y70"]
 atlas = ExtResource("1_3tuto")
@@ -11,7 +10,6 @@ region = Rect2(164.33264, 161.33334, 162.66666, 156)
 radius = 29.017237
 
 [node name="ball" type="CharacterBody2D" unique_id=38758623]
-script = ExtResource("1_e5y70")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1586259811]
 position = Vector2(0.4999993, -1.1920929e-07)
