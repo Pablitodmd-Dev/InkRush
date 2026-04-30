@@ -5,10 +5,27 @@
 [ext_resource type="Texture2D" uid="uid://di1cqk6uno55a" path="res://Assets/Menu/completed.png" id="2_158mb"]
 [ext_resource type="Texture2D" uid="uid://dpry3fpr7alnq" path="res://Assets/Menu/failed.png" id="3_wwsa2"]
 [ext_resource type="Texture2D" uid="uid://e3i62jpkq12p" path="res://Assets/Menu/brushes.png" id="5_wwsa2"]
+[ext_resource type="Texture2D" uid="uid://daevpkmakhpid" path="res://Assets/Menu/controls.png" id="6_jsrd8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jsrd8"]
 atlas = ExtResource("5_wwsa2")
 region = Rect2(0, -2.834, 52, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbdvm"]
+atlas = ExtResource("6_jsrd8")
+region = Rect2(21.235727, 39.85386, 42.87037, 43.797295)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3rjx"]
+atlas = ExtResource("6_jsrd8")
+region = Rect2(20.029278, 89.33489, 46.097797, 45.899956)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6swd7"]
+atlas = ExtResource("6_jsrd8")
+region = Rect2(23, 140.5, 41, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qvly"]
+atlas = ExtResource("6_jsrd8")
+region = Rect2(21.848, 189.85117, 44.52691, 44.526917)
 
 [node name="menu" type="CanvasLayer" unique_id=2045481240]
 script = ExtResource("1_158mb")
@@ -19,18 +36,20 @@ texture = ExtResource("1_cayip")
 
 [node name="completed" type="Sprite2D" parent="." unique_id=973300543]
 unique_name_in_owner = true
+visible = false
 position = Vector2(576, 324)
 texture = ExtResource("2_158mb")
 
 [node name="failed" type="Sprite2D" parent="." unique_id=1500861656]
+visible = false
 position = Vector2(576, 324)
 texture = ExtResource("3_wwsa2")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1048201957]
-offset_left = 219.0
-offset_top = 296.0
-offset_right = 447.0
-offset_bottom = 410.0
+offset_left = 483.0
+offset_top = 8.0
+offset_right = 715.0
+offset_bottom = 171.0
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=650081394]
 custom_minimum_size = Vector2(54, 90)
@@ -59,3 +78,83 @@ layout_mode = 2
 texture = SubResource("AtlasTexture_jsrd8")
 stretch_mode = 3
 metadata/_edit_lock_ = true
+
+[node name="numbers" type="Sprite2D" parent="." unique_id=2133019866]
+visible = false
+position = Vector2(315, 613)
+texture = ExtResource("6_jsrd8")
+region_enabled = true
+region_rect = Rect2(71.45752, 25.590126, 139.14813, 63.132004)
+
+[node name="allArrows" type="HBoxContainer" parent="." unique_id=676376992]
+visible = false
+offset_left = 226.0
+offset_top = 594.0
+offset_right = 411.0
+offset_bottom = 639.0
+
+[node name="left" type="TextureRect" parent="allArrows" unique_id=77923422]
+layout_mode = 2
+texture = SubResource("AtlasTexture_wbdvm")
+
+[node name="up" type="TextureRect" parent="allArrows" unique_id=529911012]
+layout_mode = 2
+texture = SubResource("AtlasTexture_q3rjx")
+
+[node name="TextureRect" type="TextureRect" parent="allArrows" unique_id=1664951411]
+layout_mode = 2
+texture = SubResource("AtlasTexture_6swd7")
+
+[node name="TextureRect2" type="TextureRect" parent="allArrows" unique_id=895657310]
+layout_mode = 2
+texture = SubResource("AtlasTexture_7qvly")
+
+[node name="verticalArrows" type="HBoxContainer" parent="." unique_id=1095150858]
+visible = false
+offset_left = 271.0
+offset_top = 592.0
+offset_right = 380.0
+offset_bottom = 637.0
+
+[node name="up" type="TextureRect" parent="verticalArrows" unique_id=532944721]
+layout_mode = 2
+texture = SubResource("AtlasTexture_q3rjx")
+
+[node name="down" type="TextureRect" parent="verticalArrows" unique_id=995192379]
+layout_mode = 2
+texture = SubResource("AtlasTexture_7qvly")
+
+[node name="horizontalArrows" type="HBoxContainer" parent="." unique_id=696844878]
+visible = false
+offset_left = 280.0
+offset_top = 594.0
+offset_right = 369.0
+offset_bottom = 639.0
+
+[node name="left" type="TextureRect" parent="horizontalArrows" unique_id=1087950737]
+layout_mode = 2
+texture = SubResource("AtlasTexture_wbdvm")
+
+[node name="down" type="TextureRect" parent="horizontalArrows" unique_id=830367673]
+layout_mode = 2
+texture = SubResource("AtlasTexture_6swd7")
+
+[node name="space" type="Sprite2D" parent="." unique_id=978795961]
+visible = false
+position = Vector2(312, 618)
+texture = ExtResource("6_jsrd8")
+region_enabled = true
+region_rect = Rect2(22.566353, 250.43152, 103.47985, 32.231445)
+
+[node name="onlyRight" type="Sprite2D" parent="." unique_id=1797933858]
+visible = false
+position = Vector2(316, 612)
+texture = ExtResource("6_jsrd8")
+region_enabled = true
+region_rect = Rect2(22.066511, 139.48767, 43.09059, 45.005737)
+
+[node name="onlyUp" type="Sprite2D" parent="." unique_id=1273273216]
+position = Vector2(313, 613)
+texture = ExtResource("6_jsrd8")
+region_enabled = true
+region_rect = Rect2(21.791927, 88.44632, 43.16614, 46.40361)

@@ -5,6 +5,13 @@ extends CanvasLayer
 @onready var defeat_screen = $failed   
 @onready var brush_container = $HBoxContainer
 
+@onready var controls_numbers = $numbers
+@onready var horizontal_arrows = $horizontalArrows
+@onready var vertical_arrows = $verticalArrows
+@onready var onlyup = $onlyUp
+@onready var onlyright = $onlyRight
+@onready var allArrows=$allArrows
+
 func _ready():
 	hide_all()
 	brush_container.show()
@@ -33,3 +40,29 @@ func update_brushes(lives_left: int):
 	var brushes = brush_container.get_children() 
 	for i in range(brushes.size()):
 		brushes[i].visible = i < lives_left
+		
+func hide_all_controls():
+	controls_numbers.hide()
+	horizontal_arrows.hide()
+	vertical_arrows.hide()
+	onlyup.hide()
+	allArrows.hide()
+	onlyright.hide()
+
+func show_specific_controls(type):
+	hide_all_controls()
+	match type:
+		"numbers":
+			controls_numbers.show()
+		"allArrows":
+			allArrows.show()
+		"horizontal":
+			horizontal_arrows.show()
+		"onlyup":
+			onlyup.show()
+		"onlyright":
+			onlyright.show()
+		"vertical":
+			vertical_arrows.show()
+		"none":
+			pass

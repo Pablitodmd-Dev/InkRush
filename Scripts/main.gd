@@ -1,16 +1,16 @@
 extends Node
 
-var minigame_list: Array = [
-	"res://Scenes/Microgames/Dodge the balls/Dodge.tscn",
-	"res://Scenes/Microgames/dodge_vehicles/main.tscn",
-	"res://Scenes/Microgames/Escape the labyrinth/Level1.tscn",
-	"res://Scenes/Microgames/Help The Robot/Main.tscn",
-	"res://Scenes/Microgames/Hit the fruit/main.tscn",
-	"res://Scenes/Microgames/Pattern Bot/main.tscn",
-	"res://Scenes/Microgames/Protect Lulu/Game.tscn",
-	"res://Scenes/Microgames/score_the_goal/main.tscn",
-	"res://Scenes/Microgames/The Last Lesson/main.tscn",
-    "res://Scenes/Microgames/trampoline_game/trampoline_game.tscn"
+var minigame_list = [
+	"res://Scenes/Microgames/Dodge the balls/Dodge.tscn|allArrows",
+	"res://Scenes/Microgames/dodge_vehicles/main.tscn|horizontal",
+	"res://Scenes/Microgames/Escape the labyrinth/Level1.tscn|allArrows",
+	"res://Scenes/Microgames/Help The Robot/Main.tscn|vertical",
+	"res://Scenes/Microgames/Hit the fruit/main.tscn|onlyright",
+	"res://Scenes/Microgames/Pattern Bot/main.tscn|numbers",
+	"res://Scenes/Microgames/Protect Lulu/Game.tscn|horizontal",
+	"res://Scenes/Microgames/score_the_goal/main.tscn|onlyup",
+	"res://Scenes/Microgames/The Last Lesson/main.tscn|horizontal",
+	"res://Scenes/Microgames/trampoline_game/trampoline_game.tscn|horizontal"
 ]
 
 var lives: int = 4
@@ -23,17 +23,26 @@ func _ready():
 func load_random_microgame() -> void:
 	menu_layer.show_screen("start")
 	
+	var random_index = randi() % minigame_list.size()
+	var allData = minigame_list[random_index]
+
+	var parts = allData.split("|")
+	var game_path = parts[0]
+	var control_type = parts[1]
+
+	menu_layer.show_specific_controls(control_type)
 
 	await get_tree().create_timer(3.0).timeout
 
-	var random_index = randi() % minigame_list.size()
-	var game_path = minigame_list[random_index]
 	var game_scene = load(game_path).instantiate()
 
 	game_scene.finished.connect(_on_microgame_finished)
 	
 	add_child(game_scene)
+	
+	minigame_list.pop_at(random_index)
 	menu_layer.hide_all() 
+	menu_layer.hide_all_controls()
 
 func _on_microgame_finished(success: bool) -> void:
 	for child in get_children():
