@@ -41,6 +41,7 @@ texture = ExtResource("3_aq44l")
 
 [node name="PlayerScoreLabel" type="Label" parent="UI" unique_id=1821083011]
 anchors_preset = -1
+anchor_left = -0.140625
 anchor_right = -0.140625
 offset_left = 786.99994
 offset_top = 360.0

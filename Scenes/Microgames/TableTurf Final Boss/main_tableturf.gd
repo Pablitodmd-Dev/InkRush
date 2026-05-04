@@ -1,5 +1,6 @@
 extends Node2D
 
+signal finished(success: bool)
 @onready var board = $Board 
 @onready var round_label = $UI/RoundLabel
 @onready var player_score_label = $UI/PlayerScoreLabel

@@ -1,5 +1,6 @@
 extends Node
-
+var boss_played =false
+var boss_path="res://Scenes/Microgames/TableTurf Final Boss/Main.tscn"
 var minigame_list = {
 	"res://Scenes/Microgames/Dodge the balls/Dodge.tscn":"allArrows",
 	"res://Scenes/Microgames/dodge_vehicles/main.tscn":"horizontal",
@@ -22,8 +23,24 @@ func _ready():
 
 func load_random_microgame() -> void:
 	if minigame_list.size()<=0:
-		get_tree().quit()
-		return
+		if not boss_played:
+			boss_played = true 
+
+			menu_layer.show_screen("start")
+			menu_layer.show_specific_controls("allArrows") 
+
+			await get_tree().create_timer(3.0).timeout
+
+			var boss_scene = load(boss_path).instantiate()
+			boss_scene.finished.connect(_on_microgame_finished)
+			
+			add_child(boss_scene)
+			menu_layer.hide_all() 
+			menu_layer.hide_all_controls()
+			return 
+		else:
+			get_tree().quit()
+			return
 	menu_layer.show_screen("start")
 	var allKeys=minigame_list.keys()
 	var random_index = randi() % minigame_list.size()
