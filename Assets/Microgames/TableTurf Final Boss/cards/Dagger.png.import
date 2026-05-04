@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqrukigbej0a7"
-path="res://.godot/imported/Character.png-38103a372b80e28dd8470288f52159e4.ctex"
+uid="uid://cq0om7axmtsml"
+path="res://.godot/imported/Dagger.png-30f57574a0d3a0da49b52081952e356a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Microgames/Hit the Fruit/Character.png"
-dest_files=["res://.godot/imported/Character.png-38103a372b80e28dd8470288f52159e4.ctex"]
+source_file="res://Assets/Microgames/TableTurf Final Boss/cards/Dagger.png"
+dest_files=["res://.godot/imported/Dagger.png-30f57574a0d3a0da49b52081952e356a.ctex"]
 
 [params]
 

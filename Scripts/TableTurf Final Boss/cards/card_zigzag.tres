@@ -1,11 +1,13 @@
 [gd_resource type="Resource" script_class="CardData" format=3 uid="uid://oahdpk4bxae1"]
 
 [ext_resource type="Script" uid="uid://b3yjmycxxs3kw" path="res://Scripts/TableTurf Final Boss/card_data.gd" id="1_3t8ef"]
+[ext_resource type="Texture2D" uid="uid://bva6ln5stk6np" path="res://Assets/Microgames/TableTurf Final Boss/cards/ZigZag.png" id="1_vay44"]
 
 [resource]
 resource_name = "Zig Zag"
 script = ExtResource("1_3t8ef")
 name = "ZigZag"
 power = 4
+card_texture = ExtResource("1_vay44")
 occupied_cells = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(1, 1), Vector2i(2, 1)])
 metadata/_custom_type_script = "uid://b3yjmycxxs3kw"

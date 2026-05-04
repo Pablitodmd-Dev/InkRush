@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqrukigbej0a7"
-path="res://.godot/imported/Character.png-38103a372b80e28dd8470288f52159e4.ctex"
+uid="uid://dgi0gcmrj4n1t"
+path="res://.godot/imported/Spear.png-8ad229617a154b54325016c636152f5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Microgames/Hit the Fruit/Character.png"
-dest_files=["res://.godot/imported/Character.png-38103a372b80e28dd8470288f52159e4.ctex"]
+source_file="res://Assets/Microgames/TableTurf Final Boss/cards/Spear.png"
+dest_files=["res://.godot/imported/Spear.png-8ad229617a154b54325016c636152f5e.ctex"]
 
 [params]
 

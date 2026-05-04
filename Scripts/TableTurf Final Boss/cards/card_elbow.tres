@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dekk12bek8w2m"]
 
+[ext_resource type="Texture2D" uid="uid://ctj1xvfh5h1lj" path="res://Assets/Microgames/TableTurf Final Boss/cards/Elbow.png" id="1_5ipae"]
 [ext_resource type="Script" uid="uid://b3yjmycxxs3kw" path="res://Scripts/TableTurf Final Boss/card_data.gd" id="1_rcj1t"]
 
 [resource]
@@ -7,5 +8,6 @@ resource_name = "Elbow"
 script = ExtResource("1_rcj1t")
 name = "Elbow"
 power = 3
+card_texture = ExtResource("1_5ipae")
 occupied_cells = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(1, 1)])
 metadata/_custom_type_script = "uid://b3yjmycxxs3kw"

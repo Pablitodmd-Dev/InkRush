@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqrukigbej0a7"
-path="res://.godot/imported/Character.png-38103a372b80e28dd8470288f52159e4.ctex"
+uid="uid://qyai4kneid6g"
+path="res://.godot/imported/Cross.png-491b4b7aed9589507fc8257cf6fa3591.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Microgames/Hit the Fruit/Character.png"
-dest_files=["res://.godot/imported/Character.png-38103a372b80e28dd8470288f52159e4.ctex"]
+source_file="res://Assets/Microgames/TableTurf Final Boss/cards/Cross.png"
+dest_files=["res://.godot/imported/Cross.png-491b4b7aed9589507fc8257cf6fa3591.ctex"]
 
 [params]
 

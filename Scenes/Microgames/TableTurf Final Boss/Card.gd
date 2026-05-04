@@ -1,21 +1,29 @@
-extends Node2D
+extends Control
 
-@export var card_data: CardData # Aquí arrastrarás tu Resource de carta
+signal card_clicked(index)
+
+var index_in_hand: int = 0
+@export var card_data: CardData
 
 func _ready():
-	if card_data:
-		render_shape()
+	self.custom_minimum_size = Vector2(100, 100)
+	self.mouse_filter = Control.MOUSE_FILTER_STOP
+	update_visuals()
 
-func render_shape():
-	# Limpiamos si hubiera algo previo
+func _gui_input(event):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		card_clicked.emit(index_in_hand)
+
+func update_visuals():
 	for child in get_children():
 		child.queue_free()
-	
-	# Creamos un pequeño cuadrado por cada celda definida en los datos
-	for cell in card_data.occupied_cells:
-		var rect = ColorRect.new()
-		rect.size = Vector2(30, 30) # Tamaño del cuadradito de la carta
-		# Multiplicamos por 32 (o el tamaño que quieras) para separar las celdas
-		rect.position = Vector2(cell.x * 32, cell.y * 32)
-		rect.color = Color.SKY_BLUE # Color temporal
-		add_child(rect)
+
+	if not card_data:
+		return
+
+	var img = TextureRect.new()
+	img.texture = card_data.card_texture
+	img.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	img.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	img.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	add_child(img)

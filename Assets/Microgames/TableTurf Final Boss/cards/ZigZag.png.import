@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqrukigbej0a7"
-path="res://.godot/imported/Character.png-38103a372b80e28dd8470288f52159e4.ctex"
+uid="uid://bva6ln5stk6np"
+path="res://.godot/imported/ZigZag.png-c220dbfdbe7d3f7f1d672aee26ea1b3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Microgames/Hit the Fruit/Character.png"
-dest_files=["res://.godot/imported/Character.png-38103a372b80e28dd8470288f52159e4.ctex"]
+source_file="res://Assets/Microgames/TableTurf Final Boss/cards/ZigZag.png"
+dest_files=["res://.godot/imported/ZigZag.png-c220dbfdbe7d3f7f1d672aee26ea1b3e.ctex"]
 
 [params]
 

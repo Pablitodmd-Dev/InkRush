@@ -1,24 +1,21 @@
 extends Node2D
 
 @onready var board = $Board 
-# --- IMPORTANTE: Revisa estas rutas si no aparecen los elementos ---
-# Si en tu árbol de nodos están dentro de "PlayerUI" o "KromaUI", cámbialas aquí.
-@onready var score_label = $UI/ScoreLabel 
+@onready var round_label = $UI/RoundLabel
+@onready var player_score_label = $UI/PlayerScoreLabel
+@onready var kroma_score_label = $UI/KromaScoreLabel
 @onready var hand_ui = $UI/HandUI 
 @onready var pass_button = $UI/PassButton
 
+var card_scene = preload("res://Scenes/Microgames/TableTurf Final Boss/Card.tscn")
+
 func _ready():
-	# 1. Conectar las señales primero
+	hand_ui.add_theme_constant_override("separation", 0)
 	board.score_updated.connect(_on_score_updated)
 	board.hand_updated.connect(_on_hand_updated)
 	pass_button.pressed.connect(board.pass_turn)
 	
-	# 2. Centrar el tablero
 	center_board()
-
-	# 3. FORZAR ACTUALIZACIÓN INICIAL
-	# Llamamos a estas funciones para que el Board emita los datos 
-	# ahora que Main ya está escuchando.
 	board.update_score()
 	_on_hand_updated(board.hero_hand, true)
 
@@ -28,18 +25,21 @@ func center_board():
 	board.position = (viewport_size / 2) - (board_size / 2)
 
 func _on_score_updated(p1, p2, turn, max_turns):
-	score_label.text = "Héroe: %d - %d Kroma\nTurno: %d / %d" % [p1, p2, turn, max_turns]
+	round_label.text = "%d / %d" % [turn, max_turns]
+	player_score_label.text = str(p1)
+	kroma_score_label.text = str(p2)
 
 func _on_hand_updated(hand, is_player):
-	# Limpiar botones anteriores
 	for child in hand_ui.get_children():
 		child.queue_free()
 	
-	# Crear botones para cada carta
 	for i in range(hand.size()):
-		var card = hand[i]
-		var btn = Button.new()
-		btn.text = card.resource_name if card.resource_name != "" else "Carta"
-		btn.custom_minimum_size = Vector2(80, 40)
-		btn.pressed.connect(func(): board.select_card_from_hand(i))
-		hand_ui.add_child(btn)
+		var card_data = hand[i]
+		if card_data == null: continue
+		
+		var card_instance = card_scene.instantiate()
+		card_instance.card_data = card_data
+		card_instance.index_in_hand = i
+		card_instance.card_clicked.connect(board.select_card_from_hand)
+		
+		hand_ui.add_child(card_instance)

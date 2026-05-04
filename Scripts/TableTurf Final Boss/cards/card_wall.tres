@@ -1,11 +1,13 @@
 [gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bsnro47qrlngy"]
 
 [ext_resource type="Script" uid="uid://b3yjmycxxs3kw" path="res://Scripts/TableTurf Final Boss/card_data.gd" id="1_87frd"]
+[ext_resource type="Texture2D" uid="uid://co8x2j0q01evk" path="res://Assets/Microgames/TableTurf Final Boss/cards/Wall.png" id="1_bguuh"]
 
 [resource]
 resource_name = "Wall"
 script = ExtResource("1_87frd")
 name = "Wall"
 power = 5
+card_texture = ExtResource("1_bguuh")
 occupied_cells = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(0, 2), Vector2i(0, 3), Vector2i(0, 4)])
 metadata/_custom_type_script = "uid://b3yjmycxxs3kw"

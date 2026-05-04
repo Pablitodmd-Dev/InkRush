@@ -25,11 +25,14 @@ var kroma_hand = []
 var active_card = null 
 var preview_cells = [] 
 
-@onready var board_graphics = $BoardGraphics # Contenedor interno
+@onready var board_graphics = $BoardGraphics
+
+# --- Función de control para bloquear el juego ---
+func is_game_finished() -> bool:
+	return turn_counter >= MAX_TURNS
 
 func _ready():
 	initialize_board()
-	# Usamos call_deferred para asegurar que el nodo está listo antes de dibujar
 	call_deferred("draw_board_visuals")
 	
 	hero_deck = all_cards.duplicate(); hero_deck.shuffle()
@@ -43,16 +46,20 @@ func _ready():
 	emit_signal("hand_updated", hero_hand, true)
 
 func pass_turn():
-	# Si ya llegamos al máximo de turnos, no dejamos hacer nada más
-	if turn_counter >= MAX_TURNS: return 
+	# Bloqueo: si terminó el juego, no hacer nada
+	if is_game_finished(): return 
 	if not is_player_turn: return 
 	
 	turn_counter += 1
 	active_card = null
 	clear_preview()
 	
-	if turn_counter >= MAX_TURNS: finish_game()
-	else: switch_turn()
+	update_score()
+	
+	if turn_counter >= MAX_TURNS: 
+		finish_game()
+	else: 
+		switch_turn()
 
 func update_score():
 	var p1 = 0; var p2 = 0
@@ -61,7 +68,6 @@ func update_score():
 			if grid_data[x][y] == Player.P1: p1 += 1
 			elif grid_data[x][y] == Player.P2: p2 += 1
 	
-	# Usamos min para que el número no pase de 12
 	var display_turn = min(turn_counter + 1, MAX_TURNS)
 	emit_signal("score_updated", p1, p2, display_turn, MAX_TURNS)
 
@@ -69,18 +75,23 @@ func switch_turn():
 	current_turn = Player.P2 if current_turn == Player.P1 else Player.P1
 	is_player_turn = (current_turn == Player.P1)
 	emit_signal("turn_changed", is_player_turn)
-	if not is_player_turn: play_ai_turn()
-	else: emit_signal("hand_updated", hero_hand, true)
+	
+	if not is_player_turn: 
+		play_ai_turn()
+	else: 
+		emit_signal("hand_updated", hero_hand, true)
+	
 	update_score()
 
 func select_card_from_hand(index: int):
+	# Bloqueo: si terminó el juego, no dejar seleccionar cartas
+	if is_game_finished(): return 
 	if not is_player_turn: return 
 	active_card = hero_hand[index]
-	emit_signal("hand_updated", hero_hand, true)
 
 func place_card(card_data, position: Vector2i):
-	# Si ya llegamos al máximo de turnos, no dejamos colocar cartas
-	if turn_counter >= MAX_TURNS: return 
+	# Bloqueo: si terminó el juego, no dejar colocar cartas
+	if is_game_finished(): return 
 	
 	var player_color = HERO_COLOR if current_turn == Player.P1 else VILLAIN_COLOR
 	for cell in card_data.occupied_cells:
@@ -101,11 +112,13 @@ func place_card(card_data, position: Vector2i):
 	active_card = null 
 	clear_preview()
 	
-	if turn_counter >= MAX_TURNS: finish_game()
-	else: switch_turn()
+	if turn_counter >= MAX_TURNS: 
+		finish_game()
+	else: 
+		switch_turn()
+	
 	update_score()
 
-# --- Lógica de Tablero ---
 func initialize_board():
 	grid_data = []; cell_nodes = []
 	for x in range(BOARD_SIZE.x):
@@ -114,12 +127,7 @@ func initialize_board():
 			column.append(0); node_column.append(null)
 		grid_data.append(column); cell_nodes.append(node_column)
 	
-	# --- CORRECCIÓN DE POSICIONES INICIALES ---
-	
-	# Villano (P2, Morado) en Arriba-Izquierda (x=0, y=0)
 	grid_data[0][0] = Player.P2
-	
-	# Héroe (P1, Verde) en Abajo-Derecha (x=7, y=7)
 	grid_data[BOARD_SIZE.x - 1][BOARD_SIZE.y - 1] = Player.P1
 
 func draw_board_visuals():
@@ -140,16 +148,26 @@ func draw_board_visuals():
 			board_graphics.add_child(rect)
 			cell_nodes[x][y] = rect
 
-# --- Input y Reglas ---
 func _input(event):
+	# Bloqueo: si terminó el juego, ignorar clics en tablero
+	if is_game_finished(): return 
 	if not is_player_turn: return 
-	var mouse_pos = get_local_mouse_position()
+	
+	var mouse_pos = board_graphics.to_local(get_global_mouse_position())
 	var grid_pos = Vector2i(floor(mouse_pos.x / CELL_SIZE), floor(mouse_pos.y / CELL_SIZE))
+	
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if active_card:
+				if is_inside_board(grid_pos) and can_place_card(active_card, grid_pos):
+					place_card(active_card, grid_pos)
+		elif event.button_index == MOUSE_BUTTON_RIGHT:
+			if active_card:
+				active_card = null
+				clear_preview()
+
 	if active_card:
 		update_preview(grid_pos)
-		if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-			if is_inside_board(grid_pos) and can_place_card(active_card, grid_pos):
-				place_card(active_card, grid_pos)
 
 func update_preview(pos: Vector2i):
 	clear_preview()
@@ -199,7 +217,8 @@ func play_ai_turn():
 		var move = possible_moves.pick_random()
 		active_card = move.card
 		place_card(move.card, move.pos)
-	else: switch_turn()
+	else: 
+		switch_turn()
 
 func finish_game():
 	print("Partida finalizada")

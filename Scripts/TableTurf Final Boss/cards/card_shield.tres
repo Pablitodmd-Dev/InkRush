@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dmgjd67bseuhm"]
 
+[ext_resource type="Texture2D" uid="uid://c36j2dpjm4erg" path="res://Assets/Microgames/TableTurf Final Boss/cards/Shield.png" id="1_ijw3x"]
 [ext_resource type="Script" uid="uid://b3yjmycxxs3kw" path="res://Scripts/TableTurf Final Boss/card_data.gd" id="1_m21ka"]
 
 [resource]
@@ -7,5 +8,6 @@ resource_name = "Shield"
 script = ExtResource("1_m21ka")
 name = "Shield"
 power = 4
+card_texture = ExtResource("1_ijw3x")
 occupied_cells = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(1, 0), Vector2i(1, 1)])
 metadata/_custom_type_script = "uid://b3yjmycxxs3kw"
