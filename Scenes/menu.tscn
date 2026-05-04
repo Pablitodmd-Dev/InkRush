@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://dpry3fpr7alnq" path="res://Assets/Menu/failed.png" id="3_wwsa2"]
 [ext_resource type="Texture2D" uid="uid://e3i62jpkq12p" path="res://Assets/Menu/brushes.png" id="5_wwsa2"]
 [ext_resource type="Texture2D" uid="uid://daevpkmakhpid" path="res://Assets/Menu/controls.png" id="6_jsrd8"]
+[ext_resource type="AudioStream" uid="uid://ct558l8c015l6" path="res://Assets/Sounds/win_minigame.wav" id="7_6swd7"]
+[ext_resource type="AudioStream" uid="uid://c1mvxw1ovkjux" path="res://Assets/Sounds/defeated.wav" id="8_7qvly"]
+[ext_resource type="AudioStream" uid="uid://cak0an4pe0ewk" path="res://Assets/Sounds/Intermission.wav" id="9_rfqti"]
+[ext_resource type="FontFile" uid="uid://dfaepymu60y6l" path="res://Assets/Menu/Angkor-Regular.ttf" id="10_7qvly"]
+[ext_resource type="FontFile" uid="uid://0qwe45n8sxkd" path="res://Assets/Microgames/TableTurf Final Boss/PatrickHand-Regular.ttf" id="11_rfqti"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jsrd8"]
 atlas = ExtResource("5_wwsa2")
@@ -158,3 +163,34 @@ position = Vector2(313, 613)
 texture = ExtResource("6_jsrd8")
 region_enabled = true
 region_rect = Rect2(21.791927, 88.44632, 43.16614, 46.40361)
+
+[node name="VictorySound" type="AudioStreamPlayer2D" parent="." unique_id=230239396]
+stream = ExtResource("7_6swd7")
+
+[node name="DefeatSound" type="AudioStreamPlayer2D" parent="." unique_id=1096698250]
+stream = ExtResource("8_7qvly")
+
+[node name="IntermissionSound" type="AudioStreamPlayer2D" parent="." unique_id=59905592]
+stream = ExtResource("9_rfqti")
+
+[node name="ScoreCounter" type="Label" parent="." unique_id=729904882]
+offset_left = 555.0
+offset_top = 568.0
+offset_right = 680.0
+offset_bottom = 641.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_7qvly")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameNameLabel" type="Label" parent="." unique_id=1305529277]
+offset_left = 490.0
+offset_top = 285.0
+offset_right = 744.0
+offset_bottom = 411.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_rfqti")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
