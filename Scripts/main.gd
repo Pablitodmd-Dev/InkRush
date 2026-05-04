@@ -1,17 +1,17 @@
 extends Node
 
-var minigame_list = [
-	"res://Scenes/Microgames/Dodge the balls/Dodge.tscn|allArrows",
-	"res://Scenes/Microgames/dodge_vehicles/main.tscn|horizontal",
-	"res://Scenes/Microgames/Escape the labyrinth/Level1.tscn|allArrows",
-	"res://Scenes/Microgames/Help The Robot/Main.tscn|vertical",
-	"res://Scenes/Microgames/Hit the fruit/main.tscn|onlyright",
-	"res://Scenes/Microgames/Pattern Bot/main.tscn|numbers",
-	"res://Scenes/Microgames/Protect Lulu/Game.tscn|horizontal",
-	"res://Scenes/Microgames/score_the_goal/main.tscn|onlyup",
-	"res://Scenes/Microgames/The Last Lesson/main.tscn|horizontal",
-	"res://Scenes/Microgames/trampoline_game/trampoline_game.tscn|horizontal"
-]
+var minigame_list = {
+	"res://Scenes/Microgames/Dodge the balls/Dodge.tscn":"allArrows",
+	"res://Scenes/Microgames/dodge_vehicles/main.tscn":"horizontal",
+	"res://Scenes/Microgames/Escape the labyrinth/Level1.tscn":"allArrows",
+	"res://Scenes/Microgames/Help The Robot/Main.tscn":"vertical",
+	"res://Scenes/Microgames/Hit the fruit/main.tscn":"onlyright",
+	"res://Scenes/Microgames/Pattern Bot/main.tscn":"numbers",
+	"res://Scenes/Microgames/Protect Lulu/Game.tscn":"horizontal",
+	"res://Scenes/Microgames/score_the_goal/main.tscn":"onlyup",
+	"res://Scenes/Microgames/The Last Lesson/main.tscn":"horizontal",
+	"res://Scenes/Microgames/trampoline_game/trampoline_game.tscn":"horizontal"
+}
 
 var lives: int = 4
 @onready var menu_layer = $menu
@@ -21,14 +21,15 @@ func _ready():
 	load_random_microgame()
 
 func load_random_microgame() -> void:
+	if minigame_list.size()<=0:
+		get_tree().quit()
+		return
 	menu_layer.show_screen("start")
-	
+	var allKeys=minigame_list.keys()
 	var random_index = randi() % minigame_list.size()
-	var allData = minigame_list[random_index]
+	var game_path = allKeys[random_index]
 
-	var parts = allData.split("|")
-	var game_path = parts[0]
-	var control_type = parts[1]
+	var control_type =minigame_list[game_path]
 
 	menu_layer.show_specific_controls(control_type)
 
@@ -40,7 +41,8 @@ func load_random_microgame() -> void:
 	
 	add_child(game_scene)
 	
-	minigame_list.pop_at(random_index)
+	#minigame_list.pop_at(random_index)
+	minigame_list.erase(game_path)
 	menu_layer.hide_all() 
 	menu_layer.hide_all_controls()
 
