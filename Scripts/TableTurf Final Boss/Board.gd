@@ -1,5 +1,6 @@
 extends Node2D
 
+signal finished(success: bool)
 signal score_updated(p1_score, p2_score, current_turn, max_turns)
 signal hand_updated(hand_array, is_player)
 signal turn_changed(is_player_turn)
@@ -225,4 +226,7 @@ func finish_game():
 			elif grid_data[x][y] == Player.P2: p2 += 1
 	
 	var player_won = p1 > p2
-	get_parent().emit_signal("finished", player_won)
+	if player_won:
+		get_parent().finished.emit(true)
+	else:
+		get_parent().finished.emit(false)

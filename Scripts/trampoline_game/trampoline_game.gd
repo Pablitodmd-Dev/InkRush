@@ -17,7 +17,9 @@ func _ready():
 	countdown_sprite.play("countdown")
 
 func _on_timer_timeout():
+	
 	print("¡Tiempo agotado! Cerrando juego...")
+	_on_victory()
 
 func spawn_player_randomly():
 	var random_range = 300.0
