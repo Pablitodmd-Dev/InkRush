@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cblureaq1glfx" path="res://Scenes/Microgames/TableTurf Final Boss/Board.tscn" id="1_w010f"]
 [ext_resource type="Texture2D" uid="uid://dgfd6xdbjr8l7" path="res://Scenes/Microgames/TableTurf Final Boss/1000105973.png" id="2_5n54b"]
 [ext_resource type="Texture2D" uid="uid://d0r2ukqy67g4j" path="res://Assets/Microgames/TableTurf Final Boss/39 sin título_20260430124415.png" id="3_aq44l"]
-[ext_resource type="AudioStream" uid="uid://bct2oe1lulyhe" path="res://Scenes/Microgames/TableTurf Final Boss/Super Mario Galaxy_ The Movie - Dino Piranha COVER.mp3" id="3_ghxvk"]
+[ext_resource type="AudioStream" uid="uid://bct2oe1lulyhe" path="res://Scenes/Microgames/TableTurf Final Boss/BossTheme.mp3" id="3_ghxvk"]
 [ext_resource type="FontFile" uid="uid://0qwe45n8sxkd" path="res://Assets/Microgames/TableTurf Final Boss/PatrickHand-Regular.ttf" id="5_8ehus"]
 
 [node name="Main" type="Node2D" unique_id=731322542]

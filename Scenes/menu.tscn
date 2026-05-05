@@ -166,12 +166,15 @@ region_rect = Rect2(21.791927, 88.44632, 43.16614, 46.40361)
 
 [node name="VictorySound" type="AudioStreamPlayer2D" parent="." unique_id=230239396]
 stream = ExtResource("7_6swd7")
+volume_db = -10.0
 
 [node name="DefeatSound" type="AudioStreamPlayer2D" parent="." unique_id=1096698250]
 stream = ExtResource("8_7qvly")
+volume_db = -10.0
 
 [node name="IntermissionSound" type="AudioStreamPlayer2D" parent="." unique_id=59905592]
 stream = ExtResource("9_rfqti")
+volume_db = -10.0
 
 [node name="ScoreCounter" type="Label" parent="." unique_id=729904882]
 offset_left = 555.0

@@ -46,9 +46,8 @@ func _ready():
 	emit_signal("hand_updated", hero_hand, true)
 
 func pass_turn():
-	# Bloqueo: si terminó el juego, no hacer nada
-	if is_game_finished(): return 
-	if not is_player_turn: return 
+	if is_game_finished(): return
+	if not is_player_turn: return
 	
 	turn_counter += 1
 	active_card = null
@@ -84,14 +83,12 @@ func switch_turn():
 	update_score()
 
 func select_card_from_hand(index: int):
-	# Bloqueo: si terminó el juego, no dejar seleccionar cartas
-	if is_game_finished(): return 
-	if not is_player_turn: return 
+	if is_game_finished(): return
+	if not is_player_turn: return
 	active_card = hero_hand[index]
 
 func place_card(card_data, position: Vector2i):
-	# Bloqueo: si terminó el juego, no dejar colocar cartas
-	if is_game_finished(): return 
+	if is_game_finished(): return
 	
 	var player_color = HERO_COLOR if current_turn == Player.P1 else VILLAIN_COLOR
 	for cell in card_data.occupied_cells:
@@ -149,9 +146,8 @@ func draw_board_visuals():
 			cell_nodes[x][y] = rect
 
 func _input(event):
-	# Bloqueo: si terminó el juego, ignorar clics en tablero
-	if is_game_finished(): return 
-	if not is_player_turn: return 
+	if is_game_finished(): return
+	if not is_player_turn: return
 	
 	var mouse_pos = board_graphics.to_local(get_global_mouse_position())
 	var grid_pos = Vector2i(floor(mouse_pos.x / CELL_SIZE), floor(mouse_pos.y / CELL_SIZE))
@@ -206,7 +202,7 @@ func is_inside_board(pos: Vector2i) -> bool:
 	return pos.x >= 0 and pos.x < BOARD_SIZE.x and pos.y >= 0 and pos.y < BOARD_SIZE.y
 
 func play_ai_turn():
-	await get_tree().create_timer(1.0).timeout 
+	await get_tree().create_timer(1.0).timeout
 	var possible_moves = []
 	for card in kroma_hand:
 		for x in range(BOARD_SIZE.x):
@@ -221,4 +217,12 @@ func play_ai_turn():
 		switch_turn()
 
 func finish_game():
-	print("Partida finalizada")
+	var p1 = 0
+	var p2 = 0
+	for x in range(BOARD_SIZE.x):
+		for y in range(BOARD_SIZE.y):
+			if grid_data[x][y] == Player.P1: p1 += 1
+			elif grid_data[x][y] == Player.P2: p2 += 1
+	
+	var player_won = p1 > p2
+	get_parent().emit_signal("finished", player_won)
