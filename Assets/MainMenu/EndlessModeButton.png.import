@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c517esqasw2k2"
-path="res://.godot/imported/43 sin título_20260505110158.png-2edd95f8fe57e09acfc43f28c3ee0131.ctex"
+uid="uid://beqdsal3g4osd"
+path="res://.godot/imported/EndlessModeButton.png-fdc2f71e5f09cd30edb2166431596d37.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/MainMenu/43 sin título_20260505110158.png"
-dest_files=["res://.godot/imported/43 sin título_20260505110158.png-2edd95f8fe57e09acfc43f28c3ee0131.ctex"]
+source_file="res://Assets/MainMenu/EndlessModeButton.png"
+dest_files=["res://.godot/imported/EndlessModeButton.png-fdc2f71e5f09cd30edb2166431596d37.ctex"]
 
 [params]
 

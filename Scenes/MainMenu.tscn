@@ -1,5 +1,12 @@
 [gd_scene format=3 uid="uid://x672fa2shx8n"]
 
+[ext_resource type="Script" uid="uid://ciso00jlvv8br" path="res://Scenes/main_menu.gd" id="1_tt5f1"]
+[ext_resource type="Texture2D" uid="uid://c517esqasw2k2" path="res://Assets/MainMenu/BackgroundBase.png" id="2_853f1"]
+[ext_resource type="Texture2D" uid="uid://c2snbr1tg8waw" path="res://Assets/MainMenu/BackgroundWin.png" id="3_df05h"]
+[ext_resource type="Texture2D" uid="uid://dpyybmc638ihv" path="res://Assets/MainMenu/StoryModeButton.png" id="4_8um5k"]
+[ext_resource type="Texture2D" uid="uid://beqdsal3g4osd" path="res://Assets/MainMenu/EndlessModeButton.png" id="5_xim88"]
+[ext_resource type="Texture2D" uid="uid://dh86p0fj8s46a" path="res://Assets/MainMenu/EndlessModeButtonInactive(1).png" id="6_8um5k"]
+
 [node name="MainMenu" type="Control" unique_id=2088546402]
 layout_mode = 3
 anchors_preset = 15
@@ -7,5 +14,43 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tt5f1")
 
-[node name="BackgroundImage" type="Sprite2D" parent="." unique_id=994287090]
+[node name="BackgroundNormal" type="Sprite2D" parent="." unique_id=994287090]
+modulate = Color(0.6190818, 0.6190819, 0.6190818, 1)
+position = Vector2(576, 324)
+texture = ExtResource("2_853f1")
+
+[node name="BackgroundVictory" type="Sprite2D" parent="." unique_id=1574785648]
+position = Vector2(576, 324)
+texture = ExtResource("3_df05h")
+
+[node name="StoryMode" type="TextureButton" parent="." unique_id=1951709198]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 165.0
+offset_right = 542.0
+offset_bottom = 264.0
+texture_normal = ExtResource("4_8um5k")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="EndlessMode" type="TextureButton" parent="." unique_id=828735737]
+layout_mode = 0
+offset_left = 582.0
+offset_top = 183.0
+offset_right = 715.0
+offset_bottom = 259.0
+texture_normal = ExtResource("5_xim88")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="EndlessModeInactive" type="TextureButton" parent="." unique_id=716570519]
+layout_mode = 0
+offset_left = 572.0
+offset_top = 167.0
+offset_right = 724.0
+offset_bottom = 261.0
+texture_normal = ExtResource("6_8um5k")
+ignore_texture_size = true
+stretch_mode = 0

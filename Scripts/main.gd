@@ -43,7 +43,9 @@ func load_random_microgame() -> void:
 			menu_layer.hide_all_controls()
 			return 
 		else:
-			get_tree().quit()
+			# Victoria modo historia
+			Global.historia_completada = true
+			get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 			return
 
 	menu_layer.show_screen("start")
@@ -51,16 +53,13 @@ func load_random_microgame() -> void:
 	var random_index = randi() % minigame_list.size()
 	var game_path = allKeys[random_index]
 	
-	# Extraemos la información del diccionario
 	var game_data = minigame_list[game_path]
 	var control_type = game_data["control"]
 	var game_name = game_data["name"]
 
-	# Enviamos los datos a la capa de menú
 	menu_layer.set_game_name(game_name)
 	menu_layer.show_specific_controls(control_type)
 
-	# Esperamos a que termine el sonido de intermisión
 	await menu_layer.intermission_sound.finished
 
 	var game_scene = load(game_path).instantiate()
@@ -72,10 +71,12 @@ func load_random_microgame() -> void:
 	menu_layer.hide_all_controls()
 
 func _on_microgame_finished(success: bool) -> void:
+	# Limpieza de la escena del minijuego
 	for child in get_children():
 		if child != menu_layer:
 			child.queue_free()
 	
+	# SUMA SIEMPRE: Movido fuera del if success para que cuente el intento
 	menu_layer.increment_score() 
 	
 	if success:
@@ -88,6 +89,7 @@ func _on_microgame_finished(success: bool) -> void:
 		await menu_layer.defeat_sound.finished
 
 	if lives <= 0:
-		print("GAME OVER")
+		# Al perder todas las vidas volvemos al menú
+		get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 	else:
 		load_random_microgame()
