@@ -21,4 +21,5 @@ func _on_screen_exited():
 func _on_body_entered(body):
 	if body.name == "Player":
 		print("GAME OVER - Crashed!")
+		get_tree().paused = true
 		get_parent().finished.emit(false)

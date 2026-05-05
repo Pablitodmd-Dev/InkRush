@@ -7,6 +7,9 @@ signal finished(success: bool)
 @onready var power_bar = $PowerBar
 @onready var goal_label = $GoalLabel
 
+@onready var timer = $Timer
+@onready var countdown_sprite = $AnimatedSprite2D
+
 # Game Settings
 var charge_speed = 60.0
 var ball_speed = 750.0
@@ -25,6 +28,12 @@ func _ready():
 	power_bar.step = 0.01
 	if goal_label:
 		goal_label.visible = false
+	timer.start()
+	countdown_sprite.play("countdown")
+
+func _on_timer_timeout():
+	print("¡Tiempo agotado! Cerrando juego...")
+	get_tree().paused=true
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_up"):

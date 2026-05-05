@@ -19,12 +19,9 @@ func _ready():
 func _process(delta):
 	$ParallaxBackground.scroll_offset.y += road_speed * delta
 
-# --- LÓGICA DEL CONTADOR (NUEVA) ---
 func _on_timer_timeout() -> void:
-	# Esta función se ejecuta automáticamente cuando el timer llega a 0
 	finished.emit(true)
 
-# --- LÓGICA DE COCHES (EXISTENTE) ---
 func _on_car_spawn_timer_timeout() -> void:
 	var spawn_x = -1.0
 	var attempts = 0

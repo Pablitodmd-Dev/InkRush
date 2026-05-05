@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bnc207vkvfxxl" path="res://Assets/Microgames/dodge_vehicles/enemy_vehicle-Photoroom.png" id="2_b56ud"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_th7ce"]
-size = Vector2(132, 194)
+size = Vector2(112, 194)
 
 [node name="CarObstacle" type="Area2D" unique_id=143810493 groups=["enemies"]]
 texture_filter = 1

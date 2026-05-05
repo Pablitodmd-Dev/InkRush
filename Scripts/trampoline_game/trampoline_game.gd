@@ -5,20 +5,19 @@ signal finished(success: bool)
 @onready var player = $Player
 @onready var spawn_point = $SpawnPoint
 
-var game_time: float = 7.0
 var is_active: bool = true
+
+@onready var timer = $Timer
+@onready var countdown_sprite = $AnimatedSprite2D
 
 func _ready():
 	spawn_player_randomly()
 	is_active = true
+	timer.start()
+	countdown_sprite.play("countdown")
 
-func _process(delta: float):
-	$TimeLabel.text = str(int(game_time))
-	if is_active:
-		game_time -= delta
-		
-		if game_time <= 0:
-			_on_victory()
+func _on_timer_timeout():
+	print("¡Tiempo agotado! Cerrando juego...")
 
 func spawn_player_randomly():
 	var random_range = 300.0
