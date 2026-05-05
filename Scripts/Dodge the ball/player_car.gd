@@ -15,26 +15,42 @@ func _physics_process(_delta):
 		
 		if direction.x < 0 and direction.y < 0:
 			$AnimatedSprite2D.play("up_left")
+			%diagonal.disabled=false
+			
 		elif direction.x > 0 and direction.y < 0:
 			$AnimatedSprite2D.play("up_right")
+			%diagonal2.disabled=false
 		elif direction.x < 0 and direction.y > 0:
 			$AnimatedSprite2D.play("down_left")
+			%diagonal2.disabled=false
 		elif direction.x > 0 and direction.y > 0:
 			$AnimatedSprite2D.play("down_right")
-			
+			%diagonal.disabled=false
 		elif direction.x < 0:
 			$AnimatedSprite2D.play("left")
+			%horizontal.disabled=false
 		elif direction.x > 0:
 			$AnimatedSprite2D.play("right")
+			%horizontal.disabled=false
 		elif direction.y < 0:
 			$AnimatedSprite2D.play("up")
+			%vertical.disabled=false
 		elif direction.y > 0:
 			$AnimatedSprite2D.play("down")
+			%vertical.disabled=false
 	else:
 		velocity = Vector2.ZERO
+		_hide_collisions()
+		
 		$AnimatedSprite2D.stop()
 		
 	move_and_slide()
+
+func _hide_collisions():
+	%horizontal.disabled=true
+	%diagonal2.disabled=true
+	%vertical.disabled=true
+	%diagonal.disabled=true
 
 
 func _on_area_2d_body_entered(body):

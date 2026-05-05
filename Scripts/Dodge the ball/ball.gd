@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 350.0
+var speed = 300.0
 
 func _ready():
 	var angle = randf_range(0, 2 * PI)

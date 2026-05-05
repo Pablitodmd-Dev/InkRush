@@ -1,7 +1,7 @@
 extends Node2D
 var questions={}
 var index=0
-var correctAnswer=0
+var correctAnswer=1
 signal finished(success: bool)
 
 

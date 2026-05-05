@@ -126,16 +126,16 @@ shape = SubResource("RectangleShape2D_1vm6a")
 [node name="balls" type="Node2D" parent="." unique_id=1110553696]
 
 [node name="Ball2" parent="balls" unique_id=1402104833 groups=["balls"] instance=ExtResource("3_66v0l")]
-position = Vector2(-431, -210)
+position = Vector2(-474, -235)
 
 [node name="Ball5" parent="balls" unique_id=1973790165 groups=["balls"] instance=ExtResource("3_66v0l")]
-position = Vector2(391, 154)
+position = Vector2(487, 252)
 
 [node name="Ball3" parent="balls" unique_id=246775177 groups=["balls"] instance=ExtResource("3_66v0l")]
-position = Vector2(461, -225)
+position = Vector2(504, -246)
 
 [node name="Ball4" parent="balls" unique_id=1197625879 groups=["balls"] instance=ExtResource("3_66v0l")]
-position = Vector2(-384, 130)
+position = Vector2(-425, 237)
 
 [node name="PlayerCar" parent="." unique_id=1718791426 instance=ExtResource("4_ctq5k")]
 position = Vector2(-7, -12)

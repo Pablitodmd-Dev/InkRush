@@ -40,15 +40,17 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d60mj"]
-radius = 77.10383
+radius = 48.010414
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ij5cq"]
-radius = 78.025635
+radius = 48.0
 
 [node name="Ball" type="CharacterBody2D" unique_id=1973790165]
 script = ExtResource("1_ij5cq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=271678691]
+position = Vector2(0.12500453, -0.49999833)
+scale = Vector2(0.64090914, 0.63124996)
 sprite_frames = SubResource("SpriteFrames_1ji7f")
 autoplay = "default"
 
