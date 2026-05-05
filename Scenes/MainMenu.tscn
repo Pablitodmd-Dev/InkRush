@@ -54,3 +54,5 @@ offset_bottom = 261.0
 texture_normal = ExtResource("6_8um5k")
 ignore_texture_size = true
 stretch_mode = 0
+
+[connection signal="pressed" from="StoryMode" to="." method="_on_story_mode_pressed"]

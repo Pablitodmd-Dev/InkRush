@@ -13,3 +13,7 @@ func _ready():
 
 func _on_boton_jugar_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Main.tscn")
+
+
+func _on_story_mode_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Main.tscn")
