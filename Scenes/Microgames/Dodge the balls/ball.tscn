@@ -43,7 +43,7 @@ animations = [{
 radius = 48.010414
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ij5cq"]
-radius = 48.0
+radius = 51.0
 
 [node name="Ball" type="CharacterBody2D" unique_id=1973790165]
 script = ExtResource("1_ij5cq")
@@ -60,5 +60,5 @@ shape = SubResource("CircleShape2D_d60mj")
 [node name="Area2D" type="Area2D" parent="." unique_id=1425197887]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=453399019 groups=["balls"]]
-position = Vector2(2, -1)
+position = Vector2(1, -1)
 shape = SubResource("CircleShape2D_ij5cq")
