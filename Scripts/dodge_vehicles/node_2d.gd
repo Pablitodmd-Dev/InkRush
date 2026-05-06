@@ -7,12 +7,19 @@ const CAR_OBSTACLE_SCENE = preload("res://Scenes/Microgames/dodge_vehicles/car_o
 @export var max_spawn_x: float = 1070.0
 @export var safe_distance: float = 120.0
 
-# Referencias nuevas para el contador
 @onready var countdown_timer = $Timer 
 @onready var countdown_sprite = $AnimatedSprite2D
+@onready var car_spawn_timer = $CarSpawnTimer 
 
 func _ready():
-	# Iniciamos el contador de 5 segundos al arrancar la escena
+	if Global.difficulty_level == 1:
+		road_speed = 600.0
+		car_spawn_timer.wait_time = 0.6
+	elif Global.difficulty_level == 2:
+		road_speed = 800.0
+		car_spawn_timer.wait_time = 0.4
+		
+	car_spawn_timer.start()
 	countdown_timer.start(7.0) 
 	countdown_sprite.play("countdown")
 

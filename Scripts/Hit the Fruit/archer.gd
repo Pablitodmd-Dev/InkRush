@@ -10,13 +10,20 @@ var can_shoot = true
 var angle = 0.0
 var max_angle = PI/4 
 var line_length = 200
+var line_speed=0.003
 
 func _ready():
+	if Global.difficulty_level == 0:
+		line_speed = 0.003  
+	elif Global.difficulty_level == 1:
+		line_speed = 0.005  
+	elif Global.difficulty_level == 2:
+		line_speed = 0.007 
 	anim.play("idle")
 
 func _process(_delta):
 	if can_shoot: 
-		angle = sin(Time.get_ticks_msec() * 0.003) * max_angle
+		angle = sin(Time.get_ticks_msec() * line_speed) * max_angle
 		var x = cos(angle) * line_length
 		var y = sin(angle) * line_length
 		line.set_point_position(1, Vector2(x, y))

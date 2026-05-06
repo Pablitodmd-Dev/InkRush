@@ -7,6 +7,12 @@ var timer = 0.0
 var is_hit = false
 
 func _ready():
+	if Global.difficulty_level == 0:
+		speed = 150
+	elif Global.difficulty_level == 1:
+		speed = 180
+	elif Global.difficulty_level == 2:
+		speed = 200
 	$AnimatedSprite2D.play("walk")
 
 func _process(delta):

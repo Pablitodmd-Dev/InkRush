@@ -12,7 +12,12 @@ var center_x: float
 @onready var audioplayer: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready():
-
+	if Global.difficulty_level == 0:
+		move_speed = 100.0
+	elif Global.difficulty_level == 1:
+		move_speed = 200.0
+	elif Global.difficulty_level == 2:
+		move_speed = 300.0
 	center_x = global_position.x 
 
 func _process(delta):

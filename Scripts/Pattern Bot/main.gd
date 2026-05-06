@@ -5,18 +5,26 @@ var buttons = []
 var redButtons = []
 var randomButtons
 var correctButton = 0
+var buttons_to_light = 4 # Variable para la dificultad
 
 @onready var countdown_timer=$Timer2
 @onready var countdown_sprite=$AnimatedSprite2D2
 
 func _ready():
+	if Global.difficulty_level == 0:
+		buttons_to_light = 4
+	elif Global.difficulty_level == 1:
+		buttons_to_light = 5
+	elif Global.difficulty_level == 2:
+		buttons_to_light = 6
+
 	buttons = $GridContainer.get_children()
 	colorButtons()
 	countdown_timer.start(7.0) 
 	countdown_sprite.play("countdown")
 
 func colorButtons():
-	while redButtons.size() < 4:
+	while redButtons.size() < buttons_to_light:
 		randomButtons = randi_range(0, buttons.size() - 1)
 		
 		if !redButtons.has(randomButtons):
@@ -45,7 +53,7 @@ func _on_pressed_button(numberButton):
 		correctButton += 1
 		redButtons.erase(numberButton)
 		
-		if correctButton == 4:
+		if correctButton == buttons_to_light:
 			$Timer2.stop()
 			%win.play()
 			$AnimatedSprite2D.play("repaired")
@@ -65,15 +73,12 @@ func _on_pressed_button(numberButton):
 		await %incorrectOption.finished
 		finished.emit(false)
 
-
-
 func resetButtons():
 	for btn in buttons:
 		btn.remove_theme_stylebox_override("normal")
 		
 func _on_timer_timeout() -> void:
 	resetButtons()
-
 
 func _on_timer_2_timeout() -> void:
 	finished.emit(false)

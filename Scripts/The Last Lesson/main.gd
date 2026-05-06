@@ -10,10 +10,22 @@ signal finished(success: bool)
 
 
 func _ready():
+	var time_limit = 7.0
+	var anim_speed = 1.0
+	
+	if Global.difficulty_level == 1:
+		time_limit = 5.5
+		anim_speed = 1.27 
+	elif Global.difficulty_level == 2:
+		time_limit = 4.0
+		anim_speed = 1.75 
+
 	questions = readQuestions()
 	$%optionA.grab_focus()
 	newQuestion()
-	countdown_timer.start(7.0) 
+	
+	countdown_timer.start(time_limit) 
+	countdown_sprite.speed_scale = anim_speed 
 	countdown_sprite.play("countdown")
 	
 func readQuestions():

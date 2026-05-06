@@ -141,3 +141,4 @@ autoplay = true
 [connection signal="input_event" from="Node2D/RubikCube" to="." method="_on_rubik_cube_input_event"]
 [connection signal="input_event" from="Node2D/KitchenHatArea" to="." method="_on_kitchen_hat_area_input_event"]
 [connection signal="pressed" from="StoryMode" to="." method="_on_story_mode_pressed"]
+[connection signal="pressed" from="EndlessMode" to="." method="_on_endless_mode_pressed"]
