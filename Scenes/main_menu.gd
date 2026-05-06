@@ -49,7 +49,6 @@ func reproducir_efecto(ruta_sonido: String):
 		sfx_player.play()
 
 func _on_story_mode_pressed() -> void:
-	Global.endless_mode=false
 	get_tree().change_scene_to_file("res://Scenes/Animations/History.tscn")
 
 

@@ -51,6 +51,7 @@ position = Vector2(576, 324)
 texture = ExtResource("3_wwsa2")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1048201957]
+visible = false
 offset_left = 483.0
 offset_top = 8.0
 offset_right = 715.0
@@ -159,6 +160,7 @@ region_enabled = true
 region_rect = Rect2(22.066511, 139.48767, 43.09059, 45.005737)
 
 [node name="onlyUp" type="Sprite2D" parent="." unique_id=1273273216]
+visible = false
 position = Vector2(313, 613)
 texture = ExtResource("6_jsrd8")
 region_enabled = true

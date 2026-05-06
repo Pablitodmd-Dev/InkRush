@@ -39,12 +39,14 @@
 [ext_resource type="Texture2D" uid="uid://bmaa5d2pu68p8" path="res://Assets/StoryModeIntro/images/53 sin título_20260506110554.png" id="26_od138"]
 [ext_resource type="Texture2D" uid="uid://grj08t07dks" path="res://Assets/StoryModeIntro/images/53 sin título_20260506112754.png" id="27_xpwg7"]
 [ext_resource type="Texture2D" uid="uid://c7vuuyd6baaup" path="res://Assets/StoryModeIntro/images/53 sin título_20260506112855.png" id="28_ud36e"]
+[ext_resource type="Texture2D" uid="uid://c8q2fqbh6ktuw" path="res://Assets/Menu/start.png" id="30_2ievg"]
 [ext_resource type="AudioStream" uid="uid://ba5t4gudf7tfo" path="res://Assets/StoryModeIntro/sounds/Narrator7.wav" id="32_mr4bc"]
 [ext_resource type="AudioStream" uid="uid://c4wdojjx3kig5" path="res://Assets/StoryModeIntro/sounds/Narrator8.wav" id="35_l0kv4"]
 [ext_resource type="AudioStream" uid="uid://b4rist15flxcj" path="res://Assets/StoryModeIntro/sounds/Narrator9.wav" id="38_xujuj"]
 [ext_resource type="AudioStream" uid="uid://ci7u2bvfp2wyn" path="res://Assets/StoryModeIntro/sounds/Exclamation.mp3" id="39_xpwg7"]
 [ext_resource type="AudioStream" uid="uid://dqxbg5klice0f" path="res://Assets/StoryModeIntro/sounds/Sound effect-_wrestling ring Bell_ boxing match[HD] _video(SFX).mp3" id="43_ud36e"]
 [ext_resource type="FontFile" uid="uid://0qwe45n8sxkd" path="res://Assets/Microgames/TableTurf Final Boss/PatrickHand-Regular.ttf" id="45_iluje"]
+[ext_resource type="AudioStream" uid="uid://b6jg54r5gd0ru" path="res://Assets/StoryModeIntro/sounds/introgamesound.wav" id="46_1jnwo"]
 
 [sub_resource type="Animation" id="Animation_r67h3"]
 length = 0.001
@@ -840,10 +842,58 @@ tracks/65/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0.196522)]
 }
+tracks/66/type = "value"
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/path = NodePath("Audios/PaperSound:volume_db")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [15.0]
+}
+tracks/67/type = "value"
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/path = NodePath("Images/TextureRect30:modulate")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/68/type = "value"
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/path = NodePath("Audios/IntroGame:playing")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/69/type = "value"
+tracks/69/imported = false
+tracks/69/enabled = true
+tracks/69/path = NodePath("Audios/IntroGame:volume_db")
+tracks/69/interp = 1
+tracks/69/loop_wrap = true
+tracks/69/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-8.0]
+}
 
 [sub_resource type="Animation" id="Animation_rqpde"]
 resource_name = "intro"
-length = 70.0
+length = 71.23333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1636,6 +1686,54 @@ tracks/65/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/66/type = "value"
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/path = NodePath("Audios/PaperSound:volume_db")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/keys = {
+"times": PackedFloat32Array(4.5687904),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [15.0]
+}
+tracks/67/type = "value"
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/path = NodePath("Images/TextureRect30:modulate")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/keys = {
+"times": PackedFloat32Array(69, 70.666664, 71.166664),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/68/type = "value"
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/path = NodePath("Audios/IntroGame:playing")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/keys = {
+"times": PackedFloat32Array(68.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/69/type = "value"
+tracks/69/imported = false
+tracks/69/enabled = true
+tracks/69/path = NodePath("Audios/IntroGame:volume_db")
+tracks/69/interp = 1
+tracks/69/loop_wrap = true
+tracks/69/keys = {
+"times": PackedFloat32Array(68.70386),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-8.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5fj63"]
 _data = {
@@ -1901,10 +1999,19 @@ offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 1)
 
+[node name="TextureRect30" type="TextureRect" parent="Images" unique_id=1454828222]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+pivot_offset = Vector2(582, 370)
+texture = ExtResource("30_2ievg")
+
 [node name="Audios" type="Node2D" parent="." unique_id=766591593]
 
 [node name="PaperSound" type="AudioStreamPlayer2D" parent="Audios" unique_id=829207968]
 stream = ExtResource("6_6d6i7")
+volume_db = 15.0
 
 [node name="Narrator1" type="AudioStreamPlayer2D" parent="Audios" unique_id=901143380]
 stream = ExtResource("6_x8lvl")
@@ -1961,6 +2068,10 @@ stream = ExtResource("39_xpwg7")
 [node name="BellSoundEffect" type="AudioStreamPlayer2D" parent="Audios" unique_id=1743698475]
 stream = ExtResource("43_ud36e")
 volume_db = 10.0
+
+[node name="IntroGame" type="AudioStreamPlayer2D" parent="Audios" unique_id=1304286507]
+stream = ExtResource("46_1jnwo")
+volume_db = -8.0
 
 [node name="Texts" type="Control" parent="." unique_id=1894526705]
 anchors_preset = 0
