@@ -6,6 +6,28 @@
 [ext_resource type="Texture2D" uid="uid://dpyybmc638ihv" path="res://Assets/MainMenu/StoryModeButton.png" id="4_8um5k"]
 [ext_resource type="Texture2D" uid="uid://beqdsal3g4osd" path="res://Assets/MainMenu/EndlessModeButton.png" id="5_xim88"]
 [ext_resource type="Texture2D" uid="uid://dh86p0fj8s46a" path="res://Assets/MainMenu/EndlessModeButtonInactive(1).png" id="6_8um5k"]
+[ext_resource type="Texture2D" uid="uid://8rh6nbk364ps" path="res://Assets/MainMenu/44 sin título_20260505183348(1).png" id="7_xim88"]
+[ext_resource type="AudioStream" uid="uid://cxth2xudu0kx5" path="res://Assets/MainMenu/Sunrise_at_the_Citadel.mp3" id="8_koqhg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_koqhg"]
+radius = 45.01111
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmrfp"]
+size = Vector2(103, 139)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_loo7a"]
+radius = 42.000015
+height = 107.999985
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_if7li"]
+size = Vector2(48.999992, 171)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrcx7"]
+size = Vector2(130, 133)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fh7cp"]
+radius = 50.000008
+height = 138.0
 
 [node name="MainMenu" type="Control" unique_id=2088546402]
 layout_mode = 3
@@ -14,10 +36,52 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_tt5f1")
 
+[node name="Node2D" type="Node2D" parent="." unique_id=204927672]
+
+[node name="PokeballArea" type="Area2D" parent="Node2D" unique_id=1050456094]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/PokeballArea" unique_id=768013326]
+position = Vector2(133, 535)
+shape = SubResource("CircleShape2D_koqhg")
+
+[node name="EifetTowerArea" type="Area2D" parent="Node2D" unique_id=1900266231]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/EifetTowerArea" unique_id=1792878703]
+position = Vector2(287, 78)
+shape = SubResource("RectangleShape2D_cmrfp")
+
+[node name="MushroomArea" type="Area2D" parent="Node2D" unique_id=1952399344]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/MushroomArea" unique_id=1063363635]
+position = Vector2(287, 508)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_loo7a")
+
+[node name="CarArea" type="Area2D" parent="Node2D" unique_id=694629317]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/CarArea" unique_id=541544323]
+position = Vector2(823, 67)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_if7li")
+
+[node name="RubikCube" type="Area2D" parent="Node2D" unique_id=1838029754]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/RubikCube" unique_id=2109680821]
+position = Vector2(1002.5, 122)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_rrcx7")
+
+[node name="KitchenHatArea" type="Area2D" parent="Node2D" unique_id=812562227]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/KitchenHatArea" unique_id=1560111679]
+position = Vector2(141, 82)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_fh7cp")
+
 [node name="BackgroundNormal" type="Sprite2D" parent="." unique_id=994287090]
-modulate = Color(0.6190818, 0.6190819, 0.6190818, 1)
 position = Vector2(576, 324)
 texture = ExtResource("2_853f1")
 
@@ -37,9 +101,9 @@ stretch_mode = 0
 
 [node name="EndlessMode" type="TextureButton" parent="." unique_id=828735737]
 layout_mode = 0
-offset_left = 582.0
-offset_top = 183.0
-offset_right = 715.0
+offset_left = 573.0
+offset_top = 168.0
+offset_right = 723.0
 offset_bottom = 259.0
 texture_normal = ExtResource("5_xim88")
 ignore_texture_size = true
@@ -55,4 +119,25 @@ texture_normal = ExtResource("6_8um5k")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="TextureRect5" type="TextureRect" parent="." unique_id=902108521]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 10.0
+offset_right = 733.0
+offset_bottom = 160.0
+texture = ExtResource("7_xim88")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=468253198]
+stream = ExtResource("8_koqhg")
+volume_db = -5.0
+autoplay = true
+
+[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="." unique_id=436965674]
+
+[connection signal="input_event" from="Node2D/PokeballArea" to="." method="_on_pokeball_area_input_event"]
+[connection signal="input_event" from="Node2D/EifetTowerArea" to="." method="_on_eifet_tower_area_input_event"]
+[connection signal="input_event" from="Node2D/MushroomArea" to="." method="_on_mushroom_area_input_event"]
+[connection signal="input_event" from="Node2D/CarArea" to="." method="_on_car_area_input_event"]
+[connection signal="input_event" from="Node2D/RubikCube" to="." method="_on_rubik_cube_input_event"]
+[connection signal="input_event" from="Node2D/KitchenHatArea" to="." method="_on_kitchen_hat_area_input_event"]
 [connection signal="pressed" from="StoryMode" to="." method="_on_story_mode_pressed"]
