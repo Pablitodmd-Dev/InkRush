@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dqxbg5klice0f"
+path="res://.godot/imported/Sound effect-_wrestling ring Bell_ boxing match[HD] _video(SFX).mp3-5e3f06ec72432157e1593a1c37d13007.mp3str"
+
+[deps]
+
+source_file="res://Assets/StoryModeIntro/sounds/Sound effect-_wrestling ring Bell_ boxing match[HD] _video(SFX).mp3"
+dest_files=["res://.godot/imported/Sound effect-_wrestling ring Bell_ boxing match[HD] _video(SFX).mp3-5e3f06ec72432157e1593a1c37d13007.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

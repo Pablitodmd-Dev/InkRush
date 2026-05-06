@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b6ar5qmy42hkc"
+path="res://.godot/imported/Serious Trouble - Mario & Luigi_ Partners in Time [OST].mp3-5b50f35470fe4ed789e479c383fd5ad0.mp3str"
+
+[deps]
+
+source_file="res://Assets/StoryModeIntro/music/Serious Trouble - Mario & Luigi_ Partners in Time [OST].mp3"
+dest_files=["res://.godot/imported/Serious Trouble - Mario & Luigi_ Partners in Time [OST].mp3-5b50f35470fe4ed789e479c383fd5ad0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
