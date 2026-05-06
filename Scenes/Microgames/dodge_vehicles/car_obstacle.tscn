@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://glr6dr86v24j"]
+
+[ext_resource type="Script" uid="uid://bptsvngtsbxhl" path="res://Scripts/dodge_vehicles/car_obstacle.gd" id="1_b56ud"]
+[ext_resource type="Texture2D" uid="uid://bnc207vkvfxxl" path="res://Assets/Microgames/dodge_vehicles/enemy_vehicle-Photoroom.png" id="2_b56ud"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_th7ce"]
+size = Vector2(112, 194)
+
+[node name="CarObstacle" type="Area2D" unique_id=143810493 groups=["enemies"]]
+texture_filter = 1
+script = ExtResource("1_b56ud")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1908605297]
+position = Vector2(19.000011, 8.349482)
+scale = Vector2(0.43563002, 0.39447805)
+texture = ExtResource("2_b56ud")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1550900547]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_th7ce")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=105264846]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

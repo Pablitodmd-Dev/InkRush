@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bct2oe1lulyhe"
+path="res://.godot/imported/BossTheme.mp3-d6250cbea6793b143e21de03c64c93ef.mp3str"
+
+[deps]
+
+source_file="res://Scenes/Microgames/TableTurf Final Boss/BossTheme.mp3"
+dest_files=["res://.godot/imported/BossTheme.mp3-d6250cbea6793b143e21de03c64c93ef.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

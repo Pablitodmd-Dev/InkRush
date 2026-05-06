@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cvdyq2c15p5sb"]
+
+[ext_resource type="Texture2D" uid="uid://cvkeo6otut3et" path="res://Assets/Microgames/The Last Lesson/board.png" id="1_1v6we"]
+[ext_resource type="Script" uid="uid://lvqunhtlfrck" path="res://Scripts/The Last Lesson/main.gd" id="1_1x5l5"]
+
+[node name="Main" type="Node2D" unique_id=1263790000]
+script = ExtResource("1_1x5l5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=139576642]
+position = Vector2(579.5, 500.375)
+scale = Vector2(0.7448052, 0.67613643)
+texture = ExtResource("1_1v6we")
+
+[node name="Question" type="Label" parent="." unique_id=1765013804]
+unique_name_in_owner = true
+offset_left = 187.0
+offset_top = 235.0
+offset_right = 519.0
+offset_bottom = 282.0
+text = "Loading Question...."
+horizontal_alignment = 1
+
+[node name="optionA" type="Button" parent="." unique_id=2007357918]
+unique_name_in_owner = true
+offset_left = 120.0
+offset_top = 341.0
+offset_right = 208.0
+offset_bottom = 372.0
+text = "A"
+
+[node name="optionB" type="Button" parent="." unique_id=1660201937]
+unique_name_in_owner = true
+offset_left = 316.0
+offset_top = 341.0
+offset_right = 399.0
+offset_bottom = 372.0
+text = "B"
+
+[node name="optionC" type="Button" parent="." unique_id=1573178579]
+unique_name_in_owner = true
+offset_left = 496.0
+offset_top = 339.0
+offset_right = 581.0
+offset_bottom = 370.0
+text = "C"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1765875580]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1894933812]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="optionA" to="." method="_on_option_a_pressed"]
+[connection signal="pressed" from="optionB" to="." method="_on_option_b_pressed"]
+[connection signal="pressed" from="optionC" to="." method="_on_option_c_pressed"]

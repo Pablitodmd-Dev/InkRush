@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://b7ixivo6a1bne"]
+
+[ext_resource type="Script" uid="uid://7nl8k5n2cm1v" path="res://Scripts/Hit the Fruit/archer.gd" id="1_u540x"]
+[ext_resource type="PackedScene" uid="uid://dprk7yipeps0o" path="res://Scenes/Microgames/Hit the fruit/Arrow.tscn" id="2_7l3d2"]
+[ext_resource type="Texture2D" uid="uid://daqpho8kwa5td" path="res://Assets/Microgames/Hit the Fruit/Arrow and Bow.png" id="2_gr2sn"]
+[ext_resource type="Texture2D" uid="uid://bqrukigbej0a7" path="res://Assets/Microgames/Hit the Fruit/Character.png" id="3_dfqup"]
+[ext_resource type="Texture2D" uid="uid://cx62xj7vpunx5" path="res://Assets/Microgames/Hit the Fruit/AimCircle.png" id="4_n5vx6"]
+[ext_resource type="AudioStream" uid="uid://b6d2nbvfbp0f3" path="res://Assets/Microgames/Hit the Fruit/sounds/HitFruitSound.wav" id="6_dfqup"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s276f"]
+atlas = ExtResource("3_dfqup")
+region = Rect2(0, 0, 72, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43844"]
+atlas = ExtResource("3_dfqup")
+region = Rect2(72, 0, 72, 216)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n5vx6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s276f")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43844")
+}],
+"loop": true,
+"name": &"win",
+"speed": 5.0
+}]
+
+[node name="Archer" type="Node2D" unique_id=1390194333]
+script = ExtResource("1_u540x")
+arrow_scene = ExtResource("2_7l3d2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=260123487]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_n5vx6")
+animation = &"win"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=43266592]
+position = Vector2(44, 18)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_gr2sn")
+region_enabled = true
+region_rect = Rect2(57.271763, 112.23994, 74.21175, 109.74474)
+
+[node name="Line2D" type="Line2D" parent="." unique_id=240345919]
+texture_repeat = 2
+position = Vector2(36.53846, 19)
+scale = Vector2(0.9692308, 1)
+points = PackedVector2Array(0, 0, 227.46031, -1)
+width = 25.0
+default_color = Color(0.92622006, 0, 0.18547997, 1)
+texture = ExtResource("4_n5vx6")
+texture_mode = 1
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=1985368693]
+position = Vector2(37, 19)
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="." unique_id=347396039]
+stream = ExtResource("6_dfqup")

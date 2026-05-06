@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://brgwsfwnnjxbk" path="res://Scenes/Microgames/trampoline_game/spring.tscn" id="3_ftqrp"]
 [ext_resource type="Texture2D" uid="uid://cstgqchg2yv4l" path="res://Assets/Microgames/trampoline_game/back_cave.png" id="3_pvkkj"]
 [ext_resource type="AudioStream" uid="uid://cyd8bhcmemm72" path="res://Assets/Microgames/trampoline_game/fastpacetune2.ogg" id="5_emcvb"]
+[ext_resource type="Texture2D" uid="uid://lqkfpke5tvg8" path="res://Assets/Timer/Timer.png" id="7_q4fmi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ftqrp"]
 texture = ExtResource("1_82sgi")
@@ -279,6 +280,63 @@ sources/0 = SubResource("TileSetAtlasSource_6ait7")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ait7"]
 size = Vector2(1150, 30.5)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2j6l"]
+atlas = ExtResource("7_q4fmi")
+region = Rect2(0, 0, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3c4b8"]
+atlas = ExtResource("7_q4fmi")
+region = Rect2(0, 45, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stfay"]
+atlas = ExtResource("7_q4fmi")
+region = Rect2(0, 90, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a556t"]
+atlas = ExtResource("7_q4fmi")
+region = Rect2(0, 135, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aagdb"]
+atlas = ExtResource("7_q4fmi")
+region = Rect2(0, 180, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2ywv"]
+atlas = ExtResource("7_q4fmi")
+region = Rect2(0, 225, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22i5k"]
+atlas = ExtResource("7_q4fmi")
+region = Rect2(0, 270, 370, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3do6h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2j6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3c4b8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stfay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a556t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aagdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2ywv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22i5k")
+}],
+"loop": true,
+"name": &"countdown",
+"speed": 1.0
+}]
+
 [node name="trampoline" type="Node2D" unique_id=1925429596]
 script = ExtResource("1_6ait7")
 
@@ -318,4 +376,15 @@ volume_db = 8.398
 autoplay = true
 parameters/looping = true
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1009357163]
+position = Vector2(407, 46)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_3do6h")
+animation = &"countdown"
+
+[node name="Timer" type="Timer" parent="." unique_id=690735709]
+wait_time = 5.5
+one_shot = true
+
 [connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

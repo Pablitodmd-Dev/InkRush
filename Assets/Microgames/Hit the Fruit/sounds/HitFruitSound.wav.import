@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b6d2nbvfbp0f3"
+path="res://.godot/imported/HitFruitSound.wav-e18db19bcd2771b0cae3edc2a597c354.sample"
+
+[deps]
+
+source_file="res://Assets/Microgames/Hit the Fruit/sounds/HitFruitSound.wav"
+dest_files=["res://.godot/imported/HitFruitSound.wav-e18db19bcd2771b0cae3edc2a597c354.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

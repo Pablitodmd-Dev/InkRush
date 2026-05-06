@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://cxam3ngwtb62y"]
 
-[ext_resource type="Texture2D" uid="uid://cookypqhpxm77" path="res://Assets/Microgames/Dodge the balls/2.png" id="1_cb7e8"]
+[ext_resource type="Script" uid="uid://5g8b2uui7flx" path="res://Scripts/Dodge the ball/dodge.gd" id="1_66v0l"]
+[ext_resource type="Texture2D" uid="uid://30d301veeai3" path="res://Assets/Microgames/Dodge the balls/pitch.png" id="1_cb7e8"]
 [ext_resource type="Texture2D" uid="uid://cuj4sc5ludvk6" path="res://Assets/Microgames/Dodge the balls/border5.png" id="2_mikc2"]
 [ext_resource type="PackedScene" uid="uid://c28svxpc8086h" path="res://Scenes/Microgames/Dodge the balls/ball.tscn" id="3_66v0l"]
 [ext_resource type="PackedScene" uid="uid://bctyxbdlbgruh" path="res://Scenes/Microgames/Dodge the balls/player_car.tscn" id="4_ctq5k"]
+[ext_resource type="Texture2D" uid="uid://lqkfpke5tvg8" path="res://Assets/Timer/Timer.png" id="6_ctq5k"]
+[ext_resource type="AudioStream" uid="uid://cuxy8w15kr1n8" path="res://Assets/Microgames/Dodge the balls/dodge-balls.mp3" id="7_ctq5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhcxe"]
 size = Vector2(1270.5, 6)
@@ -17,13 +20,71 @@ size = Vector2(5, 655.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vm6a"]
 size = Vector2(1276, 4.5)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2j6l"]
+atlas = ExtResource("6_ctq5k")
+region = Rect2(0, 0, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3c4b8"]
+atlas = ExtResource("6_ctq5k")
+region = Rect2(0, 45, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stfay"]
+atlas = ExtResource("6_ctq5k")
+region = Rect2(0, 90, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a556t"]
+atlas = ExtResource("6_ctq5k")
+region = Rect2(0, 135, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aagdb"]
+atlas = ExtResource("6_ctq5k")
+region = Rect2(0, 180, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2ywv"]
+atlas = ExtResource("6_ctq5k")
+region = Rect2(0, 225, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22i5k"]
+atlas = ExtResource("6_ctq5k")
+region = Rect2(0, 270, 370, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j88eu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2j6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3c4b8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stfay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a556t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aagdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2ywv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22i5k")
+}],
+"loop": true,
+"name": &"countdown",
+"speed": 1.0
+}]
+
 [node name="Dodge" type="Node2D" unique_id=384416477]
 position = Vector2(9, 11)
+script = ExtResource("1_66v0l")
 
 [node name="background" type="Sprite2D" parent="." unique_id=854340734]
 z_index = -1
-position = Vector2(5.5, 1.0000081)
-scale = Vector2(9.0078125, 5.0625)
+position = Vector2(8.500046, -0.50001144)
+scale = Vector2(0.9973959, 0.9799383)
 texture = ExtResource("1_cb7e8")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=625252371]
@@ -65,19 +126,37 @@ shape = SubResource("RectangleShape2D_1vm6a")
 [node name="balls" type="Node2D" parent="." unique_id=1110553696]
 
 [node name="Ball2" parent="balls" unique_id=1402104833 groups=["balls"] instance=ExtResource("3_66v0l")]
-position = Vector2(-431, -210)
+position = Vector2(-474, -235)
 
 [node name="Ball5" parent="balls" unique_id=1973790165 groups=["balls"] instance=ExtResource("3_66v0l")]
-position = Vector2(391, 154)
+position = Vector2(487, 252)
 
 [node name="Ball3" parent="balls" unique_id=246775177 groups=["balls"] instance=ExtResource("3_66v0l")]
-position = Vector2(461, -225)
+position = Vector2(504, -246)
 
 [node name="Ball4" parent="balls" unique_id=1197625879 groups=["balls"] instance=ExtResource("3_66v0l")]
-position = Vector2(-384, 130)
+position = Vector2(-425, 237)
 
 [node name="PlayerCar" parent="." unique_id=1718791426 instance=ExtResource("4_ctq5k")]
 position = Vector2(-7, -12)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=20522130]
 position = Vector2(5, 1)
+
+[node name="Timer" type="Timer" parent="." unique_id=992228750]
+wait_time = 5.5
+one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1332246476]
+position = Vector2(-190, 279)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_j88eu")
+animation = &"countdown"
+frame = 1
+frame_progress = 0.35378447
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1093744261]
+stream = ExtResource("7_ctq5k")
+autoplay = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

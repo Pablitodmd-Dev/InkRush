@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cw4nclswcwe4b"]
+
+[ext_resource type="Texture2D" uid="uid://bdnhck0cua6k1" path="res://Assets/Microgames/dodge_vehicles/road.png" id="1_kyqvq"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" unique_id=317593496]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=246580337]
+motion_mirroring = Vector2(0, 730)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer" unique_id=324303931]
+texture_repeat = 2
+position = Vector2(577.09106, 306.72336)
+rotation = -3.1421268
+scale = Vector2(0.7499201, 0.76163703)
+texture = ExtResource("1_kyqvq")

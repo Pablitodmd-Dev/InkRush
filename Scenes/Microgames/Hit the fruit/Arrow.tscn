@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dprk7yipeps0o"]
+
+[ext_resource type="Script" uid="uid://hu7fgbbqaod" path="res://Scripts/Hit the Fruit/arrow.gd" id="1_h4ipl"]
+[ext_resource type="Texture2D" uid="uid://daqpho8kwa5td" path="res://Assets/Microgames/Hit the Fruit/Arrow and Bow.png" id="1_kyvjk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h4ipl"]
+radius = 7.0
+height = 14.0
+
+[node name="Arrow" type="Area2D" unique_id=874605234 groups=["Arrow"]]
+script = ExtResource("1_h4ipl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=988699431]
+rotation = 0.6457718
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_kyvjk")
+region_enabled = true
+region_rect = Rect2(116.98492, 66.02879, 75.862144, 65.30696)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=630586589]
+position = Vector2(43, -2)
+shape = SubResource("CapsuleShape2D_h4ipl")
+debug_color = Color(0.39994493, 0.6090765, 0.015177551, 0.41960785)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://m0jmc7lhd5cs"]
+
+[ext_resource type="Script" uid="uid://b3yjmycxxs3kw" path="res://Scripts/TableTurf Final Boss/card_data.gd" id="1_t05d7"]
+[ext_resource type="Texture2D" uid="uid://cq0om7axmtsml" path="res://Assets/Microgames/TableTurf Final Boss/cards/Dagger.png" id="1_tcse5"]
+
+[resource]
+resource_name = "Dagger"
+script = ExtResource("1_t05d7")
+name = "Dagger"
+power = 3
+card_texture = ExtResource("1_tcse5")
+occupied_cells = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(0, 2)])
+metadata/_custom_type_script = "uid://b3yjmycxxs3kw"

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dgwvjyg7m43ho"]
+
+[ext_resource type="Texture2D" uid="uid://dtg5g10rx86xl" path="res://Assets/Microgames/Hit the Fruit/Fruit.png" id="1_vp2df"]
+[ext_resource type="Script" uid="uid://cdjg4m6s172pk" path="res://Scripts/Hit the Fruit/target.gd" id="1_x8d5r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x8d5r"]
+radius = 52.153618
+
+[node name="Target" type="Area2D" unique_id=190506642 groups=["target"]]
+script = ExtResource("1_x8d5r")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1908524441]
+texture = ExtResource("1_vp2df")
+region_enabled = true
+region_rect = Rect2(90.04465, 2.8048763, 121.883545, 211.05548)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1032847994]
+position = Vector2(0, 46)
+shape = SubResource("CircleShape2D_x8d5r")
+debug_color = Color(0.9166126, 0.27773932, 0.20009246, 0.41960785)

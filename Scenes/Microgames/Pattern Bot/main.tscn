@@ -1,0 +1,221 @@
+[gd_scene format=3 uid="uid://ck3q7ct3n4h0s"]
+
+[ext_resource type="Script" uid="uid://3ntroqh2swb5" path="res://Scripts/Pattern Bot/main.gd" id="1_46wrp"]
+[ext_resource type="Texture2D" uid="uid://c7qy6xd0vqvu" path="res://Assets/Microgames/Pattern Bot/robots.png" id="2_hupnw"]
+[ext_resource type="Texture2D" uid="uid://bfhy8j85tp87i" path="res://Assets/Microgames/Pattern Bot/bg_robot.jpg" id="3_hupnw"]
+[ext_resource type="AudioStream" uid="uid://b4jqxvw04u7ev" path="res://Assets/Microgames/Pattern Bot/true.wav" id="4_maq16"]
+[ext_resource type="AudioStream" uid="uid://cciixeit3iyv0" path="res://Assets/Microgames/Pattern Bot/win.wav" id="5_26875"]
+[ext_resource type="AudioStream" uid="uid://uarweyweq1o2" path="res://Assets/Microgames/Pattern Bot/incorretoptionm.mp3" id="6_hupnw"]
+[ext_resource type="Texture2D" uid="uid://lqkfpke5tvg8" path="res://Assets/Timer/Timer.png" id="7_jltw2"]
+[ext_resource type="AudioStream" uid="uid://dkbp5pg6b7l2a" path="res://Assets/Microgames/Pattern Bot/patternrobot.mp3" id="8_whl5g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jltw2"]
+atlas = ExtResource("2_hupnw")
+region = Rect2(0, 0, 268, 464)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whl5g"]
+atlas = ExtResource("2_hupnw")
+region = Rect2(268, 0, 268, 464)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_maq16"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jltw2")
+}],
+"loop": true,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whl5g")
+}],
+"loop": true,
+"name": &"repaired",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lc7d2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_46wrp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58jnk"]
+atlas = ExtResource("7_jltw2")
+region = Rect2(0, 0, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j16jm"]
+atlas = ExtResource("7_jltw2")
+region = Rect2(0, 45, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2hcr"]
+atlas = ExtResource("7_jltw2")
+region = Rect2(0, 90, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exuol"]
+atlas = ExtResource("7_jltw2")
+region = Rect2(0, 135, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn1j5"]
+atlas = ExtResource("7_jltw2")
+region = Rect2(0, 180, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l84pf"]
+atlas = ExtResource("7_jltw2")
+region = Rect2(0, 225, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qh601"]
+atlas = ExtResource("7_jltw2")
+region = Rect2(0, 270, 370, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_27817"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58jnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j16jm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2hcr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exuol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn1j5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l84pf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qh601")
+}],
+"loop": true,
+"name": &"countdown",
+"speed": 1.0
+}]
+
+[node name="Main" type="Node2D" unique_id=2103921213]
+script = ExtResource("1_46wrp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1744309112]
+z_index = 8
+position = Vector2(560, 458.36874)
+scale = Vector2(1.8606946, 1.6050379)
+sprite_frames = SubResource("SpriteFrames_maq16")
+animation = &"broken"
+autoplay = "broken"
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=893409820]
+z_index = 10
+offset_left = 495.0
+offset_top = 306.0
+offset_right = 621.0
+offset_bottom = 407.0
+columns = 3
+
+[node name="Button" type="Button" parent="GridContainer" unique_id=1869159443]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxEmpty_lc7d2")
+text = "1"
+
+[node name="Button2" type="Button" parent="GridContainer" unique_id=1763493088]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxEmpty_46wrp")
+text = "2"
+
+[node name="Button3" type="Button" parent="GridContainer" unique_id=1086397488]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxEmpty_46wrp")
+text = "3"
+
+[node name="Button4" type="Button" parent="GridContainer" unique_id=876891287]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxEmpty_46wrp")
+text = "4"
+
+[node name="Button5" type="Button" parent="GridContainer" unique_id=1637291630]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxEmpty_46wrp")
+text = "5"
+
+[node name="Button6" type="Button" parent="GridContainer" unique_id=2008669272]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxEmpty_46wrp")
+text = "6"
+
+[node name="Button7" type="Button" parent="GridContainer" unique_id=2104765270]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxEmpty_46wrp")
+text = "7"
+
+[node name="Button8" type="Button" parent="GridContainer" unique_id=82183061]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxEmpty_46wrp")
+text = "8"
+
+[node name="Button9" type="Button" parent="GridContainer" unique_id=1160386837]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxEmpty_46wrp")
+text = "9"
+
+[node name="Timer" type="Timer" parent="." unique_id=2001837724]
+one_shot = true
+autostart = true
+
+[node name="Bg2" type="Sprite2D" parent="." unique_id=1455306664]
+z_index = 1
+position = Vector2(527.7241, 249.00002)
+scale = Vector2(1.2209648, 1.3179013)
+texture = ExtResource("3_hupnw")
+metadata/_edit_lock_ = true
+
+[node name="correctOption" type="AudioStreamPlayer2D" parent="." unique_id=230270965]
+unique_name_in_owner = true
+stream = ExtResource("4_maq16")
+
+[node name="win" type="AudioStreamPlayer2D" parent="." unique_id=1114078641]
+unique_name_in_owner = true
+stream = ExtResource("5_26875")
+
+[node name="incorrectOption" type="AudioStreamPlayer2D" parent="." unique_id=477273429]
+unique_name_in_owner = true
+stream = ExtResource("6_hupnw")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1803636934]
+z_index = 16
+position = Vector2(280.5, 602.75)
+scale = Vector2(1.3648648, 2.2777777)
+sprite_frames = SubResource("SpriteFrames_27817")
+animation = &"countdown"
+
+[node name="Timer2" type="Timer" parent="." unique_id=1151512160]
+wait_time = 5.5
+one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1002247811]
+stream = ExtResource("8_whl5g")
+autoplay = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

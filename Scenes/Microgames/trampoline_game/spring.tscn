@@ -58,7 +58,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"compress",
-"speed": 10.0
+"speed": 20.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4p3qg"]
@@ -74,8 +74,8 @@ position = Vector2(0.37500072, -28.125006)
 scale = Vector2(0.33605075, 0.17206787)
 sprite_frames = SubResource("SpriteFrames_cro43")
 animation = &"compress"
-frame = 1
-frame_progress = 0.6234544
+frame = 6
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=70818267]
 position = Vector2(1, -25)

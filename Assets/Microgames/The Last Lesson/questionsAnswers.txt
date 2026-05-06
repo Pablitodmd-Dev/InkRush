@@ -1,0 +1,15 @@
+[
+  {"question":"What's the Capital of France.","answers":[{"Paris":"true"},{"Berlin":"false"},{"Madrid":"false"}]},
+  {"question":"What's the result of 3³","answers":[{"9":"false"},{"27":"true"},{"81":"false"}]},
+  {"question":"Who painted the Mona Lisa?","answers":[{"Dali":"false"},{"Da Vinci":"true"},{"Picasso":"false"}]},
+  {"question":"Where is the Sagrada Familia located?","answers":[{"Barcelona":"true"},{"Bilbao":"false"},{"Sevilla":"false"}]},
+  {"question":"What sport did Michael Jordan play?","answers":[{"Basketball":"true"},{"Hockey":"false"},{"Football":"false"}]},
+  {"question":"What is the currency of the United Kingdom?","answers":[{"Euro":"false"},{"Pound":"true"},{"USD":"false"}]},
+  {"question":"Which is the largest planet in our Solar System?","answers":[{"Saturn":"false"},{"Jupiter":"true"},{"Mars":"false"}]},
+  {"question":"What is the largest ocean on Earth?","answers":[{"Atlantic":"false"},{"Indian":"false"},{"Pacific":"true"}]},
+  {"question":"In what year did World War II end?","answers":[{"1939":"false"},{"1945":"true"},{"1918":"false"}]},
+  {"question":"What is the largest organ in the human body?","answers":[{"Skin":"true"},{"Liver":"false"},{"Heart":"false"}]},
+  {"question":"Who wrote 'Don Quixote'?","answers":[{"Shakespeare":"false"},{"Cervantes":"true"},{"Dante":"false"}]},
+  {"question":"What chemical element has the symbol 'Au'?","answers":[{"Silver":"false"},{"Copper":"false"},{"Gold":"true"}]},
+  {"question": "How many months have 28 days?","answers": [{"Only one": "false"},{"Every month": "true"},{"None": "false"}]}
+]

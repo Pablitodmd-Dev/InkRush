@@ -106,7 +106,18 @@ animations = [{
 size = Vector2(140.75, 56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7seya"]
-size = Vector2(141, 57)
+size = Vector2(144, 58)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b1gqg"]
+radius = 29.551083
+height = 133.56174
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1gqg"]
+size = Vector2(60, 89)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_54kai"]
+radius = 28.299438
+height = 118.85419
 
 [node name="PlayerCar" type="CharacterBody2D" unique_id=1718791426]
 script = ExtResource("1_iwbkh")
@@ -115,7 +126,7 @@ script = ExtResource("1_iwbkh")
 position = Vector2(6.000004, -1)
 scale = Vector2(1.69, 1.4399999)
 sprite_frames = SubResource("SpriteFrames_k5784")
-animation = &"left"
+animation = &"up_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1774144929]
 position = Vector2(2.625, 4)
@@ -123,8 +134,26 @@ shape = SubResource("RectangleShape2D_iwbkh")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=504736209]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=878020164]
-position = Vector2(2.5, 4.5)
+[node name="horizontal" type="CollisionShape2D" parent="Area2D" unique_id=878020164]
+unique_name_in_owner = true
+position = Vector2(3, 4)
 shape = SubResource("RectangleShape2D_7seya")
+
+[node name="diagonal" type="CollisionShape2D" parent="Area2D" unique_id=1838262321]
+unique_name_in_owner = true
+position = Vector2(9.000001, 5)
+rotation = 2.2933626
+shape = SubResource("CapsuleShape2D_b1gqg")
+
+[node name="vertical" type="CollisionShape2D" parent="Area2D" unique_id=251499856]
+unique_name_in_owner = true
+position = Vector2(5, 1.5)
+shape = SubResource("RectangleShape2D_b1gqg")
+
+[node name="diagonal2" type="CollisionShape2D" parent="Area2D" unique_id=1743753479]
+unique_name_in_owner = true
+position = Vector2(5, 3.0000005)
+rotation = 0.79761547
+shape = SubResource("CapsuleShape2D_54kai")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

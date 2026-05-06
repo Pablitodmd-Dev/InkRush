@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://8ia8cbr2fy70"]
+
+[ext_resource type="Texture2D" uid="uid://bgor5cdjt5ovb" path="res://Assets/Microgames/score_the_goal/balls.png" id="1_3tuto"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5y70"]
+atlas = ExtResource("1_3tuto")
+region = Rect2(164.33264, 161.33334, 162.66666, 156)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a7pu1"]
+radius = 29.017237
+
+[node name="ball" type="CharacterBody2D" unique_id=38758623]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1586259811]
+position = Vector2(0.4999993, -1.1920929e-07)
+scale = Vector2(0.3888889, 0.3846154)
+texture = SubResource("AtlasTexture_e5y70")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=278379203]
+shape = SubResource("CircleShape2D_a7pu1")

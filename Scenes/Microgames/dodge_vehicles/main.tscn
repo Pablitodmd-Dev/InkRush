@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://ykfrvbsqckqh"]
+
+[ext_resource type="Script" uid="uid://gdv8cergjxrc" path="res://Scripts/dodge_vehicles/node_2d.gd" id="1_7l2j0"]
+[ext_resource type="PackedScene" uid="uid://cw4nclswcwe4b" path="res://Scenes/Microgames/dodge_vehicles/parallax_background.tscn" id="2_yuoq1"]
+[ext_resource type="PackedScene" uid="uid://bdgerhtfx1d24" path="res://Scenes/Microgames/dodge_vehicles/player.tscn" id="3_pa6x6"]
+[ext_resource type="Texture2D" uid="uid://lqkfpke5tvg8" path="res://Assets/Timer/Timer.png" id="4_yuoq1"]
+[ext_resource type="AudioStream" uid="uid://cuo5dfehkhaws" path="res://Assets/Microgames/dodge_vehicles/Last_Quarter_Standing.mp3" id="5_pa6x6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pa6x6"]
+atlas = ExtResource("4_yuoq1")
+region = Rect2(0, 0, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_555u0"]
+atlas = ExtResource("4_yuoq1")
+region = Rect2(0, 45, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bj7g"]
+atlas = ExtResource("4_yuoq1")
+region = Rect2(0, 90, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2m31"]
+atlas = ExtResource("4_yuoq1")
+region = Rect2(0, 135, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qmdv"]
+atlas = ExtResource("4_yuoq1")
+region = Rect2(0, 180, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02b6t"]
+atlas = ExtResource("4_yuoq1")
+region = Rect2(0, 225, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6bsx"]
+atlas = ExtResource("4_yuoq1")
+region = Rect2(0, 270, 370, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y1xho"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pa6x6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_555u0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bj7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2m31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qmdv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02b6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6bsx")
+}],
+"loop": true,
+"name": &"countdown",
+"speed": 1.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=352350838]
+script = ExtResource("1_7l2j0")
+
+[node name="ParallaxBackground" parent="." unique_id=317593496 instance=ExtResource("2_yuoq1")]
+
+[node name="Player" parent="." unique_id=1233756294 instance=ExtResource("3_pa6x6")]
+position = Vector2(609, 507)
+
+[node name="CarSpawnTimer" type="Timer" parent="." unique_id=1532697878]
+wait_time = 1.5
+autostart = true
+
+[node name="SpawnPointY" type="Marker2D" parent="." unique_id=721373546]
+position = Vector2(-1, -488)
+
+[node name="Timer" type="Timer" parent="." unique_id=1227749361]
+wait_time = 7.0
+one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=88124872]
+position = Vector2(414, 594)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_y1xho")
+animation = &"countdown"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2002124788]
+stream = ExtResource("5_pa6x6")
+autoplay = true
+
+[connection signal="timeout" from="CarSpawnTimer" to="." method="_on_car_spawn_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

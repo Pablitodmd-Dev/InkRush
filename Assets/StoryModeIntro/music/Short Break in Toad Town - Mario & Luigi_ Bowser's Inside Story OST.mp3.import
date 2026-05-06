@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://crfx5llw7sjay"
+path="res://.godot/imported/Short Break in Toad Town - Mario & Luigi_ Bowser's Inside Story OST.mp3-4cbd5fb9c02eb987fa9ecd01af976f15.mp3str"
+
+[deps]
+
+source_file="res://Assets/StoryModeIntro/music/Short Break in Toad Town - Mario & Luigi_ Bowser's Inside Story OST.mp3"
+dest_files=["res://.godot/imported/Short Break in Toad Town - Mario & Luigi_ Bowser's Inside Story OST.mp3-4cbd5fb9c02eb987fa9ecd01af976f15.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

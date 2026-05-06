@@ -5,6 +5,64 @@
 [ext_resource type="PackedScene" uid="uid://ddo2ia35adypv" path="res://Scenes/Microgames/Protect Lulu/Lulu.tscn" id="3_1ia0r"]
 [ext_resource type="PackedScene" uid="uid://denx46lb7jn2a" path="res://Scenes/Microgames/Protect Lulu/umbrella.tscn" id="4_n51rm"]
 [ext_resource type="AudioStream" uid="uid://bhmktd3yxudwc" path="res://Assets/Microgames/Protect Lulu/Music/videoplayback.mp3" id="5_1ia0r"]
+[ext_resource type="Texture2D" uid="uid://lqkfpke5tvg8" path="res://Assets/Timer/Timer.png" id="6_n51rm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i36k6"]
+atlas = ExtResource("6_n51rm")
+region = Rect2(0, 0, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lepc"]
+atlas = ExtResource("6_n51rm")
+region = Rect2(0, 45, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bn3vh"]
+atlas = ExtResource("6_n51rm")
+region = Rect2(0, 90, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq707"]
+atlas = ExtResource("6_n51rm")
+region = Rect2(0, 135, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adr41"]
+atlas = ExtResource("6_n51rm")
+region = Rect2(0, 180, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws6yo"]
+atlas = ExtResource("6_n51rm")
+region = Rect2(0, 225, 370, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hemf"]
+atlas = ExtResource("6_n51rm")
+region = Rect2(0, 270, 370, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gvc7m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i36k6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lepc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bn3vh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq707")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adr41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws6yo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hemf")
+}],
+"loop": false,
+"name": &"countdown",
+"speed": 1.3
+}]
 
 [node name="Node2D" type="Node2D" unique_id=854515093]
 script = ExtResource("1_stjev")
@@ -28,4 +86,15 @@ autostart = true
 stream = ExtResource("5_1ia0r")
 autoplay = true
 
+[node name="Timer" type="Timer" parent="." unique_id=247878084]
+wait_time = 6.0
+one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=279722756]
+position = Vector2(374, 604)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_gvc7m")
+animation = &"countdown"
+
 [connection signal="timeout" from="RainTimer" to="." method="_on_rain_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -11,12 +11,20 @@ config_version=5
 [application]
 
 config/name="InkRush"
+run/main_scene="uid://dp2uf4ksio8e6"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*uid://dwykig8coyeuf"
 
 [global_group]
 
 raindrops=""
+target=""
+Arrow=""
+enemies=""
 
 [input]
 

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cfj83n16gq5qm"]
+
+[ext_resource type="Script" uid="uid://bds250yntm4t" path="res://Scenes/Microgames/TableTurf Final Boss/Card.gd" id="1_gvwl3"]
+[ext_resource type="Resource" uid="uid://biek7x34g70xd" path="res://Scripts/TableTurf Final Boss/cards/card_v-shape.tres" id="2_rupma"]
+
+[node name="Card" type="Control" unique_id=507371165]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 300.0
+offset_bottom = 200.0
+script = ExtResource("1_gvwl3")
+card_data = ExtResource("2_rupma")
