@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var defeat_screen = $failed   
 @onready var brush_container = $HBoxContainer
 @onready var levelUp_screen = $levelUp 
+@onready var pause_menu = $pauseMenu
 # --- Elementos de Texto ---
 @onready var score_counter_label = $ScoreCounter
 @onready var game_name_label = $GameNameLabel
@@ -17,6 +18,7 @@ extends CanvasLayer
 @onready var onlyup = $onlyUp
 @onready var onlyright = $onlyRight
 @onready var allArrows = $allArrows
+@onready var mouse = $mouse
 
 # --- Sonidos ---
 @onready var victory_sound = $VictorySound
@@ -42,6 +44,10 @@ func hide_all():
 	score_counter_label.hide() 
 	game_name_label.hide()
 	levelUp_screen.hide()
+	
+func abrir_pausa():
+	get_tree().paused = true
+	pause_menu.show()
 
 func show_screen(screen_type: String):
 	hide_all() 
@@ -64,7 +70,7 @@ func show_screen(screen_type: String):
 			defeat_sound.play()
 		"levelup":
 			levelUp_screen.show()
-			apply_pulse_animation(defeat_screen)
+			apply_pulse_animation(levelUp_screen)
 # --- Lógica de Animación Sutil (Pulse) ---
 
 func apply_pulse_animation(node: CanvasItem):
@@ -110,6 +116,7 @@ func hide_all_controls():
 	onlyup.hide()
 	allArrows.hide()
 	onlyright.hide()
+	mouse.hide()
 
 func show_specific_controls(type: String):
 	hide_all_controls()
@@ -124,6 +131,7 @@ func show_specific_controls(type: String):
 		"onlyup": selected_control = onlyup
 		"onlyright": selected_control = onlyright
 		"vertical": selected_control = vertical_arrows
+		"mouse": selected_control = mouse
 	
 	if selected_control:
 		selected_control.show()
@@ -131,3 +139,13 @@ func show_specific_controls(type: String):
 		
 	if type != "none" and not intermission_sound.playing:
 		intermission_sound.play()
+
+
+func _on_pause_controls_resume_pressed() -> void:
+	get_tree().paused = false
+	pause_menu.hide()
+
+
+func _on_pause_controls_exit_pressed() -> void:
+	get_tree().paused = false 
+	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")

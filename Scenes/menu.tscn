@@ -7,12 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://e3i62jpkq12p" path="res://Assets/Menu/brushes.png" id="5_wwsa2"]
 [ext_resource type="Texture2D" uid="uid://daevpkmakhpid" path="res://Assets/Menu/controls.png" id="6_jsrd8"]
 [ext_resource type="AudioStream" uid="uid://ct558l8c015l6" path="res://Assets/Sounds/win_minigame.wav" id="7_6swd7"]
+[ext_resource type="Texture2D" uid="uid://dqty3wnpavjku" path="res://Assets/Menu/mouse.png" id="7_8ph6h"]
 [ext_resource type="AudioStream" uid="uid://c1mvxw1ovkjux" path="res://Assets/Sounds/defeated.wav" id="8_7qvly"]
 [ext_resource type="AudioStream" uid="uid://cak0an4pe0ewk" path="res://Assets/Sounds/Intermission.wav" id="9_rfqti"]
 [ext_resource type="FontFile" uid="uid://dfaepymu60y6l" path="res://Assets/Menu/Angkor-Regular.ttf" id="10_7qvly"]
 [ext_resource type="FontFile" uid="uid://0qwe45n8sxkd" path="res://Assets/Microgames/TableTurf Final Boss/PatrickHand-Regular.ttf" id="11_rfqti"]
 [ext_resource type="Texture2D" uid="uid://dqxsh1m51pgeu" path="res://Assets/LevelUp/Level_Up_Scaling.jpg" id="12_g8i7c"]
 [ext_resource type="AudioStream" uid="uid://bi6xvcdo1847" path="res://Assets/LevelUp/levelupscalingsound.mp3" id="13_23t3j"]
+[ext_resource type="Texture2D" uid="uid://kggpkcot41g0" path="res://Assets/Menu/pause.png" id="15_5ti5v"]
+[ext_resource type="Texture2D" uid="uid://cvsxjgxk4mcae" path="res://Assets/Menu/pauseControls.png" id="16_1by5w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jsrd8"]
 atlas = ExtResource("5_wwsa2")
@@ -33,6 +36,14 @@ region = Rect2(23, 140.5, 41, 43)
 [sub_resource type="AtlasTexture" id="AtlasTexture_7qvly"]
 atlas = ExtResource("6_jsrd8")
 region = Rect2(21.848, 189.85117, 44.52691, 44.526917)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmwmt"]
+atlas = ExtResource("16_1by5w")
+region = Rect2(125.000015, 133.2, 98.399994, 42.399994)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1by5w"]
+atlas = ExtResource("16_1by5w")
+region = Rect2(125.000015, 192.4, 99.19998, 42.399994)
 
 [node name="menu" type="CanvasLayer" unique_id=2045481240]
 script = ExtResource("1_158mb")
@@ -168,6 +179,13 @@ texture = ExtResource("6_jsrd8")
 region_enabled = true
 region_rect = Rect2(21.791927, 88.44632, 43.16614, 46.40361)
 
+[node name="mouse" type="Sprite2D" parent="." unique_id=719159203]
+visible = false
+position = Vector2(436, 712.00006)
+scale = Vector2(0.9206433, 0.9408118)
+texture = ExtResource("7_8ph6h")
+region_rect = Rect2(21.791927, 88.44632, 43.16614, 46.40361)
+
 [node name="VictorySound" type="AudioStreamPlayer2D" parent="." unique_id=230239396]
 stream = ExtResource("7_6swd7")
 volume_db = -10.0
@@ -210,3 +228,40 @@ texture = ExtResource("12_g8i7c")
 
 [node name="LevelUpSound" type="AudioStreamPlayer2D" parent="levelUp" unique_id=1155247808]
 stream = ExtResource("13_23t3j")
+
+[node name="pauseMenu" type="Control" parent="." unique_id=1587815821]
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="pause" type="TextureRect" parent="pauseMenu" unique_id=880694795]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 26.0
+offset_right = 977.0
+offset_bottom = 567.0
+texture = ExtResource("15_5ti5v")
+
+[node name="pauseControlsResume" type="TextureButton" parent="pauseMenu" unique_id=283177214]
+layout_mode = 0
+offset_left = 525.0
+offset_top = 271.0
+offset_right = 623.0
+offset_bottom = 317.0
+texture_normal = SubResource("AtlasTexture_kmwmt")
+
+[node name="pauseControlsExit" type="TextureButton" parent="pauseMenu" unique_id=297700763]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 338.0
+offset_right = 623.0
+offset_bottom = 380.0
+texture_normal = SubResource("AtlasTexture_1by5w")
+
+[connection signal="pressed" from="pauseMenu/pauseControlsResume" to="." method="_on_pause_controls_resume_pressed"]
+[connection signal="pressed" from="pauseMenu/pauseControlsExit" to="." method="_on_pause_controls_exit_pressed"]

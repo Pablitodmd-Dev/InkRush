@@ -36,14 +36,21 @@ func _ready():
 		Global.difficulty_level=0
 	menu_layer.update_brushes(lives)
 	load_random_microgame()
-
+func _input(event):
+	if event.is_action_pressed("ui_cancel"): 
+		if not get_tree().paused:
+			get_tree().paused = true
+			menu_layer.get_node("pauseMenu").show()
+		else:
+			get_tree().paused = false
+			menu_layer.get_node("pauseMenu").hide()
 func load_random_microgame() -> void:
 	if minigame_list.size() <= 0:
 		if not boss_played:
 			boss_played = true 
 			menu_layer.set_game_name("¡Defeat Kroma!") 
 			menu_layer.show_screen("start")
-			menu_layer.show_specific_controls("allArrows") 
+			menu_layer.show_specific_controls("mouse") 
 
 			await menu_layer.intermission_sound.finished
 
