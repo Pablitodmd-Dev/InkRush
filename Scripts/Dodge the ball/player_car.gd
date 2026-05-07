@@ -40,9 +40,10 @@ func _physics_process(_delta):
 			%vertical.disabled=false
 	else:
 		velocity = Vector2.ZERO
-		_hide_collisions()
-		
 		$AnimatedSprite2D.stop()
+		_hide_collisions()
+		%horizontal.disabled = false
+		
 		
 	move_and_slide()
 

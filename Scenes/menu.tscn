@@ -11,6 +11,8 @@
 [ext_resource type="AudioStream" uid="uid://cak0an4pe0ewk" path="res://Assets/Sounds/Intermission.wav" id="9_rfqti"]
 [ext_resource type="FontFile" uid="uid://dfaepymu60y6l" path="res://Assets/Menu/Angkor-Regular.ttf" id="10_7qvly"]
 [ext_resource type="FontFile" uid="uid://0qwe45n8sxkd" path="res://Assets/Microgames/TableTurf Final Boss/PatrickHand-Regular.ttf" id="11_rfqti"]
+[ext_resource type="Texture2D" uid="uid://dqxsh1m51pgeu" path="res://Assets/LevelUp/Level_Up_Scaling.jpg" id="12_g8i7c"]
+[ext_resource type="AudioStream" uid="uid://bi6xvcdo1847" path="res://Assets/LevelUp/levelupscalingsound.mp3" id="13_23t3j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jsrd8"]
 atlas = ExtResource("5_wwsa2")
@@ -199,3 +201,11 @@ theme_override_fonts/font = ExtResource("11_rfqti")
 theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="levelUp" type="Sprite2D" parent="." unique_id=1470192910]
+position = Vector2(558.5, 323)
+scale = Vector2(3.2297294, 2.05)
+texture = ExtResource("12_g8i7c")
+
+[node name="LevelUpSound" type="AudioStreamPlayer2D" parent="levelUp" unique_id=1155247808]
+stream = ExtResource("13_23t3j")

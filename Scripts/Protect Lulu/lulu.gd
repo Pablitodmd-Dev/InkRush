@@ -36,8 +36,10 @@ func _on_area_entered(area):
 	if area.is_in_group("raindrops") and not is_hit:
 		is_hit = true
 		area.queue_free()
+		get_parent().timer.stop()
 		$AudioStreamPlayer2D.play()
 		$AnimatedSprite2D.stop()
 		$AnimatedSprite2D.modulate = Color(0.3, 0.3, 0.3, 1)
 		await get_tree().create_timer(1.0).timeout
 		get_parent().finished.emit(false)
+		

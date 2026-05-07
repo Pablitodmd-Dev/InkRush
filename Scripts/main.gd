@@ -3,7 +3,6 @@ extends Node
 var boss_played = false
 var boss_path = "res://Scenes/Microgames/TableTurf Final Boss/Main.tscn"
 
-# Diccionario con rutas, tipos de control e instrucciones (nombres)
 var minigame_list = {
 	"res://Scenes/Microgames/Dodge the balls/Dodge.tscn": {"control": "allArrows", "name": "Dodge the balls!"},
 	"res://Scenes/Microgames/dodge_vehicles/main.tscn": {"control": "horizontal", "name": "Dodge the cars!"},
@@ -57,15 +56,20 @@ func load_random_microgame() -> void:
 			return 
 		else:
 			if Global.endless_mode:
+				Global.coins += 2
+				menu_layer.show_screen("levelup")
+				menu_layer.get_node("levelUp/LevelUpSound").play()
+				await get_tree().create_timer(4.0).timeout
+				menu_layer.get_node("levelUp").hide()
+				menu_layer.get_node("levelUp/LevelUpSound").stop()
 				if Global.difficulty_level < 2: 
 					Global.difficulty_level += 1
-					boss_played = false
-					Global.coins+=2
-					minigame_list = MINIGAMES_RESOURCES.duplicate()
 					print("Se sube nivel??: ", Global.difficulty_level)
 				else:
-					get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
-					return
+					print("Nivel máximo alcanzado. ¡Modo Infinito!")
+
+				boss_played = false
+				minigame_list = MINIGAMES_RESOURCES.duplicate()
 			else:
 				# Victoria normal en Modo Historia
 				Global.historia_completada = true
@@ -108,6 +112,9 @@ func _on_microgame_finished(success: bool) -> void:
 		await menu_layer.victory_sound.finished
 	else:
 		lives -= 1
+		if minigame_list.size() <= 0:
+			boss_played = false
+			
 		menu_layer.show_screen("failed")
 		menu_layer.update_brushes(lives)
 		await menu_layer.defeat_sound.finished

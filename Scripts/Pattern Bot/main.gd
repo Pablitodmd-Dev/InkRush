@@ -5,7 +5,7 @@ var buttons = []
 var redButtons = []
 var randomButtons
 var correctButton = 0
-var buttons_to_light = 4 # Variable para la dificultad
+var buttons_to_light = 4 
 
 @onready var countdown_timer=$Timer2
 @onready var countdown_sprite=$AnimatedSprite2D2

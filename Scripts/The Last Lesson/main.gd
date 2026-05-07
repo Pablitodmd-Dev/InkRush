@@ -1,7 +1,7 @@
 extends Node2D
 var questions={}
 var index=0
-var correctAnswer=1
+#var correctAnswer=1
 signal finished(success: bool)
 
 
@@ -52,15 +52,12 @@ func _on_option_c_pressed() -> void:
 	checkAnswer(questions[index].answers[2].values()[0])
 
 func checkAnswer(valor):
-	if correctAnswer>=1:
-		#print('Ganaste')
-		finished.emit(true)
-	else:
 		if valor == "true":
-			#print("bien")
-			correctAnswer+=1
-			questions.pop_at(index)
-			newQuestion()
+			print("bien")
+			#correctAnswer+=1
+			finished.emit(true)
+			#questions.pop_at(index)
+			#newQuestion()
 			
 		else:
 			print("mal")

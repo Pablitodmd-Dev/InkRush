@@ -5,7 +5,7 @@ extends CanvasLayer
 @onready var victory_screen = $completed 
 @onready var defeat_screen = $failed   
 @onready var brush_container = $HBoxContainer
-
+@onready var levelUp_screen = $levelUp 
 # --- Elementos de Texto ---
 @onready var score_counter_label = $ScoreCounter
 @onready var game_name_label = $GameNameLabel
@@ -41,6 +41,7 @@ func hide_all():
 	brush_container.hide()
 	score_counter_label.hide() 
 	game_name_label.hide()
+	levelUp_screen.hide()
 
 func show_screen(screen_type: String):
 	hide_all() 
@@ -61,7 +62,9 @@ func show_screen(screen_type: String):
 			defeat_screen.show()
 			apply_pulse_animation(defeat_screen)
 			defeat_sound.play()
-
+		"levelup":
+			levelUp_screen.show()
+			apply_pulse_animation(defeat_screen)
 # --- Lógica de Animación Sutil (Pulse) ---
 
 func apply_pulse_animation(node: CanvasItem):
