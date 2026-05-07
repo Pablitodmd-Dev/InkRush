@@ -11,7 +11,6 @@ var is_active: bool = true
 @onready var countdown_sprite = $AnimatedSprite2D
 
 func _ready():
-	spawn_player_randomly()
 	is_active = true
 	timer.start()
 	countdown_sprite.play("countdown")
@@ -20,17 +19,6 @@ func _on_timer_timeout():
 	
 	print("¡Tiempo agotado! Cerrando juego...")
 	_on_victory()
-
-func spawn_player_randomly():
-	var random_range = 300.0
-	var offset_x = randf_range(-random_range, random_range)
-	
-	player.global_position = Vector2(
-		spawn_point.global_position.x + offset_x, 
-		spawn_point.global_position.y
-	)
-	
-	player.velocity = Vector2.ZERO
 
 func _on_victory():
 	is_active = false

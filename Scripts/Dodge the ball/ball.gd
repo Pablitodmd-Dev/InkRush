@@ -18,3 +18,5 @@ func _physics_process(delta):
 	
 	if collision:
 		velocity = velocity.bounce(collision.get_normal())
+		position += collision.get_normal() * 2.0
+		move_and_collide(velocity * delta)

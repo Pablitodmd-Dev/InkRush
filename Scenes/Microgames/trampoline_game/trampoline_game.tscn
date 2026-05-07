@@ -361,9 +361,6 @@ tile_set = SubResource("TileSet_xk84e")
 unique_name_in_owner = true
 position = Vector2(567, 120)
 
-[node name="SpawnPoint" type="Marker2D" parent="." unique_id=1410494634]
-position = Vector2(576, 125)
-
 [node name="DeathZone" type="Area2D" parent="." unique_id=1875130292]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=945347812]
@@ -377,8 +374,8 @@ autoplay = true
 parameters/looping = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1009357163]
-position = Vector2(407, 46)
-scale = Vector2(2, 2)
+position = Vector2(293, 595)
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_3do6h")
 animation = &"countdown"
 

@@ -2070,6 +2070,7 @@ stream = ExtResource("43_ud36e")
 volume_db = 10.0
 
 [node name="IntroGame" type="AudioStreamPlayer2D" parent="Audios" unique_id=1304286507]
+position = Vector2(-1, -1)
 stream = ExtResource("46_1jnwo")
 volume_db = -8.0
 
