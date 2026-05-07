@@ -100,19 +100,7 @@ func increment_score():
 	update_score_display()
 	print(total_score)
 	print(Global.difficulty_level)
-	# 1. Evaluamos primero el nivel más alto.
-	# Si llegamos a 20 y todavía estamos en nivel 1, subimos al 2.
-	if total_score >= 20 and Global.difficulty_level < 2:
-		Global.difficulty_level = 2
-		show_screen("levelup")
 	
-	# 2. Si no es nivel 20, evaluamos el nivel 10.
-	# Usamos un 'elif' para que no intente ejecutar ambos en el mismo frame.
-	elif total_score >= 10 and Global.difficulty_level < 1:
-		Global.difficulty_level = 1
-		show_screen("levelup")
-	
-	# Animación de punch
 	var punch = create_tween()
 	punch.tween_property(score_counter_label, "scale", Vector2(1.3, 1.3), 0.1)
 	punch.tween_property(score_counter_label, "scale", Vector2(1.0, 1.0), 0.1)
