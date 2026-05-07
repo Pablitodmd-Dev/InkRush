@@ -25,6 +25,7 @@ raindrops=""
 target=""
 Arrow=""
 enemies=""
+shelf_grid=""
 
 [input]
 

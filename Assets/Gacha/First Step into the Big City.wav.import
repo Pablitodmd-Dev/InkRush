@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b4imbqiurwhek"
+path="res://.godot/imported/First Step into the Big City.wav-134eefda0f7dda1294f3149645413798.sample"
+
+[deps]
+
+source_file="res://Assets/Gacha/First Step into the Big City.wav"
+dest_files=["res://.godot/imported/First Step into the Big City.wav-134eefda0f7dda1294f3149645413798.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

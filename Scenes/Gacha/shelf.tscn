@@ -1,0 +1,208 @@
+[gd_scene format=3 uid="uid://d1pnk5ygbvyby"]
+
+[ext_resource type="Script" uid="uid://3bfj8jwb0o7x" path="res://Scripts/Gacha/grid_container.gd" id="1_ilx2d"]
+[ext_resource type="PackedScene" uid="uid://b7japhdrbvflu" path="res://Scenes/Gacha/shelf_slot.tscn" id="2_4nbcr"]
+[ext_resource type="Texture2D" uid="uid://ot7djlg3lioj" path="res://Assets/Microgames/Dodge the balls/car_player.png" id="4_eqh4a"]
+[ext_resource type="Texture2D" uid="uid://k1ttyvio2y3g" path="res://Assets/Microgames/dodge_vehicles/blue_car-Photoroom.png" id="4_trrwl"]
+[ext_resource type="Texture2D" uid="uid://dvgsvdux7fm8p" path="res://Assets/Microgames/Help the Robot!/12 sin título_20260423191927.png" id="5_0cnfs"]
+[ext_resource type="Texture2D" uid="uid://dtg5g10rx86xl" path="res://Assets/Microgames/Hit the Fruit/Fruit.png" id="6_otbaa"]
+[ext_resource type="Texture2D" uid="uid://c7qy6xd0vqvu" path="res://Assets/Microgames/Pattern Bot/robots.png" id="7_n1p3a"]
+[ext_resource type="Texture2D" uid="uid://j5ogdr2jhaj6" path="res://Assets/Microgames/Protect Lulu/Lulu/idlesprite.png" id="8_84v5w"]
+[ext_resource type="Texture2D" uid="uid://cmndf2vxku3m1" path="res://Assets/Microgames/Scape the labyrinth/images/character.png" id="9_mrk7f"]
+[ext_resource type="Texture2D" uid="uid://bgor5cdjt5ovb" path="res://Assets/Microgames/score_the_goal/balls.png" id="10_2td61"]
+[ext_resource type="Texture2D" uid="uid://ctj1xvfh5h1lj" path="res://Assets/Microgames/TableTurf Final Boss/cards/Elbow.png" id="11_iguwo"]
+[ext_resource type="Texture2D" uid="uid://ct58kla06v8x6" path="res://Assets/Microgames/The Last Lesson/class.png" id="12_bjvdn"]
+[ext_resource type="Texture2D" uid="uid://d022c857lsvc7" path="res://Assets/Microgames/trampoline_game/spring.png" id="13_8tli6"]
+[ext_resource type="AudioStream" uid="uid://b4imbqiurwhek" path="res://Assets/Gacha/First Step into the Big City.wav" id="14_otbaa"]
+
+[sub_resource type="Gradient" id="Gradient_ilx2d"]
+offsets = PackedFloat32Array(0, 0.62285715, 1)
+colors = PackedColorArray(0.43179333, 0.33211064, 0, 1, 0.7024665, 0.4660023, 0, 1, 0.596546, 0.4236641, 9.62615e-08, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4nbcr"]
+gradient = SubResource("Gradient_ilx2d")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fojf"]
+atlas = ExtResource("4_eqh4a")
+region = Rect2(10.665985, 113.33334, 80.66666, 78.66666)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4xyn"]
+atlas = ExtResource("5_0cnfs")
+region = Rect2(165.66599, 0, 49.333313, 105.33334)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxb4m"]
+atlas = ExtResource("7_n1p3a")
+region = Rect2(287.166, 0, 249.83401, 464)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dles5"]
+atlas = ExtResource("8_84v5w")
+region = Rect2(516.8305, 0, 264.55322, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enivi"]
+atlas = ExtResource("9_mrk7f")
+region = Rect2(191.09076, 0, 171.48724, 321.3438)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvlmk"]
+atlas = ExtResource("10_2td61")
+region = Rect2(0, 0, 164.99347, 161.42896)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfkto"]
+atlas = ExtResource("11_iguwo")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqibg"]
+atlas = ExtResource("12_bjvdn")
+region = Rect2(128.32877, 125.66254, 585.3345, 279.4709)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsmqn"]
+atlas = ExtResource("13_8tli6")
+region = Rect2(572.94037, 0, 288.41034, 324)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ilx2d"]
+bg_color = Color(0.478765, 0.3993718, 0.22333476, 1)
+
+[node name="Shelf" type="Control" unique_id=546586604]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 62.0
+offset_top = 51.0
+offset_right = 1090.0
+offset_bottom = 602.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=491508986]
+layout_mode = 0
+offset_left = -64.0
+offset_top = -49.0
+offset_right = 1090.0
+offset_bottom = 602.0
+texture = SubResource("GradientTexture2D_4nbcr")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=43338615]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 4
+script = ExtResource("1_ilx2d")
+
+[node name="ShelfSlot" parent="GridContainer" unique_id=1775293193 instance=ExtResource("2_4nbcr")]
+layout_mode = 2
+item_id = "item_001"
+
+[node name="Sprite2D" type="Sprite2D" parent="GridContainer/ShelfSlot" unique_id=1455821341]
+position = Vector2(130.00002, 91.00002)
+scale = Vector2(1.7062498, 1.6602563)
+texture = SubResource("AtlasTexture_1fojf")
+
+[node name="ShelfSlot2" parent="GridContainer" unique_id=615840949 instance=ExtResource("2_4nbcr")]
+layout_mode = 2
+expand_mode = 2
+item_id = "item_002"
+
+[node name="bluecar" type="Sprite2D" parent="GridContainer/ShelfSlot2" unique_id=1015454881]
+position = Vector2(112, 126)
+rotation = 1.858444
+scale = Vector2(0.28645834, 0.33125)
+texture = ExtResource("4_trrwl")
+
+[node name="ShelfSlot3" parent="GridContainer" unique_id=690988162 instance=ExtResource("2_4nbcr")]
+layout_mode = 2
+item_id = "item_003"
+
+[node name="robot" type="Sprite2D" parent="GridContainer/ShelfSlot3" unique_id=627556525]
+position = Vector2(126, 84)
+scale = Vector2(1.8737248, 0.9886905)
+texture = SubResource("AtlasTexture_g4xyn")
+
+[node name="ShelfSlot4" parent="GridContainer" unique_id=1306258925 instance=ExtResource("2_4nbcr")]
+layout_mode = 2
+item_id = "item_004"
+
+[node name="fruit" type="Sprite2D" parent="GridContainer/ShelfSlot4" unique_id=1750396285]
+position = Vector2(144.00002, 129.00006)
+rotation = 0.50800765
+scale = Vector2(0.772973, 0.621875)
+texture = ExtResource("6_otbaa")
+
+[node name="ShelfSlot5" parent="GridContainer" unique_id=803234718 instance=ExtResource("2_4nbcr")]
+layout_mode = 2
+item_id = "item_005"
+
+[node name="robotTable" type="Sprite2D" parent="GridContainer/ShelfSlot5" unique_id=1099052845]
+position = Vector2(127.00006, 88.00003)
+scale = Vector2(0.37951806, 0.32543105)
+texture = SubResource("AtlasTexture_pxb4m")
+
+[node name="ShelfSlot6" parent="GridContainer" unique_id=1615766976 instance=ExtResource("2_4nbcr")]
+layout_mode = 2
+item_id = "item_006"
+
+[node name="lulu" type="Sprite2D" parent="GridContainer/ShelfSlot6" unique_id=384899132]
+position = Vector2(135, 85)
+scale = Vector2(0.68389434, 0.56768584)
+texture = SubResource("AtlasTexture_dles5")
+
+[node name="ShelfSlot7" parent="GridContainer" unique_id=91234643 instance=ExtResource("2_4nbcr")]
+layout_mode = 2
+item_id = "item_007"
+
+[node name="BillCypher" type="Sprite2D" parent="GridContainer/ShelfSlot7" unique_id=1172759481]
+position = Vector2(127.95314, 89.62499)
+scale = Vector2(0.49177593, 0.43380067)
+texture = SubResource("AtlasTexture_enivi")
+
+[node name="ShelfSlot8" parent="GridContainer" unique_id=1755369137 instance=ExtResource("2_4nbcr")]
+layout_mode = 2
+item_id = "item_008"
+
+[node name="ball" type="Sprite2D" parent="GridContainer/ShelfSlot8" unique_id=1681319592]
+position = Vector2(127.00012, 94.00003)
+scale = Vector2(0.5487805, 0.48136646)
+texture = SubResource("AtlasTexture_kvlmk")
+
+[node name="ShelfSlot9" parent="GridContainer" unique_id=540123248 instance=ExtResource("2_4nbcr")]
+layout_mode = 2
+item_id = "item_009"
+
+[node name="card" type="Sprite2D" parent="GridContainer/ShelfSlot9" unique_id=1209758398]
+position = Vector2(131, 88.00001)
+rotation = 0.22266999
+scale = Vector2(0.75242716, 0.76)
+texture = SubResource("AtlasTexture_xfkto")
+
+[node name="ShelfSlot10" parent="GridContainer" unique_id=13679589 instance=ExtResource("2_4nbcr")]
+layout_mode = 2
+item_id = "item_010"
+
+[node name="chalkboard" type="Sprite2D" parent="GridContainer/ShelfSlot10" unique_id=1782240288]
+position = Vector2(124.00006, 93.00008)
+rotation = -0.37910792
+scale = Vector2(0.23333333, 0.26344085)
+texture = SubResource("AtlasTexture_wqibg")
+
+[node name="ShelfSlot11" parent="GridContainer" unique_id=347376908 instance=ExtResource("2_4nbcr")]
+layout_mode = 2
+item_id = "item_011"
+
+[node name="spring" type="Sprite2D" parent="GridContainer/ShelfSlot11" unique_id=1406823005]
+position = Vector2(132.00003, 93)
+scale = Vector2(0.4652778, 0.32407406)
+texture = SubResource("AtlasTexture_dsmqn")
+
+[node name="ShelfSlot12" parent="GridContainer" unique_id=1850884166 instance=ExtResource("2_4nbcr")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="." unique_id=1690515807]
+layout_mode = 0
+offset_left = -40.0
+offset_top = -42.0
+offset_right = 67.0
+offset_bottom = -11.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_ilx2d")
+text = "Go back"
+
+[node name="CasinoMusic" type="AudioStreamPlayer2D" parent="." unique_id=633053667]
+stream = ExtResource("14_otbaa")
+autoplay = true
+
+[connection signal="pressed" from="Button" to="GridContainer" method="_on_button_pressed"]

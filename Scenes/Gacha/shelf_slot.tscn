@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b7japhdrbvflu"]
+
+[ext_resource type="Texture2D" uid="uid://iosn7tdvx3uq" path="res://Assets/Gacha/shelf-Photoroom.png" id="1_uh3ic"]
+[ext_resource type="Script" uid="uid://bynf1skvttnug" path="res://Scripts/Gacha/shelf_slot.gd" id="2_6lksc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73kpx"]
+atlas = ExtResource("1_uh3ic")
+region = Rect2(534.0003, 306.6307, 254.46503, 181.65036)
+
+[node name="ShelfSlot" type="TextureRect" unique_id=1775293193]
+offset_left = 425.0
+offset_top = 216.0
+offset_right = 679.0
+offset_bottom = 397.0
+texture = SubResource("AtlasTexture_73kpx")
+script = ExtResource("2_6lksc")

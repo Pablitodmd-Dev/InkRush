@@ -1,0 +1,164 @@
+[gd_scene format=3 uid="uid://430rj4xx0bh1"]
+
+[ext_resource type="Script" uid="uid://dkv87hq368mw2" path="res://Scripts/Gacha/main.gd" id="1_lrlkl"]
+[ext_resource type="Texture2D" uid="uid://ot7djlg3lioj" path="res://Assets/Microgames/Dodge the balls/car_player.png" id="2_lrlkl"]
+[ext_resource type="Texture2D" uid="uid://k1ttyvio2y3g" path="res://Assets/Microgames/dodge_vehicles/blue_car-Photoroom.png" id="3_pdmwj"]
+[ext_resource type="Texture2D" uid="uid://dvgsvdux7fm8p" path="res://Assets/Microgames/Help the Robot!/12 sin título_20260423191927.png" id="4_vl3kk"]
+[ext_resource type="Texture2D" uid="uid://dtg5g10rx86xl" path="res://Assets/Microgames/Hit the Fruit/Fruit.png" id="5_h6b6o"]
+[ext_resource type="Texture2D" uid="uid://c7qy6xd0vqvu" path="res://Assets/Microgames/Pattern Bot/robots.png" id="6_n3ctb"]
+[ext_resource type="Texture2D" uid="uid://j5ogdr2jhaj6" path="res://Assets/Microgames/Protect Lulu/Lulu/idlesprite.png" id="7_m6cbk"]
+[ext_resource type="Texture2D" uid="uid://cmndf2vxku3m1" path="res://Assets/Microgames/Scape the labyrinth/images/character.png" id="8_m7k8l"]
+[ext_resource type="Texture2D" uid="uid://bgor5cdjt5ovb" path="res://Assets/Microgames/score_the_goal/balls.png" id="9_ie5g1"]
+[ext_resource type="Texture2D" uid="uid://ctj1xvfh5h1lj" path="res://Assets/Microgames/TableTurf Final Boss/cards/Elbow.png" id="10_uqw8b"]
+[ext_resource type="Texture2D" uid="uid://ct58kla06v8x6" path="res://Assets/Microgames/The Last Lesson/class.png" id="11_5pq23"]
+[ext_resource type="Texture2D" uid="uid://d022c857lsvc7" path="res://Assets/Microgames/trampoline_game/spring.png" id="12_sejx3"]
+[ext_resource type="PackedScene" uid="uid://d0qdqkn4qgppv" path="res://Scenes/Gacha/gacha.tscn" id="13_pdmwj"]
+[ext_resource type="AudioStream" uid="uid://b4imbqiurwhek" path="res://Assets/Gacha/First Step into the Big City.wav" id="14_pdmwj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fojf"]
+atlas = ExtResource("2_lrlkl")
+region = Rect2(10.665985, 113.33334, 80.66666, 78.66666)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ximnc"]
+atlas = ExtResource("4_vl3kk")
+region = Rect2(165.66599, 0, 49.333313, 105.33334)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuoc5"]
+atlas = ExtResource("6_n3ctb")
+region = Rect2(287.166, 0, 249.83401, 464)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hcmv"]
+atlas = ExtResource("7_m6cbk")
+region = Rect2(516.8305, 0, 264.55322, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tqdd"]
+atlas = ExtResource("8_m7k8l")
+region = Rect2(191.09076, 0, 171.48724, 321.3438)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsrho"]
+atlas = ExtResource("9_ie5g1")
+region = Rect2(0, 0, 164.99347, 161.42896)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pcxx"]
+atlas = ExtResource("10_uqw8b")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjb44"]
+atlas = ExtResource("11_5pq23")
+region = Rect2(128.32877, 125.66254, 585.3345, 279.4709)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfosm"]
+atlas = ExtResource("12_sejx3")
+region = Rect2(572.94037, 0, 288.41034, 324)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_heufn"]
+load_path = "res://.godot/imported/shelf-Photoroom.png-8d61623caeaab348b17e753ca0028325.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr4c0"]
+atlas = SubResource("CompressedTexture2D_heufn")
+region = Rect2(531.81573, 303.5344, 258.75287, 186.79727)
+
+[node name="GachaMachine" type="Node2D" unique_id=943331478]
+script = ExtResource("1_lrlkl")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1837267061]
+offset_right = 1148.0
+offset_bottom = 652.0
+color = Color(0.8786112, 0.6395251, 1.1551381e-06, 1)
+
+[node name="car" type="Sprite2D" parent="." unique_id=2002777227]
+position = Vector2(142, 175)
+scale = Vector2(1.7062498, 1.6602563)
+texture = SubResource("AtlasTexture_1fojf")
+
+[node name="Label2" type="Label" parent="." unique_id=19180807]
+offset_left = 244.0
+offset_top = 25.0
+offset_right = 897.0
+offset_bottom = 108.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Get all the collectibles!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bluecar" type="Sprite2D" parent="." unique_id=2113368038]
+position = Vector2(879, 586.00006)
+rotation = 1.858444
+scale = Vector2(0.28645834, 0.33125)
+texture = ExtResource("3_pdmwj")
+
+[node name="robot" type="Sprite2D" parent="." unique_id=1471239755]
+position = Vector2(292, 273)
+scale = Vector2(1.3979592, 1.147619)
+texture = SubResource("AtlasTexture_ximnc")
+
+[node name="fruit" type="Sprite2D" parent="." unique_id=1462778879]
+position = Vector2(171.00002, 563.99994)
+rotation = 0.50800765
+scale = Vector2(0.772973, 0.621875)
+texture = ExtResource("5_h6b6o")
+
+[node name="robotTable" type="Sprite2D" parent="." unique_id=404480564]
+position = Vector2(1038.0001, 246.00002)
+scale = Vector2(0.37951806, 0.32543105)
+texture = SubResource("AtlasTexture_uuoc5")
+
+[node name="lulu" type="Sprite2D" parent="." unique_id=219010261]
+position = Vector2(860.7259, 343.3362)
+scale = Vector2(0.68389434, 0.56768584)
+texture = SubResource("AtlasTexture_5hcmv")
+
+[node name="BillCypher" type="Sprite2D" parent="." unique_id=1764898010]
+position = Vector2(318.00003, 517)
+scale = Vector2(0.5625, 0.49376947)
+texture = SubResource("AtlasTexture_7tqdd")
+
+[node name="ball" type="Sprite2D" parent="." unique_id=1478921626]
+position = Vector2(1056, 438)
+scale = Vector2(0.5487805, 0.48136646)
+texture = SubResource("AtlasTexture_jsrho")
+
+[node name="card" type="Sprite2D" parent="." unique_id=1370625709]
+position = Vector2(862, 196)
+rotation = 0.22266999
+scale = Vector2(0.75242716, 0.76)
+texture = SubResource("AtlasTexture_2pcxx")
+
+[node name="chalkboard" type="Sprite2D" parent="." unique_id=969033604]
+position = Vector2(524.00006, 181.00002)
+rotation = -0.37910792
+scale = Vector2(0.23333333, 0.26344085)
+texture = SubResource("AtlasTexture_hjb44")
+
+[node name="spring" type="Sprite2D" parent="." unique_id=787740454]
+position = Vector2(138.00003, 336)
+scale = Vector2(0.4652778, 0.32407406)
+texture = SubResource("AtlasTexture_nfosm")
+
+[node name="Label3" type="Label" parent="." unique_id=24681869]
+offset_left = 977.0
+offset_top = 4.0
+offset_right = 1144.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Colection"
+horizontal_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=771178680]
+offset_left = 937.0
+offset_top = -25.0
+offset_right = 1195.0
+offset_bottom = 161.0
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(123.33301, 86.66667)
+texture_normal = SubResource("AtlasTexture_nr4c0")
+
+[node name="Node2D" parent="." unique_id=1759736335 instance=ExtResource("13_pdmwj")]
+
+[node name="CasinoMusic" type="AudioStreamPlayer2D" parent="." unique_id=1394110706]
+position = Vector2(-18, -45)
+stream = ExtResource("14_pdmwj")
+
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

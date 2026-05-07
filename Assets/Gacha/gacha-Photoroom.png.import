@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqrukigbej0a7"
-path="res://.godot/imported/character.png-429a79e2a4af4d1d922d016eb7c6890a.ctex"
+uid="uid://c4mye2n5t3dte"
+path="res://.godot/imported/gacha-Photoroom.png-746d56e18fed8b97ac0f573ae79b469a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Microgames/Hit the Fruit/character.png"
-dest_files=["res://.godot/imported/character.png-429a79e2a4af4d1d922d016eb7c6890a.ctex"]
+source_file="res://Assets/Gacha/gacha-Photoroom.png"
+dest_files=["res://.godot/imported/gacha-Photoroom.png-746d56e18fed8b97ac0f573ae79b469a.ctex"]
 
 [params]
 
