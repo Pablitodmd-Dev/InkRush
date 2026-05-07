@@ -57,12 +57,12 @@ func load_random_microgame() -> void:
 		else:
 			if Global.endless_mode:
 				Global.coins += 2
-				menu_layer.show_screen("levelup")
-				menu_layer.get_node("levelUp/LevelUpSound").play()
-				await get_tree().create_timer(4.0).timeout
-				menu_layer.get_node("levelUp").hide()
-				menu_layer.get_node("levelUp/LevelUpSound").stop()
 				if Global.difficulty_level < 2: 
+					menu_layer.show_screen("levelup")
+					menu_layer.get_node("levelUp/LevelUpSound").play()
+					await get_tree().create_timer(4.0).timeout
+					menu_layer.get_node("levelUp").hide()
+					menu_layer.get_node("levelUp/LevelUpSound").stop()
 					Global.difficulty_level += 1
 					print("Se sube nivel??: ", Global.difficulty_level)
 				else:
@@ -113,7 +113,10 @@ func _on_microgame_finished(success: bool) -> void:
 	else:
 		lives -= 1
 		if minigame_list.size() <= 0:
-			boss_played = false
+			if Global.endless_mode:
+				pass 
+			else:
+				boss_played = false
 			
 		menu_layer.show_screen("failed")
 		menu_layer.update_brushes(lives)
