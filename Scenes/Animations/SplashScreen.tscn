@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c517esqasw2k2" path="res://Assets/MainMenu/BackgroundBase.png" id="5_0gikv"]
 [ext_resource type="Texture2D" uid="uid://8rh6nbk364ps" path="res://Assets/MainMenu/44 sin título_20260505183348(1).png" id="6_0itl6"]
 [ext_resource type="AudioStream" uid="uid://u2aq6lqlndd" path="res://Assets/IntroGame/LogoSound.wav" id="7_0ujue"]
+[ext_resource type="Texture2D" uid="uid://bpspplhmy3do6" path="res://Assets/IntroGame/47 sin título_20260507163831.png" id="7_feipn"]
 
 [sub_resource type="Animation" id="Animation_mm423"]
 length = 0.001
@@ -106,10 +107,22 @@ tracks/7/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/TextureRect6:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_nh1li"]
 resource_name = "intro"
-length = 24.0
+length = 28.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -141,7 +154,7 @@ tracks/2/path = NodePath("CanvasLayer/TextureRect3:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(10, 11, 13, 14),
+"times": PackedFloat32Array(13.533333, 14.533333, 16.533333, 17.533333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -153,7 +166,7 @@ tracks/3/path = NodePath("CanvasLayer/TextureRect4:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(15, 16, 18.001875),
+"times": PackedFloat32Array(17.533333, 18.533333, 20.535208),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
@@ -165,7 +178,7 @@ tracks/4/path = NodePath("CanvasLayer/TextureRect4:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(18.005133, 21),
+"times": PackedFloat32Array(20.538465, 23.533333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(3.5, 3.5), Vector2(1, 1)]
@@ -177,7 +190,7 @@ tracks/5/path = NodePath("CanvasLayer/TextureRect5:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(21.575361, 22.5),
+"times": PackedFloat32Array(23.575361, 24.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -189,7 +202,7 @@ tracks/6/path = NodePath("AudioStreamPlayer2D:autoplay")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(21.57295),
+"times": PackedFloat32Array(23.57295),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -201,10 +214,22 @@ tracks/7/path = NodePath("AudioStreamPlayer2D:playing")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(21.5),
+"times": PackedFloat32Array(23.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/TextureRect6:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(9.1, 10.166667, 12.466666, 13.466666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mpken"]
@@ -298,6 +323,12 @@ offset_top = 10.0
 offset_right = 733.0
 offset_bottom = 160.0
 texture = ExtResource("6_0itl6")
+
+[node name="TextureRect6" type="TextureRect" parent="CanvasLayer" unique_id=106001783]
+modulate = Color(1, 1, 1, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_feipn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1360484159]
 libraries/ = SubResource("AnimationLibrary_mpken")

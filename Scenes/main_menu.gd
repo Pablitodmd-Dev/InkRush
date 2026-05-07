@@ -4,6 +4,8 @@ extends Control
 @onready var img_victoria = $BackgroundVictory
 @onready var endlessbuttonInactive = $EndlessMode
 @onready var endlessbuttonactive = $EndlessModeInactive
+@onready var gachabuttonInactive = $GachaLocked
+@onready var gachabuttonActive = $Gacha
 @onready var sfx_player = $SFXPlayer 
 
 func _ready():
@@ -12,11 +14,16 @@ func _ready():
 		img_victoria.show()
 		endlessbuttonactive.visible = false
 		endlessbuttonInactive.visible = true
+		gachabuttonInactive.visible = false
+		gachabuttonActive.visible = true
+		
 	else:
 		img_normal.show()
 		img_victoria.hide()
 		endlessbuttonactive.visible = true
 		endlessbuttonInactive.visible = false
+		gachabuttonInactive.visible= true
+		gachabuttonActive.visible= false
 
 func _on_pokeball_area_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
@@ -58,3 +65,7 @@ func _on_endless_mode_pressed() -> void:
 	Global.endless_mode=true
 	Global.difficulty_level = 0
 	get_tree().change_scene_to_file("res://Scenes/Main.tscn")
+
+
+func _on_gacha_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Gacha/main.tscn")

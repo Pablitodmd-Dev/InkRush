@@ -141,7 +141,7 @@ offset_top = 4.0
 offset_right = 1144.0
 offset_bottom = 27.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Colection"
+text = "Collection"
 horizontal_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=771178680]
