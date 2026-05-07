@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var anim_player = %AnimatedSprite2D
 
 var speed = 350.0
-var gravity = 500
+var gravity = 850
 var is_alive = true
 
 func _physics_process(delta):

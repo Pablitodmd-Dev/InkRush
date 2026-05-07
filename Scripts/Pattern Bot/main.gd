@@ -56,7 +56,10 @@ func _on_pressed_button(numberButton):
 		if correctButton == buttons_to_light:
 			$Timer2.stop()
 			%win.play()
+			
 			$AnimatedSprite2D.play("repaired")
+			$AnimatedSprite2D.scale = Vector2(1.8, 1.525) # Cambiamos escala al ganar
+			
 			$GridContainer.visible = false
 			
 			await get_tree().create_timer(1.0).timeout
