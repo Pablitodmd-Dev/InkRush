@@ -32,8 +32,7 @@ var lives: int = 4
 @onready var menu_layer = $menu
 
 func _ready():
-	if not Global.endless_mode:
-		Global.difficulty_level=0
+	Global.difficulty_level=0
 	menu_layer.update_brushes(lives)
 	load_random_microgame()
 func _input(event):

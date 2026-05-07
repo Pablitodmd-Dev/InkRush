@@ -26,13 +26,13 @@ extends CanvasLayer
 @onready var intermission_sound = $IntermissionSound
 
 var total_score: int = 0
+var is_leveling_up: bool = false # Control para evitar errores de animación
 
 func _ready():
 	hide_all()
 	brush_container.show()
 	update_score_display()
 	
-	# Animación constante para el marcador y el contenedor de vidas
 	apply_pulse_animation(score_counter_label)
 	apply_pulse_animation(brush_container)
 
@@ -50,7 +50,10 @@ func abrir_pausa():
 	pause_menu.show()
 
 func show_screen(screen_type: String):
-	hide_all() 
+	# Si es levelup, NO ocultamos todo para que el fondo (start) se mantenga
+	if screen_type != "levelup":
+		hide_all() 
+	
 	brush_container.show()
 	score_counter_label.show() 
 	
@@ -69,20 +72,24 @@ func show_screen(screen_type: String):
 			apply_pulse_animation(defeat_screen)
 			defeat_sound.play()
 		"levelup":
+			if is_leveling_up: return 
+			
+			is_leveling_up = true
+			start_screen.show()
 			levelUp_screen.show()
 			apply_pulse_animation(levelUp_screen)
-# --- Lógica de Animación Sutil (Pulse) ---
+			
+			await get_tree().create_timer(5.0).timeout
+			levelUp_screen.hide()
+			is_leveling_up = false
+
+# --- Lógica de Animación ---
 
 func apply_pulse_animation(node: CanvasItem):
-	# Si es un nodo de UI (Control), centramos el pivote para que el latido sea parejo
 	if node is Control:
 		node.pivot_offset = node.size / 2
 	
-	# Si es un Sprite2D, asegúrate en el Inspector de que 'Centered' esté activado
-	
 	var tween = create_tween().set_loops()
-	
-	# Escala rítmica del 5% (1.05)
 	tween.tween_property(node, "scale", Vector2(1.05, 1.05), 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(node, "scale", Vector2(1.0, 1.0), 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 
@@ -91,8 +98,21 @@ func apply_pulse_animation(node: CanvasItem):
 func increment_score():
 	total_score += 1
 	update_score_display()
+	print(total_score)
+	print(Global.difficulty_level)
+	# 1. Evaluamos primero el nivel más alto.
+	# Si llegamos a 20 y todavía estamos en nivel 1, subimos al 2.
+	if total_score >= 20 and Global.difficulty_level < 2:
+		Global.difficulty_level = 2
+		show_screen("levelup")
 	
-	# Pequeño salto de impacto visual al ganar punto
+	# 2. Si no es nivel 20, evaluamos el nivel 10.
+	# Usamos un 'elif' para que no intente ejecutar ambos en el mismo frame.
+	elif total_score >= 10 and Global.difficulty_level < 1:
+		Global.difficulty_level = 1
+		show_screen("levelup")
+	
+	# Animación de punch
 	var punch = create_tween()
 	punch.tween_property(score_counter_label, "scale", Vector2(1.3, 1.3), 0.1)
 	punch.tween_property(score_counter_label, "scale", Vector2(1.0, 1.0), 0.1)
@@ -120,10 +140,7 @@ func hide_all_controls():
 
 func show_specific_controls(type: String):
 	hide_all_controls()
-	
-	# Usamos CanvasItem para evitar errores entre Sprite2D y Control
 	var selected_control: CanvasItem = null
-	
 	match type:
 		"numbers": selected_control = controls_numbers
 		"allArrows": selected_control = allArrows
@@ -140,11 +157,9 @@ func show_specific_controls(type: String):
 	if type != "none" and not intermission_sound.playing:
 		intermission_sound.play()
 
-
 func _on_pause_controls_resume_pressed() -> void:
 	get_tree().paused = false
 	pause_menu.hide()
-
 
 func _on_pause_controls_exit_pressed() -> void:
 	get_tree().paused = false 
