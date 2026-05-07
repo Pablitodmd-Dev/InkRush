@@ -1,7 +1,6 @@
 extends Node2D
 var questions={}
 var index=0
-#var correctAnswer=1
 signal finished(success: bool)
 
 
@@ -37,7 +36,6 @@ func readQuestions():
 func newQuestion():
 	index = randi_range(0, questions.size() - 1)
 	%Question.text=(questions[index].question)
-	#print(preguntas[0].respuestas.size())
 	$%optionA.text=questions[index].answers[0].keys()[0]
 	%optionB.text=questions[index].answers[1].keys()[0]
 	%optionC.text=questions[index].answers[2].keys()[0]
@@ -54,19 +52,12 @@ func _on_option_c_pressed() -> void:
 func checkAnswer(valor):
 		if valor == "true":
 			print("bien")
-			#correctAnswer+=1
 			finished.emit(true)
-			#questions.pop_at(index)
-			#newQuestion()
-			
+
 		else:
 			print("mal")
 			
 			finished.emit(false)
-		#print(questions)
-
-		#print(questions)
-
 
 func _on_timer_timeout() -> void:
 	get_tree().quit()

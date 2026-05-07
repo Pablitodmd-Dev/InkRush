@@ -22,6 +22,14 @@ var is_goal = false
 var goal_line_y = 41.0
 
 func _ready():
+	
+	if Global.difficulty_level == 0:
+		charge_speed = 60.0
+	elif Global.difficulty_level == 1:
+		charge_speed = 70.0
+	elif Global.difficulty_level == 2:
+		charge_speed = 80.0
+	
 	initial_ball_pos = ball.global_position
 	power_bar.value = 0
 	power_bar.max_value = 100
