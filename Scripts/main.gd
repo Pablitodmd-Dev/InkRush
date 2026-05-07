@@ -32,7 +32,8 @@ var lives: int = 4
 @onready var menu_layer = $menu
 
 func _ready():
-	Global.difficulty_level=0
+	if not Global.endless_mode:
+		Global.difficulty_level=0
 	menu_layer.update_brushes(lives)
 	load_random_microgame()
 func _input(event):
@@ -69,7 +70,7 @@ func load_random_microgame() -> void:
 					await get_tree().create_timer(4.0).timeout
 					menu_layer.get_node("levelUp").hide()
 					menu_layer.get_node("levelUp/LevelUpSound").stop()
-					Global.difficulty_level += 1
+					#Global.difficulty_level += 1
 					print("Se sube nivel??: ", Global.difficulty_level)
 				else:
 					print("Nivel máximo alcanzado. ¡Modo Infinito!")
