@@ -102,17 +102,17 @@ script = ExtResource("1_46wrp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1744309112]
 z_index = 8
-position = Vector2(560, 458.36874)
-scale = Vector2(1.8606946, 1.6050379)
+position = Vector2(582.99994, 456.5)
+scale = Vector2(1.861, 1.597)
 sprite_frames = SubResource("SpriteFrames_maq16")
 animation = &"broken"
 autoplay = "broken"
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=893409820]
 z_index = 10
-offset_left = 495.0
+offset_left = 521.0
 offset_top = 306.0
-offset_right = 621.0
+offset_right = 647.0
 offset_bottom = 407.0
 columns = 3
 
