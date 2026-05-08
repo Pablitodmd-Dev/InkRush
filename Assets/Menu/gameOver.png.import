@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqrukigbej0a7"
-path="res://.godot/imported/character.png-429a79e2a4af4d1d922d016eb7c6890a.ctex"
+uid="uid://u873sqampb1i"
+path="res://.godot/imported/gameOver.png-f36e51832888537aea936bf86c8eca6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Microgames/Hit the Fruit/character.png"
-dest_files=["res://.godot/imported/character.png-429a79e2a4af4d1d922d016eb7c6890a.ctex"]
+source_file="res://Assets/Menu/gameOver.png"
+dest_files=["res://.godot/imported/gameOver.png-f36e51832888537aea936bf86c8eca6b.ctex"]
 
 [params]
 

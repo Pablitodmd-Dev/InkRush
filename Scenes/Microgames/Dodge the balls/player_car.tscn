@@ -109,7 +109,7 @@ size = Vector2(140.75, 56)
 size = Vector2(144, 58)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b1gqg"]
-radius = 29.551083
+radius = 32.46273
 height = 133.56174
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b1gqg"]
@@ -141,7 +141,7 @@ shape = SubResource("RectangleShape2D_7seya")
 
 [node name="diagonal" type="CollisionShape2D" parent="Area2D" unique_id=1838262321]
 unique_name_in_owner = true
-position = Vector2(9.000001, 5)
+position = Vector2(5, 3)
 rotation = 2.2933626
 shape = SubResource("CapsuleShape2D_b1gqg")
 

@@ -40,8 +40,7 @@ func _ready():
 	countdown_sprite.play("countdown")
 
 func _on_timer_timeout():
-	print("¡Tiempo agotado! Cerrando juego...")
-	get_tree().paused=true
+	finished.emit(false)
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_up"):
