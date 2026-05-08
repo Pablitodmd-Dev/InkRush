@@ -80,6 +80,9 @@ func load_random_microgame() -> void:
 			else:
 				# Victoria normal en Modo Historia
 				Global.historia_completada = true
+				menu_layer.show_screen("win")
+				menu_layer.get_node("win/winSound").play()
+				await get_tree().create_timer(3.0).timeout
 				get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 				return
 
@@ -131,6 +134,9 @@ func _on_microgame_finished(success: bool) -> void:
 
 	if lives <= 0:
 		# Al perder todas las vidas volvemos al menú
+		menu_layer.show_screen("gameover")
+		menu_layer.get_node("gameOver/gameOverSound").play()
+		await get_tree().create_timer(3.0).timeout
 		get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 	else:
 		load_random_microgame()

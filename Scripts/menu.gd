@@ -7,6 +7,8 @@ extends CanvasLayer
 @onready var brush_container = $HBoxContainer
 @onready var levelUp_screen = $levelUp 
 @onready var pause_menu = $pauseMenu
+@onready var win=$win
+@onready var gameOver=$gameOver
 # --- Elementos de Texto ---
 @onready var score_counter_label = $ScoreCounter
 @onready var game_name_label = $GameNameLabel
@@ -44,6 +46,8 @@ func hide_all():
 	score_counter_label.hide() 
 	game_name_label.hide()
 	levelUp_screen.hide()
+	win.hide()
+	gameOver.hide()
 	
 func abrir_pausa():
 	get_tree().paused = true
@@ -53,7 +57,10 @@ func show_screen(screen_type: String):
 	# Si es levelup, NO ocultamos todo para que el fondo (start) se mantenga
 	if screen_type != "levelup":
 		hide_all() 
-	
+	if screen_type!= "win":
+		hide_all()
+	if screen_type!= "gameover":
+		hide_all()
 	brush_container.show()
 	score_counter_label.show() 
 	
@@ -71,6 +78,15 @@ func show_screen(screen_type: String):
 			defeat_screen.show()
 			apply_pulse_animation(defeat_screen)
 			defeat_sound.play()
+		"win":
+			start_screen.show()
+			$win.show()
+			apply_pulse_animation(win)
+		"gameover":
+			
+			start_screen.show()
+			$gameOver.show()
+			apply_pulse_animation(gameOver)
 		"levelup":
 			if is_leveling_up: return 
 			
