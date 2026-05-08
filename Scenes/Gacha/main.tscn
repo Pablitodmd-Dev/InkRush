@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://d0qdqkn4qgppv" path="res://Scenes/Gacha/gacha.tscn" id="13_pdmwj"]
 [ext_resource type="AudioStream" uid="uid://b4imbqiurwhek" path="res://Assets/Gacha/First Step into the Big City.wav" id="14_pdmwj"]
 [ext_resource type="Texture2D" uid="uid://dea3544jo2ko8" path="res://Assets/Gacha/WhatsApp Image 2026-05-07 at 23.42.32-Photoroom.png" id="15_vl3kk"]
+[ext_resource type="Texture2D" uid="uid://djcget1vw471" path="res://Assets/Gacha/MoneyCount.png" id="16_h6b6o"]
+[ext_resource type="FontFile" uid="uid://0qwe45n8sxkd" path="res://Assets/Microgames/TableTurf Final Boss/PatrickHand-Regular.ttf" id="17_n3ctb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1fojf"]
 atlas = ExtResource("2_lrlkl")
@@ -58,20 +60,28 @@ load_path = "res://.godot/imported/shelf-Photoroom.png-8d61623caeaab348b17e753ca
 atlas = SubResource("CompressedTexture2D_heufn")
 region = Rect2(531.81573, 303.5344, 258.75287, 186.79727)
 
-[node name="GachaMachine" type="Node2D" unique_id=943331478]
+[node name="GachaMachine" type="Control" unique_id=635640254]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_lrlkl")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1837267061]
+layout_mode = 0
 offset_right = 1148.0
 offset_bottom = 652.0
 color = Color(0.8786112, 0.6395251, 1.1551381e-06, 1)
 
-[node name="car" type="Sprite2D" parent="." unique_id=2002777227]
-position = Vector2(142, 175)
+[node name="car" type="TextureRect" parent="." unique_id=826519382]
+layout_mode = 0
+offset_left = 112.000015
+offset_top = 131.00002
+offset_right = 192.00002
+offset_bottom = 209.00002
 scale = Vector2(1.7062498, 1.6602563)
 texture = SubResource("AtlasTexture_1fojf")
 
 [node name="Label2" type="Label" parent="." unique_id=19180807]
+layout_mode = 0
 offset_left = 244.0
 offset_top = 25.0
 offset_right = 897.0
@@ -82,61 +92,102 @@ text = "Get all the collectibles!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="bluecar" type="Sprite2D" parent="." unique_id=2113368038]
-position = Vector2(879, 586.00006)
+[node name="bluecar" type="TextureRect" parent="." unique_id=1862267255]
+layout_mode = 0
+offset_left = 1066.0
+offset_top = 412.0
+offset_right = 2602.0
+offset_bottom = 1372.0
 rotation = 1.858444
 scale = Vector2(0.28645834, 0.33125)
 texture = ExtResource("3_pdmwj")
 
-[node name="robot" type="Sprite2D" parent="." unique_id=1471239755]
-position = Vector2(292, 273)
+[node name="robot" type="TextureRect" parent="." unique_id=127651009]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 227.0
+offset_right = 375.38684
+offset_bottom = 358.14108
 scale = Vector2(1.3979592, 1.147619)
 texture = SubResource("AtlasTexture_ximnc")
 
-[node name="fruit" type="Sprite2D" parent="." unique_id=1462778879]
-position = Vector2(171.00002, 563.99994)
+[node name="fruit" type="TextureRect" parent="." unique_id=1381295100]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 307.00006
+offset_right = 509.0
+offset_bottom = 627.00006
 rotation = 0.50800765
 scale = Vector2(0.772973, 0.621875)
 texture = ExtResource("5_h6b6o")
 
-[node name="robotTable" type="Sprite2D" parent="." unique_id=404480564]
-position = Vector2(1038.0001, 246.00002)
+[node name="robotTable" type="TextureRect" parent="." unique_id=695184386]
+layout_mode = 0
+offset_left = 955.0
+offset_top = 139.0
+offset_right = 1359.4607
+offset_bottom = 941.01324
 scale = Vector2(0.37951806, 0.32543105)
 texture = SubResource("AtlasTexture_uuoc5")
 
-[node name="lulu" type="Sprite2D" parent="." unique_id=219010261]
-position = Vector2(860.7259, 343.3362)
+[node name="lulu" type="TextureRect" parent="." unique_id=423678583]
+layout_mode = 0
+offset_left = 744.0
+offset_top = 276.99997
+offset_right = 1030.5941
+offset_bottom = 579.9845
 scale = Vector2(0.68389434, 0.56768584)
 texture = SubResource("AtlasTexture_5hcmv")
 
-[node name="BillCypher" type="Sprite2D" parent="." unique_id=1764898010]
-position = Vector2(318.00003, 517)
+[node name="BillCypher" type="TextureRect" parent="." unique_id=871187630]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 428.0
+offset_right = 481.0
+offset_bottom = 749.0
 scale = Vector2(0.5625, 0.49376947)
 texture = SubResource("AtlasTexture_7tqdd")
 
-[node name="ball" type="Sprite2D" parent="." unique_id=1478921626]
-position = Vector2(1056, 438)
+[node name="ball" type="TextureRect" parent="." unique_id=2024760824]
+layout_mode = 0
+offset_left = 996.0
+offset_top = 428.00003
+offset_right = 1160.0
+offset_bottom = 619.12256
 scale = Vector2(0.5487805, 0.48136646)
 texture = SubResource("AtlasTexture_jsrho")
 
-[node name="card" type="Sprite2D" parent="." unique_id=1370625709]
-position = Vector2(862, 196)
+[node name="card" type="TextureRect" parent="." unique_id=1819344022]
+layout_mode = 0
+offset_left = 821.0
+offset_top = 163.00002
+offset_right = 924.0
+offset_bottom = 313.0
 rotation = 0.22266999
 scale = Vector2(0.75242716, 0.76)
 texture = SubResource("AtlasTexture_2pcxx")
 
-[node name="chalkboard" type="Sprite2D" parent="." unique_id=969033604]
-position = Vector2(524.00006, 181.00002)
+[node name="chalkboard" type="TextureRect" parent="." unique_id=1812824366]
+layout_mode = 0
+offset_left = 472.00003
+offset_top = 169.0
+offset_right = 1057.0
+offset_bottom = 448.0
 rotation = -0.37910792
 scale = Vector2(0.23333333, 0.26344085)
 texture = SubResource("AtlasTexture_hjb44")
 
-[node name="spring" type="Sprite2D" parent="." unique_id=787740454]
-position = Vector2(138.00003, 336)
+[node name="spring" type="TextureRect" parent="." unique_id=556907978]
+layout_mode = 0
+offset_left = 32.999985
+offset_top = 291.00003
+offset_right = 321.0
+offset_bottom = 615.0
 scale = Vector2(0.4652778, 0.32407406)
 texture = SubResource("AtlasTexture_nfosm")
 
 [node name="Label3" type="Label" parent="." unique_id=24681869]
+layout_mode = 0
 offset_left = 993.0
 offset_top = 12.0
 offset_right = 1160.0
@@ -147,6 +198,7 @@ text = "Collection"
 horizontal_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=771178680]
+layout_mode = 0
 offset_left = 952.0
 offset_top = -14.999996
 offset_right = 1210.0
@@ -163,21 +215,33 @@ position = Vector2(-18, -45)
 stream = ExtResource("14_pdmwj")
 
 [node name="TextureButton2" type="TextureButton" parent="." unique_id=150920679]
-offset_left = -57.0
-offset_top = -83.0
-offset_right = 313.0
-offset_bottom = 237.0
+layout_mode = 0
+offset_left = -70.0
+offset_top = -65.0
+offset_right = 300.0
+offset_bottom = 255.0
 pivot_offset = Vector2(175, 144)
 texture_normal = ExtResource("15_vl3kk")
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1925160949]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 523.0
+offset_right = 263.0
+offset_bottom = 647.0
+texture = ExtResource("16_h6b6o")
+
 [node name="CoinsLabel" type="Label" parent="." unique_id=1323147904]
-offset_left = 913.0
-offset_top = 10.0
-offset_right = 1020.0
-offset_bottom = 45.0
+layout_mode = 0
+offset_left = 149.0
+offset_top = 549.0
+offset_right = 244.0
+offset_bottom = 618.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-text = "Coins: 111"
+theme_override_fonts/font = ExtResource("17_n3ctb")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
 [connection signal="mouse_exited" from="TextureButton" to="." method="_on_texture_button_mouse_exited"]

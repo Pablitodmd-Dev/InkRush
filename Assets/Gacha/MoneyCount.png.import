@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqrukigbej0a7"
-path="res://.godot/imported/Character.png-38103a372b80e28dd8470288f52159e4.ctex"
+uid="uid://djcget1vw471"
+path="res://.godot/imported/MoneyCount.png-ab8481a77e3d61d649c352c654edc41a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Microgames/Hit the Fruit/Character.png"
-dest_files=["res://.godot/imported/Character.png-38103a372b80e28dd8470288f52159e4.ctex"]
+source_file="res://Assets/Gacha/MoneyCount.png"
+dest_files=["res://.godot/imported/MoneyCount.png-ab8481a77e3d61d649c352c654edc41a.ctex"]
 
 [params]
 

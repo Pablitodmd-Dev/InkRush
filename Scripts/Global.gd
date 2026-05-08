@@ -7,8 +7,6 @@ var difficulty_level:int =0
 var coins:int=0
 var coin_pressed : bool=false
 
-# Dictionary to store the collection status
-# item_id: is_unlocked
 var collection = {
 	"item_001": false,
 	"item_002": false,
@@ -23,7 +21,6 @@ var collection = {
 	"item_011": false,
 }
 
-# Function to get only the items that are still locked
 func get_locked_items() -> Array:
 	var locked = []
 	for item_id in collection.keys():
@@ -31,7 +28,6 @@ func get_locked_items() -> Array:
 			locked.append(item_id)
 	return locked
 
-# Function to unlock an item
 func unlock_item(item_id: String):
 	if collection.has(item_id):
 		collection[item_id] = true

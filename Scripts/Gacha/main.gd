@@ -1,9 +1,8 @@
-extends Node2D
+extends Control
 
 
 func _process(_delta: float) -> void:
-	# Accede a la variable de tu script global
-	$CoinsLabel.text = "Coins: " + str(Global.coins)
+	$CoinsLabel.text =str(Global.coins)
 
 
 func _on_texture_button_pressed() -> void:
