@@ -8,22 +8,14 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	anim.play("walk")
-	if Global.difficulty_level == 0:
-		speed = 150.0
-	elif Global.difficulty_level == 1:
-		speed = 200.0
-	elif Global.difficulty_level == 2:
-		speed = 300.0
 
 func _physics_process(delta):
 	if is_winning:
 		return
 
-	# Gravedad
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	# Movimiento constante
 	velocity.x = speed
 	move_and_slide()
 

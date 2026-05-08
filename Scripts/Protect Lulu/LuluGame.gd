@@ -7,6 +7,13 @@ var raindrop_scene = preload("res://Scenes/Microgames/Protect Lulu/raindrop.tscn
 @onready var countdown_sprite = $AnimatedSprite2D
 
 func _ready():
+	if Global.difficulty_level == 0:
+		$RainTimer.wait_time = 0.6  
+	elif Global.difficulty_level == 1:
+		$RainTimer.wait_time = 0.4  
+	elif Global.difficulty_level == 2:
+		$RainTimer.wait_time = 0.2  
+	
 	timer.start()
 	countdown_sprite.play("countdown")
 
