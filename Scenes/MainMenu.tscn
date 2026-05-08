@@ -7,9 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://beqdsal3g4osd" path="res://Assets/MainMenu/EndlessModeButton.png" id="5_xim88"]
 [ext_resource type="Texture2D" uid="uid://dh86p0fj8s46a" path="res://Assets/MainMenu/EndlessModeButtonInactive(1).png" id="6_8um5k"]
 [ext_resource type="Texture2D" uid="uid://bxf1yy45l22yn" path="res://Assets/MainMenu/GachaButton.png" id="7_loo7a"]
-[ext_resource type="Texture2D" uid="uid://8rh6nbk364ps" path="res://Assets/MainMenu/44 sin título_20260505183348(1).png" id="7_xim88"]
+[ext_resource type="Texture2D" uid="uid://8rh6nbk364ps" path="res://Assets/MainMenu/Title.png" id="7_xim88"]
 [ext_resource type="Texture2D" uid="uid://bb0pxcljfgvov" path="res://Assets/MainMenu/GachaButtonLocked(1).png" id="8_if7li"]
 [ext_resource type="AudioStream" uid="uid://cxth2xudu0kx5" path="res://Assets/MainMenu/Sunrise_at_the_Citadel.mp3" id="8_koqhg"]
+[ext_resource type="Texture2D" uid="uid://bgamqgbim4t4l" path="res://Assets/MainMenu/CreditsButton.png" id="8_rrcx7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_koqhg"]
 radius = 45.01111
@@ -131,6 +132,16 @@ texture_normal = ExtResource("7_loo7a")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="Credits" type="TextureButton" parent="." unique_id=3605831]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 371.0
+offset_right = 712.0
+offset_bottom = 456.0
+texture_normal = ExtResource("8_rrcx7")
+ignore_texture_size = true
+stretch_mode = 0
+
 [node name="GachaLocked" type="TextureButton" parent="." unique_id=1445896562]
 layout_mode = 0
 offset_left = 384.0
@@ -165,3 +176,4 @@ autoplay = true
 [connection signal="pressed" from="StoryMode" to="." method="_on_story_mode_pressed"]
 [connection signal="pressed" from="EndlessMode" to="." method="_on_endless_mode_pressed"]
 [connection signal="pressed" from="Gacha" to="." method="_on_gacha_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cps6mr2wwdk71" path="res://Assets/IntroGame/47 sin título_20260505174844.png" id="3_nj6oa"]
 [ext_resource type="Texture2D" uid="uid://0ml23yxy43jm" path="res://Assets/IntroGame/45 sin título_20260505174913.png" id="4_rhr5q"]
 [ext_resource type="Texture2D" uid="uid://c517esqasw2k2" path="res://Assets/MainMenu/BackgroundBase.png" id="5_0gikv"]
-[ext_resource type="Texture2D" uid="uid://8rh6nbk364ps" path="res://Assets/MainMenu/44 sin título_20260505183348(1).png" id="6_0itl6"]
+[ext_resource type="Texture2D" uid="uid://8rh6nbk364ps" path="res://Assets/MainMenu/Title.png" id="6_0itl6"]
 [ext_resource type="AudioStream" uid="uid://u2aq6lqlndd" path="res://Assets/IntroGame/LogoSound.wav" id="7_0ujue"]
 [ext_resource type="Texture2D" uid="uid://bpspplhmy3do6" path="res://Assets/IntroGame/47 sin título_20260507163831.png" id="7_feipn"]
 

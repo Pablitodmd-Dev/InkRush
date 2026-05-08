@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://b2736o5ani47u"]
+
+[ext_resource type="Script" uid="uid://ba1uroqnv8sq8" path="res://Scenes/credits.gd" id="1_uy3b0"]
+[ext_resource type="Texture2D" uid="uid://cemwcap6xkg8s" path="res://Assets/MainMenu/Credits.png" id="1_xbebw"]
+[ext_resource type="FontFile" uid="uid://0qwe45n8sxkd" path="res://Assets/Microgames/TableTurf Final Boss/PatrickHand-Regular.ttf" id="2_7xmno"]
+[ext_resource type="Texture2D" uid="uid://dea3544jo2ko8" path="res://Assets/Gacha/WhatsApp Image 2026-05-07 at 23.42.32-Photoroom.png" id="3_7xmno"]
+
+[node name="Credits" type="Control" unique_id=1847690673]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_uy3b0")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=148808699]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_xbebw")
+
+[node name="Label" type="Label" parent="." unique_id=462117421]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 206.0
+offset_right = 455.0
+offset_bottom = 275.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7xmno")
+theme_override_font_sizes/font_size = 50
+text = "Coding"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="." unique_id=1673013864]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 265.0
+offset_right = 500.0
+offset_bottom = 389.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -10
+theme_override_fonts/font = ExtResource("2_7xmno")
+theme_override_font_sizes/font_size = 35
+text = "Aassujape
+PaburoGames
+Santi225"
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="." unique_id=69772160]
+layout_mode = 0
+offset_left = 594.0
+offset_top = 252.0
+offset_right = 762.0
+offset_bottom = 402.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -10
+theme_override_fonts/font = ExtResource("2_7xmno")
+theme_override_font_sizes/font_size = 35
+text = "Aassujape
+PaburoGames
+Santi225"
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="." unique_id=903966734]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 439.0
+offset_right = 367.0
+offset_bottom = 566.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -10
+theme_override_fonts/font = ExtResource("2_7xmno")
+theme_override_font_sizes/font_size = 35
+text = "Aassujape
+PaburoGames
+Santi225"
+
+[node name="Label2" type="Label" parent="." unique_id=1752693902]
+layout_mode = 0
+offset_left = 592.0
+offset_top = 209.0
+offset_right = 793.0
+offset_bottom = 278.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7xmno")
+theme_override_font_sizes/font_size = 50
+text = "Art/Assets"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=2084646064]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 386.0
+offset_right = 422.0
+offset_bottom = 455.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7xmno")
+theme_override_font_sizes/font_size = 50
+text = "Game Design"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="." unique_id=1330439331]
+layout_mode = 0
+offset_left = 677.0
+offset_top = 392.0
+offset_right = 860.0
+offset_bottom = 461.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7xmno")
+theme_override_font_sizes/font_size = 50
+text = "Animation"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="." unique_id=1137741967]
+layout_mode = 0
+offset_left = 671.0
+offset_top = 431.0
+offset_right = 854.0
+offset_bottom = 500.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7xmno")
+theme_override_font_sizes/font_size = 35
+text = "PaburoGames"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label10" type="Label" parent="." unique_id=95056812]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 534.0
+offset_right = 639.0
+offset_bottom = 603.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7xmno")
+theme_override_font_sizes/font_size = 35
+text = "LuluGameStudio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="." unique_id=1752829162]
+layout_mode = 0
+offset_left = 413.0
+offset_top = 487.0
+offset_right = 679.0
+offset_bottom = 556.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7xmno")
+theme_override_font_sizes/font_size = 50
+text = "Special Thanks"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton2" type="TextureButton" parent="." unique_id=1051778598]
+layout_mode = 0
+offset_left = -61.0
+offset_top = -46.0
+offset_right = 171.0
+offset_bottom = 161.0
+pivot_offset = Vector2(145, 162)
+texture_normal = ExtResource("3_7xmno")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

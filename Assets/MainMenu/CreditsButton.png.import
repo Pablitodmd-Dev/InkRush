@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8rh6nbk364ps"
-path="res://.godot/imported/44 sin título_20260505183348(1).png-a4acbf5ca74d6d77c65c34cb382d15c1.ctex"
+uid="uid://bgamqgbim4t4l"
+path="res://.godot/imported/CreditsButton.png-8d362587344ae0504dd5993712c58468.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/MainMenu/44 sin título_20260505183348(1).png"
-dest_files=["res://.godot/imported/44 sin título_20260505183348(1).png-a4acbf5ca74d6d77c65c34cb382d15c1.ctex"]
+source_file="res://Assets/MainMenu/CreditsButton.png"
+dest_files=["res://.godot/imported/CreditsButton.png-8d362587344ae0504dd5993712c58468.ctex"]
 
 [params]
 
