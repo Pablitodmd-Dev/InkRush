@@ -70,7 +70,7 @@ func load_random_microgame() -> void:
 					await get_tree().create_timer(4.0).timeout
 					menu_layer.get_node("levelUp").hide()
 					menu_layer.get_node("levelUp/LevelUpSound").stop()
-					#Global.difficulty_level += 1
+					Global.difficulty_level += 1
 					print("Se sube nivel??: ", Global.difficulty_level)
 				else:
 					print("Nivel máximo alcanzado. ¡Modo Infinito!")
