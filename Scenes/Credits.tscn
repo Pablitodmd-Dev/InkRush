@@ -1,9 +1,14 @@
-[gd_scene format=3 uid="uid://b2736o5ani47u"]
+[gd_scene format=3 uid="uid://dnlvj86ii43t8"]
 
-[ext_resource type="Script" uid="uid://ba1uroqnv8sq8" path="res://Scenes/credits.gd" id="1_uy3b0"]
+[ext_resource type="Script" path="res://Scenes/credits.gd" id="1_uy3b0"]
 [ext_resource type="Texture2D" uid="uid://cemwcap6xkg8s" path="res://Assets/MainMenu/Credits.png" id="1_xbebw"]
 [ext_resource type="FontFile" uid="uid://0qwe45n8sxkd" path="res://Assets/Microgames/TableTurf Final Boss/PatrickHand-Regular.ttf" id="2_7xmno"]
 [ext_resource type="Texture2D" uid="uid://dea3544jo2ko8" path="res://Assets/Gacha/WhatsApp Image 2026-05-07 at 23.42.32-Photoroom.png" id="3_7xmno"]
+[ext_resource type="Script" uid="uid://byxh6y4kpb4st" path="res://Scenes/area_2d.gd" id="5_iynit"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uy3b0"]
+radius = 61.80298
+height = 206.76471
 
 [node name="Credits" type="Control" unique_id=1847690673]
 layout_mode = 3
@@ -161,5 +166,13 @@ pivot_offset = Vector2(145, 162)
 texture_normal = ExtResource("3_7xmno")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1125903984]
+script = ExtResource("5_iynit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=770294276]
+position = Vector2(947.00006, 503)
+rotation = 0.44854963
+shape = SubResource("CapsuleShape2D_uy3b0")
 
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
