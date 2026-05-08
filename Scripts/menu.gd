@@ -79,12 +79,12 @@ func show_screen(screen_type: String):
 			apply_pulse_animation(defeat_screen)
 			defeat_sound.play()
 		"win":
-			start_screen.show()
+			victory_screen.show()
 			$win.show()
 			apply_pulse_animation(win)
 		"gameover":
 			
-			start_screen.show()
+			defeat_screen.show()
 			$gameOver.show()
 			apply_pulse_animation(gameOver)
 		"levelup":

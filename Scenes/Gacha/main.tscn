@@ -156,7 +156,7 @@ pivot_offset = Vector2(123.33301, 86.66667)
 texture_normal = SubResource("AtlasTexture_nr4c0")
 
 [node name="Node2D" parent="." unique_id=1759736335 instance=ExtResource("13_pdmwj")]
-position = Vector2(569, 447)
+position = Vector2(33, -3)
 
 [node name="CasinoMusic" type="AudioStreamPlayer2D" parent="." unique_id=1394110706]
 position = Vector2(-18, -45)
