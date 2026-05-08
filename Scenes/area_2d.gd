@@ -9,4 +9,5 @@ func _input(event):
 func coins():
 	Global.coin_pressed = true
 	Global.coins += 1
+	$AudioStreamPlayer2D.play()
 	print("se suma moneda? ", Global.coins)
