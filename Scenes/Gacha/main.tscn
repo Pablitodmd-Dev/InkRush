@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://d022c857lsvc7" path="res://Assets/Microgames/trampoline_game/spring.png" id="12_sejx3"]
 [ext_resource type="PackedScene" uid="uid://d0qdqkn4qgppv" path="res://Scenes/Gacha/gacha.tscn" id="13_pdmwj"]
 [ext_resource type="AudioStream" uid="uid://b4imbqiurwhek" path="res://Assets/Gacha/First Step into the Big City.wav" id="14_pdmwj"]
+[ext_resource type="Texture2D" uid="uid://dea3544jo2ko8" path="res://Assets/Gacha/WhatsApp Image 2026-05-07 at 23.42.32-Photoroom.png" id="15_vl3kk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1fojf"]
 atlas = ExtResource("2_lrlkl")
@@ -159,6 +160,17 @@ texture_normal = SubResource("AtlasTexture_nr4c0")
 position = Vector2(-18, -45)
 stream = ExtResource("14_pdmwj")
 
+[node name="TextureButton2" type="TextureButton" parent="." unique_id=150920679]
+offset_left = -57.0
+offset_top = -83.0
+offset_right = 313.0
+offset_bottom = 237.0
+pivot_offset = Vector2(175, 144)
+texture_normal = ExtResource("15_vl3kk")
+
 [connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
 [connection signal="mouse_exited" from="TextureButton" to="." method="_on_texture_button_mouse_exited"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="mouse_entered" from="TextureButton2" to="." method="_on_texture_button_2_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton2" to="." method="_on_texture_button_2_mouse_exited"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

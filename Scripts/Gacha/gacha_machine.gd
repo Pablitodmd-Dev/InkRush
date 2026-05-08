@@ -33,11 +33,35 @@ func _on_gacha_button_pressed() -> void:
 	if audio_loop.playing or item_label.visible:
 		return
 	
+	if Global.coins < 1:
+		print("¡No tienes suficientes monedas!")
+		item_label.text = "\n ¡NOT ENOUGH \n COINS!"
+		item_label.modulate = Color(0.861, 0.828, 0.977, 1.0)
+		item_label.visible = true
+		
+		var t_err = create_tween()
+		t_err.tween_property(item_label, "modulate:a", 1.0, 0.2)
+		t_err.tween_interval(1.0)
+		t_err.tween_property(item_label, "modulate:a", 0.0, 0.3)
+		await t_err.finished
+		
+		item_label.visible = false
+		item_label.modulate = Color.WHITE
+		return
+	
+	Global.coins -= 1
+	print("Monedas restantes: ", Global.coins)
+	
 	casino_music.stop()
 
 	var available_items = Global.get_locked_items()
 	if available_items.is_empty():
-		print("¡Collection completed!")
+		item_label.text = " ¡COLLECTION \nCOMPLETED!"
+		item_label.visible = true
+		# Reusamos un tween rápido para avisar
+		var t_full = create_tween()
+		t_full.tween_property(item_label, "modulate:a", 1.0, 0.2)
+		await t_full.finished
 		casino_music.play()
 		return
 
