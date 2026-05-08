@@ -28,7 +28,7 @@ func _ready():
 	countdown_sprite.play("countdown")
 	
 func readQuestions():
-	var file = FileAccess.open("res://Assets/Microgames/The Last Lesson/questionsAnswers.txt", FileAccess.READ)
+	var file = FileAccess.open("res://Assets/Microgames/The Last Lesson/questionsAnswers.json", FileAccess.READ)
 	var content = file.get_as_text()
 	var parseContent=JSON.parse_string(content)
 	return parseContent
