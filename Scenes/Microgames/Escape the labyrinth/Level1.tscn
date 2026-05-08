@@ -88,7 +88,7 @@ radius = 5.5
 height = 136.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5ogtw"]
-radius = 7.0
+radius = 17.0
 height = 192.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_avdyp"]
@@ -158,7 +158,7 @@ size = Vector2(15, 82)
 size = Vector2(612, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t4d62"]
-size = Vector2(33.25, 34)
+size = Vector2(33.25, 51)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2dge5"]
 atlas = ExtResource("5_t4d62")
@@ -356,7 +356,7 @@ position = Vector2(624.5, 374)
 shape = SubResource("CapsuleShape2D_18lwe")
 
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="Collisions" unique_id=1204927451]
-position = Vector2(718, 305)
+position = Vector2(718, 303)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_5ogtw")
 
@@ -458,11 +458,11 @@ position = Vector2(243, 548)
 shape = SubResource("RectangleShape2D_t4d62")
 
 [node name="CollisionShape2D45" type="CollisionShape2D" parent="Collisions" unique_id=838778058]
-position = Vector2(465, 466)
+position = Vector2(465, 450)
 shape = SubResource("RectangleShape2D_t4d62")
 
 [node name="CollisionShape2D46" type="CollisionShape2D" parent="Collisions" unique_id=296534035]
-position = Vector2(535.625, 464)
+position = Vector2(535.625, 448.5)
 shape = SubResource("RectangleShape2D_t4d62")
 
 [node name="CollisionShape2D44" type="CollisionShape2D" parent="Collisions" unique_id=1433098441]

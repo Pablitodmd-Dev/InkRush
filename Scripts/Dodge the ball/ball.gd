@@ -6,9 +6,9 @@ func _ready():
 	if Global.difficulty_level == 0:
 		speed = 300.0
 	elif Global.difficulty_level == 1:
-		speed = 320.0
+		speed = 350.0
 	elif Global.difficulty_level == 2:
-		speed = 340.0
+		speed = 400.0
 	
 	var angle = randf_range(0, 2 * PI)
 	velocity = Vector2(cos(angle), sin(angle)) * speed

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dlb0bmmg257lh" path="res://Assets/Microgames/Scape the labyrinth/images/Obstacle.png" id="1_ivaiq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ivaiq"]
-size = Vector2(103, 160)
+size = Vector2(103, 252)
 
 [node name="Obstacle" type="StaticBody2D" unique_id=1624819642]
 scale = Vector2(0.5, 0.5)
@@ -14,5 +14,5 @@ region_enabled = true
 region_rect = Rect2(94.60002, 62.076874, 108.79999, 222.50812)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=152005662]
-position = Vector2(1.5, -31)
+position = Vector2(1.5, -14)
 shape = SubResource("RectangleShape2D_ivaiq")
