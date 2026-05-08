@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bwtcc8mfhtxy2" path="res://Scenes/Microgames/Escape the labyrinth/Character_Labyrinth.tscn" id="2_m2r5f"]
 [ext_resource type="AudioStream" uid="uid://cgdgpsob4egu" path="res://Assets/Microgames/Scape the labyrinth/sounds/theme.mp3" id="3_m2r5f"]
 [ext_resource type="Texture2D" uid="uid://lqkfpke5tvg8" path="res://Assets/Timer/Timer.png" id="5_t4d62"]
+[ext_resource type="PackedScene" uid="uid://b1d1w01brkxul" path="res://Scenes/Microgames/Escape the labyrinth/Obstacle.tscn" id="6_t4d62"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttmau"]
 size = Vector2(102, 157)
@@ -138,6 +139,27 @@ height = 68.0
 radius = 4.0
 height = 68.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2dge5"]
+size = Vector2(20, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0gtf"]
+size = Vector2(176, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2g0o"]
+size = Vector2(17, 109.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfam4"]
+size = Vector2(300, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hbtw"]
+size = Vector2(15, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xk1by"]
+size = Vector2(612, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4d62"]
+size = Vector2(33.25, 34)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_2dge5"]
 atlas = ExtResource("5_t4d62")
 region = Rect2(0, 0, 370, 45)
@@ -203,8 +225,34 @@ position = Vector2(576, 324)
 rotation = 1.5707964
 texture = ExtResource("1_ttmau")
 
+[node name="Obstacles" type="Node2D" parent="." unique_id=1192025948]
+
+[node name="Obstacle" parent="Obstacles" unique_id=566180336 instance=ExtResource("6_t4d62")]
+position = Vector2(259, 167)
+
+[node name="Obstacle2" parent="Obstacles" unique_id=1107392583 instance=ExtResource("6_t4d62")]
+position = Vector2(311, 166)
+
+[node name="Obstacle3" parent="Obstacles" unique_id=1008960760 instance=ExtResource("6_t4d62")]
+position = Vector2(635, 207)
+
+[node name="Obstacle4" parent="Obstacles" unique_id=678471968 instance=ExtResource("6_t4d62")]
+position = Vector2(636, 244)
+
+[node name="Obstacle5" parent="Obstacles" unique_id=1871036269 instance=ExtResource("6_t4d62")]
+position = Vector2(845, 396)
+
+[node name="Obstacle6" parent="Obstacles" unique_id=2099178562 instance=ExtResource("6_t4d62")]
+position = Vector2(498, 384)
+
+[node name="Obstacle7" parent="Obstacles" unique_id=76657013 instance=ExtResource("6_t4d62")]
+position = Vector2(266, 475)
+
+[node name="Obstacle8" parent="Obstacles" unique_id=1739839961 instance=ExtResource("6_t4d62")]
+position = Vector2(306, 473)
+
 [node name="CharacterLabirynth" parent="." unique_id=1899389053 instance=ExtResource("2_m2r5f")]
-position = Vector2(193, 256)
+position = Vector2(210, 258)
 
 [node name="Goal" type="Area2D" parent="." unique_id=1120309680]
 
@@ -241,6 +289,7 @@ shape = SubResource("CapsuleShape2D_t4d62")
 position = Vector2(287.5, 533)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_2dge5")
+disabled = true
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Collisions" unique_id=737408344]
 position = Vector2(336.5, 332.75)
@@ -277,6 +326,7 @@ shape = SubResource("CapsuleShape2D_tj035")
 position = Vector2(501, 449.5)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_c8bun")
+disabled = true
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Collisions" unique_id=1921552702]
 position = Vector2(556.5, 490)
@@ -322,6 +372,7 @@ shape = SubResource("CapsuleShape2D_0mspl")
 position = Vector2(847.5, 458.75)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_41i1k")
+disabled = true
 
 [node name="CollisionShape2D25" type="CollisionShape2D" parent="Collisions" unique_id=1302762406]
 position = Vector2(877.5, 338)
@@ -365,6 +416,58 @@ shape = SubResource("CapsuleShape2D_6hn0p")
 position = Vector2(1045, 71)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_pewel")
+
+[node name="CollisionShape2D34" type="CollisionShape2D" parent="Collisions" unique_id=1001327544]
+position = Vector2(249, 606.5)
+shape = SubResource("RectangleShape2D_2dge5")
+
+[node name="CollisionShape2D35" type="CollisionShape2D" parent="Collisions" unique_id=1051324211]
+position = Vector2(395, 576)
+shape = SubResource("RectangleShape2D_l0gtf")
+
+[node name="CollisionShape2D36" type="CollisionShape2D" parent="Collisions" unique_id=419336256]
+position = Vector2(474.5, 510.5)
+shape = SubResource("RectangleShape2D_c2g0o")
+
+[node name="CollisionShape2D37" type="CollisionShape2D" parent="Collisions" unique_id=107891512]
+position = Vector2(527, 511)
+shape = SubResource("RectangleShape2D_c2g0o")
+
+[node name="CollisionShape2D38" type="CollisionShape2D" parent="Collisions" unique_id=1498800568]
+position = Vector2(668, 576)
+shape = SubResource("RectangleShape2D_nfam4")
+
+[node name="CollisionShape2D39" type="CollisionShape2D" parent="Collisions" unique_id=456642754]
+position = Vector2(810, 512)
+shape = SubResource("RectangleShape2D_c2g0o")
+
+[node name="CollisionShape2D40" type="CollisionShape2D" parent="Collisions" unique_id=2080403496]
+position = Vector2(880, 510.25)
+shape = SubResource("RectangleShape2D_c2g0o")
+
+[node name="CollisionShape2D41" type="CollisionShape2D" parent="Collisions" unique_id=642629642]
+position = Vector2(879.5, 606)
+shape = SubResource("RectangleShape2D_8hbtw")
+
+[node name="CollisionShape2D42" type="CollisionShape2D" parent="Collisions" unique_id=350586296]
+position = Vector2(565, 635.5)
+shape = SubResource("RectangleShape2D_xk1by")
+
+[node name="CollisionShape2D43" type="CollisionShape2D" parent="Collisions" unique_id=211353767]
+position = Vector2(243, 548)
+shape = SubResource("RectangleShape2D_t4d62")
+
+[node name="CollisionShape2D45" type="CollisionShape2D" parent="Collisions" unique_id=838778058]
+position = Vector2(465, 466)
+shape = SubResource("RectangleShape2D_t4d62")
+
+[node name="CollisionShape2D46" type="CollisionShape2D" parent="Collisions" unique_id=296534035]
+position = Vector2(535.625, 464)
+shape = SubResource("RectangleShape2D_t4d62")
+
+[node name="CollisionShape2D44" type="CollisionShape2D" parent="Collisions" unique_id=1433098441]
+position = Vector2(323, 551)
+shape = SubResource("RectangleShape2D_t4d62")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2046305929]
 stream = ExtResource("3_m2r5f")
