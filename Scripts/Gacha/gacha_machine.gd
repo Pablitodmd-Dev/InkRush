@@ -58,7 +58,6 @@ func _on_gacha_button_pressed() -> void:
 	if available_items.is_empty():
 		item_label.text = " ¡COLLECTION \nCOMPLETED!"
 		item_label.visible = true
-		# Reusamos un tween rápido para avisar
 		var t_full = create_tween()
 		t_full.tween_property(item_label, "modulate:a", 1.0, 0.2)
 		await t_full.finished

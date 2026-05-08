@@ -137,24 +137,26 @@ scale = Vector2(0.4652778, 0.32407406)
 texture = SubResource("AtlasTexture_nfosm")
 
 [node name="Label3" type="Label" parent="." unique_id=24681869]
-offset_left = 977.0
-offset_top = 4.0
-offset_right = 1144.0
-offset_bottom = 27.0
+offset_left = 993.0
+offset_top = 12.0
+offset_right = 1160.0
+offset_bottom = 35.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 19
 text = "Collection"
 horizontal_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=771178680]
-offset_left = 937.0
-offset_top = -25.0
-offset_right = 1195.0
-offset_bottom = 161.0
+offset_left = 952.0
+offset_top = -14.999996
+offset_right = 1210.0
+offset_bottom = 171.0
 scale = Vector2(0.3, 0.3)
 pivot_offset = Vector2(123.33301, 86.66667)
 texture_normal = SubResource("AtlasTexture_nr4c0")
 
 [node name="Node2D" parent="." unique_id=1759736335 instance=ExtResource("13_pdmwj")]
+position = Vector2(569, 447)
 
 [node name="CasinoMusic" type="AudioStreamPlayer2D" parent="." unique_id=1394110706]
 position = Vector2(-18, -45)
@@ -167,6 +169,15 @@ offset_right = 313.0
 offset_bottom = 237.0
 pivot_offset = Vector2(175, 144)
 texture_normal = ExtResource("15_vl3kk")
+
+[node name="CoinsLabel" type="Label" parent="." unique_id=1323147904]
+offset_left = 913.0
+offset_top = 10.0
+offset_right = 1020.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Coins: 111"
 
 [connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
 [connection signal="mouse_exited" from="TextureButton" to="." method="_on_texture_button_mouse_exited"]
